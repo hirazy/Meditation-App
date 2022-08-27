@@ -1,0 +1,9 @@
+{
+  "@@locale": "vi",
+  "@@last_modified": "2022-02-28T10:07:10.000010",
+  "yes": "Có",
+  "@yes": {
+    "type": "text",
+    "placeholders": {}
+  }
+}
