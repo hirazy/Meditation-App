@@ -77,7 +77,6 @@ class SplashPageState extends ConsumerState<SplashPage> {
                     width: 200,
                     asset: 'assets/raws/anim_splash_meditation.json',
                     isAnimated: false,
-
                   ),
                 ),
               ],
