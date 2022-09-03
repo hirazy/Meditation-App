@@ -6,12 +6,14 @@ class AnimLottieCommon extends StatefulWidget {
     required this.height,
     required this.width,
     required this.asset,
+    this.isAnimated = true,
     Key? key,
   }) : super(key: key);
 
   final double height;
   final double width;
   final String asset;
+  final bool isAnimated;
 
   @override
   AnimLottieCommonState createState() {
@@ -27,6 +29,8 @@ class AnimLottieCommonState extends State<AnimLottieCommon> {
         widget.asset,
         height: widget.height,
         width: widget.width,
+        animate: widget.isAnimated,
+        repeat: widget.isAnimated,
       ),
     );
   }
