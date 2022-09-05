@@ -14,11 +14,22 @@ class WelcomePage extends StatefulWidget {
 class WelcomePageState extends State<WelcomePage> {
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-
-        LargeButton(onTap: () {}),
-      ],
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: Colors.white,
+        body: Column(
+          children: [
+            Expanded(
+              child: Center(
+                child: LargeButton(
+                  title: 'Get Started',
+                  onTap: () {},
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }

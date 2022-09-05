@@ -6,6 +6,7 @@ part 'splash_state.freezed.dart';
 class SplashState with _$SplashState {
   factory SplashState({
     required String version,
+    @Default(false) bool isAuthenticated,
   }) = _SplashState;
 
   const SplashState._();

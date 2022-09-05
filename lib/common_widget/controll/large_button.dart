@@ -1,11 +1,15 @@
-import 'package:flutter/widgets.dart';
+import 'package:flutter/material.dart';
+
+import '../../resource/app_color.dart';
 
 class LargeButton extends StatelessWidget {
   const LargeButton({
+    required this.title,
     required this.onTap,
     Key? key,
   }) : super(key: key);
 
+  final String title;
   final Function() onTap;
 
   @override
@@ -13,14 +17,29 @@ class LargeButton extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            colors: [],
-          ),
+        margin: const EdgeInsets.symmetric(horizontal: 30),
+        padding: const EdgeInsets.symmetric(
+          vertical: 10,
+        ),
+        decoration: BoxDecoration(
+          color: AppColor.light.lightBlue,
+          borderRadius: BorderRadius.circular(20),
         ),
         child: Row(
-          children: const [
-
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Expanded(
+              child: Text(
+                title,
+                textAlign: TextAlign.center,
+                style: const TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.w500,
+                  fontSize: 15,
+                ),
+              ),
+            ),
           ],
         ),
       ),
