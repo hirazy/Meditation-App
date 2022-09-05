@@ -2,10 +2,11 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import 'page/splash/splash_page.dart';
+import 'data/provider/app_navigator_provider.dart';
+import 'navigation/app_route.dart';
+import 'navigation/app_router.dart';
 
-void main() async{
-
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
 
@@ -16,9 +17,28 @@ void main() async{
   );
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends ConsumerStatefulWidget {
   const MyApp({Key? key}) : super(key: key);
 
+  // @override
+  // Widget build(BuildContext context) {
+  //   return MaterialApp(
+  //     title: 'Flutter Demo',
+  //     theme: ThemeData(
+  //       primarySwatch: Colors.blue,
+  //     ),
+  //     // localizationsDelegates: ,
+  //     key:,
+  //     initialRoute: AppRoute.splash,
+  //     onGenerateRoute: AppRouter.onGenerateRoute,
+  //   );
+  // }
+
+  @override
+  MyAppState createState() => MyAppState();
+}
+
+class MyAppState extends ConsumerState<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -27,7 +47,9 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       // localizationsDelegates: ,
-      home: const SplashPage(),
+      key: ref.read(appNavigatorProvider).navigatorKey,
+      initialRoute: AppRoute.splash,
+      onGenerateRoute: AppRouter.onGenerateRoute,
     );
   }
 }
