@@ -17,9 +17,13 @@ class WelcomePageState extends State<WelcomePage> {
     return SafeArea(
       child: Scaffold(
         backgroundColor: Colors.white,
-        body: Column(
+        body: Stack(
           children: [
-            Expanded(
+            // Center(
+            //   child: ,
+            // ),
+            Positioned(
+              bottom: 30,
               child: Center(
                 child: LargeButton(
                   title: 'Get Started',
