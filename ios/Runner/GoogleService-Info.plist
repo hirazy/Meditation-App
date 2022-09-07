@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>187002341965-7hf6bbqefeaul4upfpmj43ooksqprlmu.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.187002341965-7hf6bbqefeaul4upfpmj43ooksqprlmu</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>187002341965-19p8vtnb51jv72hu768qj8osoil33cg2.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyA29Xma2oyGLSWadYcIo-bo2SDykflEXtI</string>
+	<key>GCM_SENDER_ID</key>
+	<string>187002341965</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.meditationApp</string>
+	<key>PROJECT_ID</key>
+	<string>meditation-app-78b18</string>
+	<key>STORAGE_BUCKET</key>
+	<string>meditation-app-78b18.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:187002341965:ios:c29866cb01413df9666a04</string>
+</dict>
+</plist>
