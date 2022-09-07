@@ -12,9 +12,12 @@ class LogoImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Assets.images.icLogo.image(
-      width: size,
-      height: size,
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(15),
+      child: Assets.images.icLogo.image(
+        width: size,
+        height: size,
+      ),
     );
   }
 }

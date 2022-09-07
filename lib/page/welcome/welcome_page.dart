@@ -19,16 +19,13 @@ class WelcomePageState extends State<WelcomePage> {
         backgroundColor: Colors.white,
         body: Stack(
           children: [
-            // Center(
-            //   child: ,
-            // ),
             Positioned(
               bottom: 30,
-              child: Center(
-                child: LargeButton(
-                  title: 'Get Started',
-                  onTap: () {},
-                ),
+              left: 0,
+              right: 0,
+              child: LargeButton(
+                title: 'Get Started',
+                onTap: () {},
               ),
             ),
           ],

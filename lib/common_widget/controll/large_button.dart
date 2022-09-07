@@ -19,11 +19,11 @@ class LargeButton extends StatelessWidget {
       child: Container(
         margin: const EdgeInsets.symmetric(horizontal: 30),
         padding: const EdgeInsets.symmetric(
-          vertical: 10,
+          vertical: 15,
         ),
         decoration: BoxDecoration(
           color: AppColor.light.lightBlue,
-          borderRadius: BorderRadius.circular(20),
+          borderRadius: BorderRadius.circular(25),
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
