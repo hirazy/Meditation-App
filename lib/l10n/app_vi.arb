@@ -14,5 +14,25 @@
   "@getStarted": {
     "type": "text",
     "placeholders": {}
+  },
+  "welcomeHeaven": "Welcome to your Heaven",
+  "@welcomeHeaven": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "haveAccount": "Bạn đã có tài khoản?",
+  "@haveAccount": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "logIn": "Đăng nhập",
+  "@logIn": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "welcomeTitle": "Hít 1 hơi sâu và bắt đầu hồi phục sức khỏe của bạn",
+  "@welcomeTitle": {
+    "type": "text",
+    "placeholders": {}
   }
 }

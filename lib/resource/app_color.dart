@@ -10,7 +10,7 @@ class AppColor {
 
   /// Light Theme
   static const light = AppColor(
-    lightBlue: Color.fromRGBO(152, 196, 236, 100),
+    lightBlue: Color.fromARGB(100, 110, 185, 248),
   );
 
   /// Dark Theme
