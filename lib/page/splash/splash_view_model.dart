@@ -13,6 +13,10 @@ class SplashViewModel extends StateNotifier<SplashState> {
 
   final Reader read;
 
+  void init(){
+
+  }
+
   Future<void> loadAppInfo(Function() onNextHome, Function() onNextLogin) async{
     onNextHome();
   }

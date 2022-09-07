@@ -17,14 +17,15 @@ class WelcomePageState extends State<WelcomePage> {
     return SafeArea(
       child: Scaffold(
         backgroundColor: Colors.white,
-        body: Column(
+        body: Stack(
           children: [
-            Expanded(
-              child: Center(
-                child: LargeButton(
-                  title: 'Get Started',
-                  onTap: () {},
-                ),
+            Positioned(
+              bottom: 30,
+              left: 0,
+              right: 0,
+              child: LargeButton(
+                title: 'Get Started',
+                onTap: () {},
               ),
             ),
           ],

@@ -9,5 +9,10 @@
   "@no": {
     "type": "text",
     "placeholders": {}
+  },
+  "getStarted": "Bắt đầu",
+  "@getStarted": {
+    "type": "text",
+    "placeholders": {}
   }
 }
