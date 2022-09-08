@@ -55,8 +55,17 @@ dependencies:
   freezed_annotation: ^2.1.0
   json_serializable: ^6.3.1
 
+  # Bottom Navigation
+  animated_bottom_navigation_bar: ^1.1.0
+
+  # Formz
+  formz: ^0.4.1
+
   # Animated Text
   animated_text_kit: ^4.2.2
+
+  # Google SignIn
+  google_sign_in: ^5.4.1
 
   # Lottie
   lottie: ^1.4.2
