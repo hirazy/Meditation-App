@@ -34,5 +34,10 @@
   "@welcomeTitle": {
     "type": "text",
     "placeholders": {}
+  },
+  "signUp": "Đăng kí",
+  "@signUp": {
+    "type": "text",
+    "placeholders": {}
   }
 }

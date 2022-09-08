@@ -9,6 +9,7 @@ import '../../common_widget/controll/large_button.dart';
 import '../../common_widget/controll/page_view_list.dart';
 import '../../common_widget/space_box.dart';
 import '../../gen/assets.gen.dart';
+import '../../navigation/app_route.dart';
 
 class WelcomePage extends ConsumerStatefulWidget {
   const WelcomePage({Key? key}) : super(key: key);
@@ -82,7 +83,11 @@ class WelcomePageState extends ConsumerState<WelcomePage> {
         children: [
           LargeButton(
             title: AppLocalizations.of(context)!.getStarted,
-            onTap: () {},
+            onTap: () {
+              Navigator.of(context).popAndPushNamed(
+                AppRoute.signUp,
+              );
+            },
           ),
           const SpaceBox.height(15),
           RichText(

@@ -61,6 +61,12 @@ dependencies:
   # Lottie
   lottie: ^1.4.2
 
+  # Formz
+  formz: ^0.4.1
+
+  # Audio Player
+  audioplayers: ^1.0.1
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
