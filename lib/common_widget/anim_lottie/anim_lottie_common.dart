@@ -1,6 +1,7 @@
 import 'package:flutter/widgets.dart';
 import 'package:lottie/lottie.dart';
 
+/// [AnimLottieCommon] is anim widget which contains Lottie widget
 class AnimLottieCommon extends StatefulWidget {
   const AnimLottieCommon({
     required this.height,

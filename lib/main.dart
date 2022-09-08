@@ -1,5 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'data/provider/app_navigator_provider.dart';
@@ -49,6 +50,8 @@ class MyAppState extends ConsumerState<MyApp> {
       // localizationsDelegates: ,
       key: ref.read(appNavigatorProvider).navigatorKey,
       initialRoute: AppRoute.splash,
+      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      supportedLocales: AppLocalizations.supportedLocales,
       onGenerateRoute: AppRouter.onGenerateRoute,
     );
   }

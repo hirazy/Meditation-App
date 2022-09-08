@@ -96,7 +96,7 @@ class SplashPageState extends ConsumerState<SplashPage> {
                     Expanded(
                       child: Center(
                         child: LogoImage(
-                          size: 60,
+                          size: 80,
                         ),
                       ),
                     )

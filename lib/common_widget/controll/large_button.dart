@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../resource/app_color.dart';
 
+/// [LargeButton] is button with expanded width screen
 class LargeButton extends StatelessWidget {
   const LargeButton({
     required this.title,
@@ -9,7 +10,10 @@ class LargeButton extends StatelessWidget {
     Key? key,
   }) : super(key: key);
 
+  /// [title]
   final String title;
+
+  /// [onTap] handle event click of button
   final Function() onTap;
 
   @override
