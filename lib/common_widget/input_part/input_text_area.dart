@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../space_box.dart';
+
 /// [InputTextArea] is base of edit text
 class InputTextArea extends StatefulWidget {
   const InputTextArea({
@@ -10,6 +12,8 @@ class InputTextArea extends StatefulWidget {
     this.onChanged,
     this.errorText,
     this.controller,
+    this.textAlign = TextAlign.left,
+    this.maxLength = 99,
   }) : super(key: key);
 
   /// Title of text area
@@ -30,6 +34,11 @@ class InputTextArea extends StatefulWidget {
   /// Text has been changed
   final ValueChanged<String>? onChanged;
 
+  /// Text Align
+  final TextAlign? textAlign;
+
+  final int? maxLength;
+
   @override
   InputTextAreaState createState() => InputTextAreaState();
 }
@@ -39,13 +48,36 @@ class InputTextAreaState extends State<InputTextArea> {
 
   @override
   Widget build(BuildContext context) {
-    return TextFormField(
-      initialValue: widget.initialText,
-      onChanged: widget.onChanged,
-      controller: widget.controller,
-      decoration: InputDecoration(
-        hintText: widget.hintText,
-      ),
+    return Column(
+      children: [
+        if (_isDangerous)
+          Text(
+            widget.errorText!,
+            style: const TextStyle(
+              color: Colors.red,
+              fontSize: 15,
+              fontWeight: FontWeight.w500,
+            ),
+          ),
+        const SpaceBox.height(),
+        Container(
+          padding: const EdgeInsets.all(16),
+          child: TextFormField(
+            initialValue: widget.initialText,
+            onChanged: widget.onChanged,
+            controller: widget.controller,
+            maxLength: widget.maxLength,
+            decoration: InputDecoration(
+              hintText: widget.hintText,
+              border: InputBorder.none,
+              enabledBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(8),
+              ),
+            ),
+            textAlign: widget.textAlign ?? TextAlign.left,
+          ),
+        )
+      ],
     );
   }
 }
