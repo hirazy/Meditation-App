@@ -14,8 +14,8 @@ abstract class BasePageState<Page extends BasePage> extends ConsumerState<Page>
 
   @override
   void initState() {
-    onInitState();
     super.initState();
+    onInitState();
   }
 
   @override

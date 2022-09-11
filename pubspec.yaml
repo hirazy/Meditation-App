@@ -46,6 +46,13 @@ dependencies:
   # Get
   get: ^4.6.5
 
+  # Dio
+  dio: ^4.0.6
+
+  # Retrofit
+  retrofit: ^3.0.1+1
+  retrofit_generator: ^4.0.3+1
+
   # Firebase
   firebase_core: ^1.21.1
   firebase_crashlytics: ^2.8.9
@@ -69,6 +76,12 @@ dependencies:
 
   # Logger
   logger: ^1.1.0
+
+  # Flutter Secure Storage
+  flutter_secure_storage: ^6.0.0
+
+  # SQFLITE
+  sqflite: ^2.0.3+1
 
 dev_dependencies:
   flutter_test:

@@ -7,6 +7,8 @@ class LargeButton extends StatelessWidget {
   const LargeButton({
     required this.title,
     required this.onTap,
+    this.prefixIcon,
+    this.backgroundColor = AppColor.bgLightBtn,
     Key? key,
   }) : super(key: key);
 
@@ -15,6 +17,11 @@ class LargeButton extends StatelessWidget {
 
   /// [onTap] handle event click of button
   final Function() onTap;
+
+  /// Asset path Icon
+  final String? prefixIcon;
+
+  final Color backgroundColor;
 
   @override
   Widget build(BuildContext context) {
@@ -26,22 +33,26 @@ class LargeButton extends StatelessWidget {
           vertical: 15,
         ),
         decoration: BoxDecoration(
-          color: AppColor.light.lightBlue,
+          color: backgroundColor,
           borderRadius: BorderRadius.circular(25),
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Expanded(
-              child: Text(
-                title,
-                textAlign: TextAlign.center,
-                style: const TextStyle(
-                  color: Colors.white,
-                  fontWeight: FontWeight.w500,
-                  fontSize: 15,
-                ),
+            if (prefixIcon != null)
+              Image.asset(
+                prefixIcon!,
+                height: 20,
+                width: 20,
+              ),
+            Text(
+              title,
+              textAlign: TextAlign.center,
+              style: const TextStyle(
+                color: Colors.white,
+                fontWeight: FontWeight.w500,
+                fontSize: 15,
               ),
             ),
           ],

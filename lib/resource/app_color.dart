@@ -5,8 +5,9 @@ class AppColor {
     required this.lightBlue,
   });
 
-  final Color lightBlue;
+  static const bgLightBtn = Color.fromARGB(100, 110, 185, 248);
 
+  final Color lightBlue;
 
   /// Light Theme
   static const light = AppColor(

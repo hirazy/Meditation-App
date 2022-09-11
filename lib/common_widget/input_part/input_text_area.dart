@@ -72,6 +72,11 @@ class InputTextAreaState extends State<InputTextArea> {
               border: InputBorder.none,
               enabledBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(8),
+                borderSide: const BorderSide(color: Colors.blue),
+              ),
+              focusedBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(8),
+                borderSide: const BorderSide(color: Colors.blue),
               ),
             ),
             textAlign: widget.textAlign ?? TextAlign.left,
