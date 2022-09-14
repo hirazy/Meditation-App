@@ -21,20 +21,6 @@ void main() async {
 class MyApp extends ConsumerStatefulWidget {
   const MyApp({Key? key}) : super(key: key);
 
-  // @override
-  // Widget build(BuildContext context) {
-  //   return MaterialApp(
-  //     title: 'Flutter Demo',
-  //     theme: ThemeData(
-  //       primarySwatch: Colors.blue,
-  //     ),
-  //     // localizationsDelegates: ,
-  //     key:,
-  //     initialRoute: AppRoute.splash,
-  //     onGenerateRoute: AppRouter.onGenerateRoute,
-  //   );
-  // }
-
   @override
   MyAppState createState() => MyAppState();
 }

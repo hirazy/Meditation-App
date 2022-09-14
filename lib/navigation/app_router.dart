@@ -13,7 +13,6 @@ class AppRouter {
           settings: settings,
           builder: (context) => const SplashPage(),
         );
-
       case AppRoute.welcome:
         return MaterialPageRoute(
           settings: settings,

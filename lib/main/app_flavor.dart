@@ -15,7 +15,7 @@ class AppFlavor {
 class AppFlavorValue {
   static final development = AppFlavor(
     apiConfig: ApiConfig(
-      baseUrl: '',
+      baseUrl: 'http://192.168.10.239:9000/api/v1/',
       masterKey: '',
     ),
     appFlavorType: AppFlavorType.development,

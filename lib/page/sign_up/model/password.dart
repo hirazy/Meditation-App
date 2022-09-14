@@ -3,6 +3,8 @@ import 'package:formz/formz.dart';
 enum PasswordValidatorError {
   pure,
   empty,
+  notEnoughLength,
+
   invalid,
 }
 
@@ -12,6 +14,8 @@ extension PasswordValidationErrorExtension on PasswordValidatorError {
       case PasswordValidatorError.pure:
         return null;
       case PasswordValidatorError.empty:
+        return '';
+      case PasswordValidatorError.notEnoughLength:
         return '';
       case PasswordValidatorError.invalid:
         return 'Error';

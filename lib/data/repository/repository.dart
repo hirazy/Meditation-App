@@ -1,9 +1,12 @@
-import 'package:firebase_crashlytics/firebase_crashlytics.dart';
+import 'dart:io';
+
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../api/api_client.dart';
 import '../provider/api_client_provider.dart';
 import '../provider/app_flavor_provider.dart';
+import '../provider/secure_storage_provider.dart';
+import '../secure_storage/secure_storage.dart';
 
 enum HttpMethod {
   /// For read request
@@ -33,5 +36,15 @@ abstract class Repository {
   /// Host base Url of Server
   String host() => read(appFlavorProvider).apiConfig.baseUrl;
 
+  /// Api client
   ApiClient apiClient() => read(apiClientProvider);
+
+  /// Secure Storage
+  SecureStorage secureStorage() => read(secureStorageProvider);
+
+  bool isOk(final int statusCode) => statusCode == HttpStatus.ok;
+
+  bool isDataError(final int statusCode) => statusCode.toString()[0] == '4';
+
+  bool isServerError(final int statusCode) => statusCode.toString()[0] == '5';
 }

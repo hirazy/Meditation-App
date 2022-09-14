@@ -23,7 +23,6 @@ class WelcomePage extends ConsumerStatefulWidget {
 class WelcomePageState extends ConsumerState<WelcomePage> {
   @override
   Widget build(BuildContext context) {
-    SystemChrome.setEnabledSystemUIOverlays([SystemUiOverlay.bottom]);
 
     return SafeArea(
       child: Scaffold(

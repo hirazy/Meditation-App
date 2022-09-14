@@ -39,5 +39,20 @@
   "@signUp": {
     "type": "text",
     "placeholders": {}
+  },
+  "usernameEmail": "Username/Email",
+  "@usernameEmail": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "password": "Mật khẩu",
+  "@password": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "confirmPassword": "Xác nhận mật khẩu",
+  "@confirmPassword": {
+    "type": "text",
+    "placeholders": {}
   }
 }

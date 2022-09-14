@@ -7,6 +7,7 @@ import '../../common_widget/base/base_page.dart';
 import '../../common_widget/controll/large_button.dart';
 import '../../common_widget/input_part/input_text_area.dart';
 import '../../common_widget/space_box.dart';
+import '../../data/provider/sign_up_provider.dart';
 
 class SignUpPage extends BasePage {
   const SignUpPage({Key? key}) : super(key: key);
@@ -67,18 +68,37 @@ class _Body extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return SingleChildScrollView(
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          const InputTextArea(
-            initialText: '',
+          InputTextArea(
+            title: 'Username/Email',
+            onChanged: (value) {
+              ref.read(signUpProvider.notifier).changeUserName(value);
+            },
           ),
           const SpaceBox.height(10),
-          const InputTextArea(
-            initialText: '',
+          InputTextArea(
+            title: 'Password',
+            onChanged: (value) {
+              ref.read(signUpProvider.notifier).changePassword(value);
+            },
+            obSecureText: true,
           ),
-          const SpaceBox.height(20),
+          const SpaceBox.height(10),
+          InputTextArea(
+            title: 'Confirm Password',
+            onChanged: (value) {
+              ref.read(signUpProvider.notifier).changeConfirmPassword(value);
+            },
+            obSecureText: true,
+          ),
+          const SpaceBox.height(15),
           LargeButton(
             title: AppLocalizations.of(context)!.signUp,
-            onTap: () {},
+            onTap: () {
+              ref.read(signUpProvider.notifier).submitSignUp();
+            },
           ),
           const SpaceBox.height(10),
         ],

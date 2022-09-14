@@ -6,4 +6,6 @@ class DbTableNames {
 
 class DbLoginInfoFields {
   DbLoginInfoFields._();
+
+  static const idField = 'id';
 }

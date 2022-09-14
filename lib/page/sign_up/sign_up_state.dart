@@ -12,6 +12,7 @@ class SignUpState with _$SignUpState {
   factory SignUpState({
     required UserName userName,
     required Password password,
+    required Password confirmPassword,
     required FormzStatus formStatus,
     AppError? error,
   }) = _SignUpState;
@@ -19,6 +20,7 @@ class SignUpState with _$SignUpState {
   factory SignUpState.initial() => SignUpState(
         userName: UserName.pure(),
         password: Password.pure(),
+        confirmPassword: Password.pure(),
         formStatus: FormzStatus.pure,
         error: null,
       );

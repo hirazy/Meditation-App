@@ -83,6 +83,15 @@ dependencies:
   # SQFLITE
   sqflite: ^2.0.3+1
 
+  # Package Info Plus
+  package_info_plus: ^1.4.3+1
+
+  # Connectivity
+  connectivity_plus: ^2.3.6+1
+
+  # Flutter Native Splash
+  flutter_native_splash: ^2.2.9
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -97,6 +106,16 @@ dev_dependencies:
   build_runner: ^2.2.0
   flutter_oss_licenses: ^2.0.1
   flutter_gen_runner:
+
+# Flutter Native Splash
+flutter_native_splash:
+  background_image: assets/images/img_moon_light_1.png
+  image: assets/images/ic_logo.png
+
+  android_12:
+    background_image: assets/images/img_moon_light_1.png
+    image: assets/images/ic_logo.png
+
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
