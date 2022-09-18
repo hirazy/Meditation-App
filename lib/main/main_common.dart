@@ -6,15 +6,13 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../data/provider/app_flavor_provider.dart';
 import '../main.dart';
-import '../utils/firebase_options.dart';
 import 'app_flavor.dart';
 
-void mainCommon(AppFlavor appFlavor) {
+Future<void> mainCommon(AppFlavor appFlavor) async {
   WidgetsFlutterBinding.ensureInitialized();
 
   Future<void> startApp() async {
     await Firebase.initializeApp(
-      options: DefaultFirebaseOptions.currentPlatform,
     );
 
     if (kDebugMode) {
@@ -25,6 +23,8 @@ void mainCommon(AppFlavor appFlavor) {
       await FirebaseCrashlytics.instance.setCrashlyticsCollectionEnabled(true);
     }
   }
+
+  await startApp();
 
   runApp(
     ProviderScope(

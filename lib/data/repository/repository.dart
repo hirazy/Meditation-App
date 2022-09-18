@@ -42,7 +42,10 @@ abstract class Repository {
   /// Secure Storage
   SecureStorage secureStorage() => read(secureStorageProvider);
 
-  bool isOk(final int statusCode) => statusCode == HttpStatus.ok;
+  bool isOk(final int statusCode) =>
+      statusCode == HttpStatus.ok ||
+      statusCode == HttpStatus.created ||
+      statusCode == HttpStatus.accepted;
 
   bool isDataError(final int statusCode) => statusCode.toString()[0] == '4';
 

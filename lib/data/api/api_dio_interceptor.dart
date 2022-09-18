@@ -4,7 +4,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../provider/alert_dialog_provider.dart';
 import '../provider/app_flavor_provider.dart';
-import '../provider/secure_storage_provider.dart';
 import 'api_paths.dart';
 
 class ApiDioInterceptor extends Interceptor {
@@ -22,12 +21,12 @@ class ApiDioInterceptor extends Interceptor {
     RequestInterceptorHandler handler,
   ) async {
     final masterKey = ref.read(appFlavorProvider).apiConfig.masterKey;
-    final authToken = await ref.read(secureStorageProvider).read(key: '');
+    // final authToken = await ref.read(secureStorageProvider).read(key: '');
     const authorizationTerm = 'Authorization';
 
     switch (options.path) {
       case ApiPaths.userTerm:
-        options.headers[authorizationTerm] = masterKey;
+        options.headers[authorizationTerm] = 'Bearer $masterKey';
     }
     super.onRequest(options, handler);
   }

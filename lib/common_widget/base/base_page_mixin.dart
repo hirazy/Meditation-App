@@ -11,19 +11,22 @@ mixin BasePageMixin {
 
   Widget body(BuildContext context);
 
-  PreferredSizeWidget? buildAppBar(BuildContext context);
+  PreferredSizeWidget? buildAppBar(BuildContext context) => null;
 
-  Widget? buildBottomNavigationBar(BuildContext context);
+  Widget? buildBottomNavigationBar(BuildContext context) => null;
 
-  Widget? buildBottomSheet(BuildContext context);
+  Widget? buildBottomSheet(BuildContext context) => null;
 
-  Widget? buildDrawer(BuildContext context);
+  Widget? buildDrawer(BuildContext context) => null;
 
-  Widget? buildEndDrawer(BuildContext context);
+  Widget? buildEndDrawer(BuildContext context) => null;
+
+  Widget? buildFloatActionButton(BuildContext context) => null;
 
   Widget buildPage(BuildContext context) {
     return Scaffold(
       appBar: buildAppBar(context),
+      resizeToAvoidBottomInset: resizeToAvoidBottomInset,
       body: SafeArea(
         child: WillPopScope(
           onWillPop: onWillPop,
@@ -36,7 +39,7 @@ mixin BasePageMixin {
             child: tapOutsideHideKeyboard
                 ? SizedBox(
                     width: MediaQuery.of(context).size.width,
-                    height: MediaQuery.of(context).size.width,
+                    height: MediaQuery.of(context).size.height,
                     child: body(context),
                   )
                 : body(context),
@@ -47,6 +50,7 @@ mixin BasePageMixin {
       bottomSheet: buildBottomSheet(context),
       drawer: buildDrawer(context),
       endDrawer: buildEndDrawer(context),
+      floatingActionButton: buildFloatActionButton(context),
     );
   }
 

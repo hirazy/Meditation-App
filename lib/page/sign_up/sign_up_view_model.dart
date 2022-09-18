@@ -2,7 +2,6 @@ import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:formz/formz.dart';
 
-import '../../data/model/api/request/user_register_request.dart';
 import '../../data/model/enum/connection.dart';
 import '../../data/repository/user_repository/user_repository.dart';
 import 'model/password.dart';
@@ -34,27 +33,31 @@ class SignUpViewModel extends StateNotifier<SignUpState> {
     );
   }
 
-  void changeConfirmPassword(String value){
+  void changeConfirmPassword(String value) {
     final confirmPassword = Password.dirty(value);
     state = state.copyWith(
       confirmPassword: confirmPassword,
-      formStatus: Formz.validate([state.userName, state.password, confirmPassword]),
+      formStatus: Formz.validate(
+          [state.userName, state.password, state.confirmPassword]),
     );
   }
 
   Future<void> submitSignUp() async {
-    print('Submit Sign Up');
+    state = state.copyWith(
+      formStatus: FormzStatus.valid,
+    );
     if (!state.formStatus.isValidated) {
       return;
     }
-    print('Validated');
-    if (await getNetworkConnection() == Connection.offline) {}
-    state = state.copyWith(formStatus: FormzStatus.submissionInProgress);
-    final userRegisterRequest = UserRegisterRequest(
-      email: state.userName.value ?? '',
-      password: state.password.value ?? '',
+    // if (await getNetworkConnection() == Connection.offline) {}
+    state = state.copyWith(
+      formStatus: FormzStatus.submissionInProgress,
     );
-    final response = await userRepository.signUp(userRegisterRequest);
+    // final userRegisterRequest = UserRegisterRequest(
+    //   username: state.userName.value ?? '',
+    //   password: state.password.value ?? '',
+    // );
+    // final response = await userRepository.signUp(userRegisterRequest);
   }
 
   Future<Connection> getNetworkConnection() async {

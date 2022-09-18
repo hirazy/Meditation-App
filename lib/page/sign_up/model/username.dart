@@ -1,3 +1,5 @@
+import 'package:flutter/cupertino.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:formz/formz.dart';
 
 enum UserNameValidatorError {
@@ -7,14 +9,14 @@ enum UserNameValidatorError {
 }
 
 extension UserNameValidationErrorExtension on UserNameValidatorError {
-  String? get description {
+  String? description({required BuildContext context}) {
     switch (this) {
       case UserNameValidatorError.pure:
         return null;
       case UserNameValidatorError.empty:
         return '';
       case UserNameValidatorError.invalid:
-        return 'Error';
+        return AppLocalizations.of(context)!.errorValidUsername;
     }
   }
 }
@@ -30,6 +32,8 @@ class UserName extends FormzInput<String?, UserNameValidatorError> {
       return UserNameValidatorError.pure;
     } else if (value.isEmpty) {
       return UserNameValidatorError.empty;
+    } else if (value.length < 8) {
+      return UserNameValidatorError.invalid;
     }
     return null;
   }

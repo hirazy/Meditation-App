@@ -29,7 +29,7 @@ class CommonAlertDialog extends StatelessWidget {
         child: SizedBox(
           child: Column(
             mainAxisSize: MainAxisSize.min,
-            children: [],
+            children: const [],
           ),
         ),
       ),

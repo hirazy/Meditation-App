@@ -1,7 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:retrofit/http.dart';
 
-import '../model/api/api_result.dart';
 import '../model/api/request/user_register_request.dart';
 import '../model/api/response/user_register_response.dart';
 import 'api_paths.dart';
@@ -16,5 +15,5 @@ abstract class ApiClient {
   }) = _ApiClient;
 
   @POST(ApiPaths.userTerm)
-  Future<UserRegisterResponse> signUp(UserRegisterRequest userRegisterRequest);
+  Future<UserRegisterResponse> signUp(@Body() UserRegisterRequest userRegisterRequest);
 }

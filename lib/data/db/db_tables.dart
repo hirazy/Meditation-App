@@ -7,5 +7,7 @@ class DbTableNames {
 class DbLoginInfoFields {
   DbLoginInfoFields._();
 
-  static const idField = 'id';
+  static const id = 'id';
+  static const username = 'username';
+  static const password = 'password';
 }
