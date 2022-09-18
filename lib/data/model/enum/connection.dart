@@ -1,0 +1,4 @@
+enum Connection {
+  online,
+  offline,
+}

@@ -1,7 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -9,6 +8,7 @@ import '../../common_widget/controll/large_button.dart';
 import '../../common_widget/controll/page_view_list.dart';
 import '../../common_widget/space_box.dart';
 import '../../gen/assets.gen.dart';
+import '../../navigation/app_route.dart';
 
 class WelcomePage extends ConsumerStatefulWidget {
   const WelcomePage({Key? key}) : super(key: key);
@@ -22,7 +22,6 @@ class WelcomePage extends ConsumerStatefulWidget {
 class WelcomePageState extends ConsumerState<WelcomePage> {
   @override
   Widget build(BuildContext context) {
-    SystemChrome.setEnabledSystemUIOverlays([SystemUiOverlay.bottom]);
 
     return SafeArea(
       child: Scaffold(
@@ -82,7 +81,11 @@ class WelcomePageState extends ConsumerState<WelcomePage> {
         children: [
           LargeButton(
             title: AppLocalizations.of(context)!.getStarted,
-            onTap: () {},
+            onTap: () {
+              Navigator.of(context).popAndPushNamed(
+                AppRoute.signUp,
+              );
+            },
           ),
           const SpaceBox.height(15),
           RichText(
