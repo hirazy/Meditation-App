@@ -22,9 +22,9 @@ extension UserNameValidationErrorExtension on UserNameValidatorError {
 }
 
 class UserName extends FormzInput<String?, UserNameValidatorError> {
-  UserName.pure() : super.pure('');
+  const UserName.pure() : super.pure('');
 
-  UserName.dirty([String value = '']) : super.dirty(value);
+  const UserName.dirty([String value = '']) : super.dirty(value);
 
   @override
   UserNameValidatorError? validator(String? value) {

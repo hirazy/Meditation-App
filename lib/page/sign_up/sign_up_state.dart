@@ -2,6 +2,7 @@ import 'package:formz/formz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 import '../../data/app_error.dart';
+import 'model/confirm_password.dart';
 import 'model/password.dart';
 import 'model/username.dart';
 
@@ -12,15 +13,15 @@ class SignUpState with _$SignUpState {
   factory SignUpState({
     required UserName userName,
     required Password password,
-    required Password confirmPassword,
+    required ConfirmPassword confirmPassword,
     required FormzStatus formStatus,
     AppError? error,
   }) = _SignUpState;
 
   factory SignUpState.initial() => SignUpState(
-        userName: UserName.pure(),
-        password: Password.pure(),
-        confirmPassword: Password.pure(),
+        userName: const UserName.pure(),
+        password: const Password.pure(),
+        confirmPassword: const ConfirmPassword.pure(),
         formStatus: FormzStatus.pure,
         error: null,
       );

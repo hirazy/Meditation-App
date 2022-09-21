@@ -15,5 +15,13 @@ abstract class ApiClient {
   }) = _ApiClient;
 
   @POST(ApiPaths.userTerm)
-  Future<UserRegisterResponse> signUp(@Body() UserRegisterRequest userRegisterRequest);
+  Future<UserRegisterResponse> signUp(
+    @Body() UserRegisterRequest userRegisterRequest,
+  );
+
+  @POST(ApiPaths.authTerm)
+  Future<UserRegisterResponse> authAppSimple(
+    @Field('access_token') String masterKey,
+    @Header('Authorization') String basicAuth,
+  );
 }
