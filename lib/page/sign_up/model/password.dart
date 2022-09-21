@@ -28,9 +28,9 @@ extension PasswordValidationErrorExtension on PasswordValidatorError {
 }
 
 class Password extends FormzInput<String?, PasswordValidatorError> {
-  Password.pure() : super.pure('');
+  const Password.pure() : super.pure('');
 
-  Password.dirty([String value = '']) : super.dirty(value);
+  const Password.dirty([String value = '']) : super.dirty(value);
 
   PasswordValidatorError? validate(String? value, String? passwordCheck) {
     if (passwordCheck != null && value != passwordCheck) {

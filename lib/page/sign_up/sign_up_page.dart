@@ -15,6 +15,7 @@ import '../../common_widget/space_box.dart';
 import '../../data/model/enum/button_state.dart';
 import '../../data/provider/sign_up_provider.dart';
 import '../../gen/assets.gen.dart';
+import 'model/confirm_password.dart';
 import 'model/password.dart';
 import 'model/username.dart';
 
@@ -88,6 +89,7 @@ class _Body extends ConsumerWidget {
     final signUpState = ref.watch(signUpProvider);
     final username = signUpState.userName;
     final password = signUpState.password;
+    final confirmPassword = signUpState.confirmPassword;
     final formStatus = signUpState.formStatus;
 
     return GestureDetector(
@@ -132,6 +134,11 @@ class _Body extends ConsumerWidget {
                       .changeConfirmPassword(value);
                 },
                 obSecureText: true,
+                errorText: confirmPassword.error != null
+                    ? (confirmPassword.error as ConfirmPasswordValidatorError)
+                            .description(context: context) ??
+                        ''
+                    : null,
               ),
               const SpaceBox.height(15),
               LargeButton(
@@ -143,11 +150,16 @@ class _Body extends ConsumerWidget {
                     ? ButtonState.active
                     : ButtonState.inactive,
               ),
-              const SpaceBox.height(15),
+              const SpaceBox.height(25),
               _buildDividerLine(context),
-              const SpaceBox.height(10),
-              _buildGoogleButton(context),
-              const SpaceBox.height(10),
+              const SpaceBox.height(20),
+              _buildGoogleButton(
+                context,
+                () {
+                  ref.read(signUpProvider.notifier).signInGmail();
+                },
+              ),
+              const SpaceBox.height(15),
             ],
           ),
         ),
@@ -187,9 +199,9 @@ class _Body extends ConsumerWidget {
     );
   }
 
-  Widget _buildGoogleButton(BuildContext context) {
+  Widget _buildGoogleButton(BuildContext context, Function() onTap) {
     return GestureDetector(
-      onTap: () {},
+      onTap: onTap,
       child: Container(
         padding: const EdgeInsets.all(10),
         decoration: BoxDecoration(
