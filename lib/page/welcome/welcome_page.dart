@@ -3,6 +3,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import '../../common_widget/controll/large_button.dart';
 import '../../common_widget/controll/page_view_list.dart';
@@ -22,7 +23,6 @@ class WelcomePage extends ConsumerStatefulWidget {
 class WelcomePageState extends ConsumerState<WelcomePage> {
   @override
   Widget build(BuildContext context) {
-
     return SafeArea(
       child: Scaffold(
         backgroundColor: Colors.white,
@@ -51,7 +51,7 @@ class WelcomePageState extends ConsumerState<WelcomePage> {
           ),
           Text(
             AppLocalizations.of(context)!.welcomeHeaven,
-            style: const TextStyle(
+            style: GoogleFonts.overpass(
               color: Colors.black,
               fontWeight: FontWeight.w700,
               fontSize: 18,
@@ -60,7 +60,7 @@ class WelcomePageState extends ConsumerState<WelcomePage> {
           const SpaceBox.height(10),
           Text(
             AppLocalizations.of(context)!.welcomeTitle,
-            style: const TextStyle(
+            style: GoogleFonts.overpass(
               color: Colors.black,
               fontWeight: FontWeight.w400,
               fontSize: 14,
@@ -93,7 +93,7 @@ class WelcomePageState extends ConsumerState<WelcomePage> {
               children: [
                 TextSpan(
                   text: AppLocalizations.of(context)!.haveAccount,
-                  style: const TextStyle(
+                  style: GoogleFonts.overpass(
                     color: Colors.black,
                     fontSize: 15,
                     fontWeight: FontWeight.w600,
@@ -107,7 +107,7 @@ class WelcomePageState extends ConsumerState<WelcomePage> {
                       }
                     },
                   text: ' ${AppLocalizations.of(context)!.logIn}',
-                  style: const TextStyle(
+                  style: GoogleFonts.overpass (
                     color: Colors.red,
                     fontSize: 15,
                     fontWeight: FontWeight.w600,

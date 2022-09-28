@@ -15,6 +15,7 @@ import '../../common_widget/space_box.dart';
 import '../../data/model/enum/button_state.dart';
 import '../../data/provider/sign_up_provider.dart';
 import '../../gen/assets.gen.dart';
+import '../../navigation/app_route.dart';
 import 'model/confirm_password.dart';
 import 'model/password.dart';
 import 'model/username.dart';
@@ -144,7 +145,11 @@ class _Body extends ConsumerWidget {
               LargeButton(
                 title: AppLocalizations.of(context)!.signUp,
                 onTap: () {
-                  ref.read(signUpProvider.notifier).submitSignUp();
+                  // ref.read(signUpProvider.notifier).submitSignUp();
+                  Navigator.of(context).pushNamedAndRemoveUntil(
+                    AppRoute.personalize,
+                    (route) => false,
+                  );
                 },
                 buttonState: formStatus.isValid
                     ? ButtonState.active

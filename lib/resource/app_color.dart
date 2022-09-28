@@ -5,6 +5,7 @@ class AppColor {
     required this.lightBlue,
     required this.disable,
     required this.border,
+    required this.gradientLargeButton,
   });
 
   /// light Blue
@@ -16,11 +17,18 @@ class AppColor {
   /// Border
   final Color border;
 
+  /// Gradient - Large Button Color
+  final List<Color> gradientLargeButton;
+
   /// Light Theme
   static const light = AppColor(
-    lightBlue: Color.fromARGB(100, 110, 185, 248),
+    lightBlue: Color.fromARGB(255, 32, 148, 246),
     disable: Color(0xFFE7E9EB),
     border: Color(0xFFE7E9EB),
+    gradientLargeButton: [
+      Color(0xFFe8a1fd),
+      Color(0xFFe97bfc),
+    ],
   );
 
   /// Dark Theme

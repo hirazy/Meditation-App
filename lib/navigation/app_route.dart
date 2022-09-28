@@ -7,4 +7,7 @@ class AppRoute {
 
   /// Sign Up Page
   static const String signUp = '/signUp';
+
+  /// Personalize Page
+  static const String personalize = '/personalize';
 }

@@ -74,5 +74,10 @@
   "@signUpWith": {
     "type": "text",
     "placeholders": {}
+  },
+  "continue": "Tiee",
+  "@continue": {
+    "type": "text",
+    "placeholders": {}
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import '../../data/model/enum/button_state.dart';
 import '../../resource/app_color.dart';
@@ -46,6 +47,11 @@ class LargeButton extends StatelessWidget {
           vertical: 15,
         ),
         decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: context.colors.gradientLargeButton,
+          ),
           color: backgroundColor(context),
           borderRadius: BorderRadius.circular(25),
         ),
@@ -62,7 +68,7 @@ class LargeButton extends StatelessWidget {
             Text(
               title,
               textAlign: TextAlign.center,
-              style: const TextStyle(
+              style: GoogleFonts.overpass(
                 color: Colors.white,
                 fontWeight: FontWeight.w500,
                 fontSize: 15,

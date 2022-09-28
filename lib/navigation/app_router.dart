@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../page/personalize/personalize_page.dart';
 import '../page/sign_up/sign_up_page.dart';
 import '../page/splash/splash_page.dart';
 import '../page/welcome/welcome_page.dart';
@@ -22,6 +23,11 @@ class AppRouter {
         return MaterialPageRoute(
           settings: settings,
           builder: (context) => const SignUpPage(),
+        );
+      case AppRoute.personalize:
+        return MaterialPageRoute(
+          settings: settings,
+          builder: (context) => const PersonalizePage(),
         );
     }
     return null;

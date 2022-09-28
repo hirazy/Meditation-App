@@ -99,6 +99,9 @@ dependencies:
   # Google Signin
   google_sign_in: ^5.4.1
 
+  # Google Font
+  google_fonts: ^3.0.1
+
   # Firebase Auth
   firebase_auth: ^3.9.0
 

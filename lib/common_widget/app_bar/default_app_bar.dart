@@ -1,12 +1,21 @@
 import 'package:flutter/material.dart';
 
-class DefaultAppBar extends StatelessWidget implements PreferredSizeWidget{
-  const DefaultAppBar({Key? key}) : super(key: key);
+class DefaultAppBar extends StatelessWidget implements PreferredSizeWidget {
+  const DefaultAppBar({
+    required this.title,
+    Key? key,
+  }) : super(key: key);
+
+  /// Title
+  final String title;
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-    throw UnimplementedError();
+    return Row(
+      children: [
+
+      ],
+    );
   }
 
   @override
