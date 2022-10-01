@@ -1,6 +1,8 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../data/model/api/personalize.dart';
 import '../../data/repository/personalize_repository/personalize_repository.dart';
+import 'model/personalize_item.dart';
 import 'personalize_state.dart';
 
 class PersonalizeViewModel extends StateNotifier<PersonalizeState> {
@@ -13,16 +15,29 @@ class PersonalizeViewModel extends StateNotifier<PersonalizeState> {
   final PersonalizeRepository personalizeRepository;
 
   Future<void> init() async {
-    final response = await personalizeRepository.getPersonalizes();
-    response.when(
-      (data) {
-        state = state.copyWith(
-          personalizes: data,
-        );
-      },
-      exception: (exception) {
-        /// Update Message Error
-      },
+    final personalizes = <PersonalizeItem>[];
+    for (var i = 0; i < 10; i++) {
+      personalizes.add(
+        PersonalizeItem(
+          isSelected: false,
+          item: Personalize(
+            id: '',
+            name: '',
+          ),
+        ),
+      );
+    }
+
+    state = state.copyWith(
+      personalizes: personalizes,
+    );
+  }
+
+  void changeItemSelected(int index) {
+    final listPersonalizes = state.personalizes;
+    listPersonalizes[index].isSelected = !listPersonalizes[index].isSelected;
+    state = state.copyWith(
+      personalizes: listPersonalizes,
     );
   }
 }

@@ -1,14 +1,17 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../common_widget/app_bar/logo_app_bar.dart';
 import '../../common_widget/base/base_page.dart';
 import '../../common_widget/controll/large_button.dart';
+import '../../common_widget/icon/icon_base.dart';
+import '../../common_widget/space_box.dart';
 import '../../data/app_error.dart';
 import '../../data/repository/personalize_repository/personalize_repository.dart';
 import '../../gen/assets.gen.dart';
+import '../../resource/app_text_styles.dart';
 import 'personalize_state.dart';
 import 'personalize_view_model.dart';
 import 'widget/item_personalize.dart';
@@ -39,9 +42,7 @@ class PersonalizePageState extends BasePageState<PersonalizePage> {
   }
 
   @override
-  PreferredSizeWidget? buildAppBar(BuildContext context) {
-    return const LogoAppBar();
-  }
+  bool get tapOutsideHideKeyboard => true;
 
   @override
   Widget body(BuildContext context) => _Body();
@@ -74,8 +75,8 @@ class _Body extends ConsumerWidget {
                 ),
                 child: BackdropFilter(
                   filter: ImageFilter.blur(
-                    sigmaX: 2,
-                    sigmaY: 2,
+                    sigmaX: 5,
+                    sigmaY: 5,
                   ),
                   child: Container(
                     decoration: BoxDecoration(
@@ -88,38 +89,95 @@ class _Body extends ConsumerWidget {
           ],
         ),
         Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            appBar(() {
+              Navigator.pop(context);
+            }),
+            headPersonalize(context),
             Expanded(
-              child: listPersonalize(),
+              child: listPersonalize(
+                ref,
+              ),
             ),
+            const SpaceBox.height(),
             LargeButton(
-              title: 'Hihi',
+              title: AppLocalizations.of(context)!.textContinue,
               onTap: () {},
-            )
+            ),
+            const SpaceBox.height(),
           ],
         ),
       ],
     );
   }
 
-  Widget listPersonalize() {
+  Widget appBar(VoidCallback onLeftTapped) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        const SpaceBox.height(10),
+        Row(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            const SpaceBox.width(15),
+            GestureDetector(
+              onTap: onLeftTapped,
+              child: IconBase(
+                path: Assets.images.icBackWhite.path,
+                size: 22,
+              ),
+            ),
+          ],
+        ),
+        const SpaceBox.height(),
+      ],
+    );
+  }
+
+  Widget headPersonalize(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.only(
-        left: 10,
-        right: 10,
+      margin: const EdgeInsets.symmetric(
+        horizontal: 15,
+      ),
+      child: Column(
+        children: [
+          Text(
+            AppLocalizations.of(context)!.tellWhatLove,
+            textAlign: TextAlign.left,
+            style: AppTextStyles.fontPoppinsBold22.copyWith(
+              color: Colors.white,
+            ),
+          ),
+          const SpaceBox.height(10),
+        ],
+      ),
+    );
+  }
+
+  Widget listPersonalize(
+    WidgetRef ref,
+  ) {
+    final listPersonalizes = ref.watch(_provider).personalizes;
+    return Container(
+      margin: const EdgeInsets.symmetric(
+        horizontal: 10,
       ),
       child: GridView.builder(
         shrinkWrap: true,
-        itemCount: 10,
+        itemCount: listPersonalizes.length,
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
           crossAxisSpacing: 0,
           mainAxisSpacing: 5,
         ),
         itemBuilder: (context, index) {
-          return ItemPersonalize(onTap: () {});
+          return ItemPersonalize(
+            onTap: () {
+              ref.read(_provider.notifier).changeItemSelected(index);
+            },
+            item: listPersonalizes[index],
+          );
         },
       ),
     );

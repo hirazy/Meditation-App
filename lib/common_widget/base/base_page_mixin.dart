@@ -27,6 +27,7 @@ mixin BasePageMixin {
     return Scaffold(
       appBar: buildAppBar(context),
       resizeToAvoidBottomInset: resizeToAvoidBottomInset,
+      extendBodyBehindAppBar: true,
       body: SafeArea(
         child: WillPopScope(
           onWillPop: onWillPop,

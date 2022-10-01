@@ -4,18 +4,26 @@ import 'package:google_fonts/google_fonts.dart';
 import '../../../common_widget/icon/icon_base.dart';
 import '../../../common_widget/space_box.dart';
 import '../../../gen/assets.gen.dart';
+import '../../../resource/app_color.dart';
+import '../model/personalize_item.dart';
 
 class ItemPersonalize extends StatelessWidget {
   const ItemPersonalize({
     required this.onTap,
+    required this.item,
     Key? key,
   }) : super(key: key);
 
+  /// Item isSelected
+  final PersonalizeItem item;
+
+  /// onTap Item
   final VoidCallback onTap;
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
+      onTap: onTap,
       child: Container(
         margin: const EdgeInsets.symmetric(
           horizontal: 10,
@@ -24,18 +32,22 @@ class ItemPersonalize extends StatelessWidget {
         decoration: BoxDecoration(
           color: Colors.transparent,
           border: Border.all(
-            color: const Color.fromARGB(255, 185, 123, 252),
-            width: 2,
+            color: item.isSelected
+                ? context.colors.gradientActiveButton[1]
+                : context.colors.gradientInActiveButton[1],
+            width: 1,
           ),
           borderRadius: BorderRadius.circular(
             10,
           ),
-          boxShadow: const [
+          boxShadow: [
             BoxShadow(
-              color: Color.fromARGB(255, 232, 161, 253),
+              color: item.isSelected
+                  ? context.colors.gradientActiveButton[0]
+                  : Colors.transparent,
               spreadRadius: 0.5,
               blurRadius: 6,
-              offset: Offset(0, 0),
+              offset: const Offset(0, 0),
               blurStyle: BlurStyle.outer,
             )
           ],
@@ -46,8 +58,8 @@ class ItemPersonalize extends StatelessWidget {
             children: [
               Container(
                 padding: const EdgeInsets.all(10),
-                decoration: const BoxDecoration(
-                  color: Color.fromARGB(77, 255, 255, 255),
+                decoration: BoxDecoration(
+                  color: context.colors.hoverBackground,
                   shape: BoxShape.circle,
                 ),
                 child: IconBase(

@@ -1,13 +1,13 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import '../../data/model/api/personalize.dart';
+import 'model/personalize_item.dart';
 
 part 'personalize_state.freezed.dart';
 
 @freezed
 class PersonalizeState with _$PersonalizeState {
   factory PersonalizeState({
-    @Default([]) List<Personalize> personalizes,
+    @Default([]) List<PersonalizeItem> personalizes,
     Exception? error,
   }) = _PersonalizeState;
 

@@ -1,7 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-enum AppNavigatorAction { keep, replace, removeAll }
+/// [AppNavigatorAction] is enum of status navigator
+enum AppNavigatorAction {
+  /// Keep All Of Stacks
+  keep,
+
+  /// Replace Last Stacks
+  replace,
+
+  /// Remove all Stacks
+  removeAll,
+}
 
 class AppNavigator {
   AppNavigator({
@@ -24,6 +34,7 @@ class AppNavigator {
     }
 
     if (shouldClearStack) {
+      /// Push the route with the given name
       await currentState.pushNamedAndRemoveUntil(
         routeName,
         (route) => false,
@@ -31,6 +42,7 @@ class AppNavigator {
       );
     }
 
+    /// Push named to route
     return currentState.pushNamed(
       routeName,
       arguments: arguments,
@@ -45,6 +57,22 @@ class AppNavigator {
     }
 
     currentState.pop(arguments);
+  }
+
+  void popUntil({
+    required String routeName,
+  }) {
+    final currentState = navigatorKey.currentState;
+
+    if (currentState == null) {
+      return;
+    }
+
+    final isCurrent = _isCurrent(routeName, currentState);
+
+    if (!isCurrent) {
+      currentState.popUntil((route) => route.settings.name == routeName);
+    }
   }
 
   bool _isCurrent(String routeName, NavigatorState currentState) {
