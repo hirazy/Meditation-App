@@ -5,7 +5,7 @@ class ClipPageImage extends CustomClipper<Path> {
   @override
   Path getClip(Size size) {
     final path = Path();
-    path.lineTo(0, size.height - 50);
+    path.lineTo(0, size.height - 80);
 
     final controlPoint = Offset(size.width / 4, size.height);
     final endPoint = Offset(size.width / 2, size.height);
@@ -18,7 +18,7 @@ class ClipPageImage extends CustomClipper<Path> {
     );
 
     final controlPoint2 = Offset(size.width * 3 / 4, size.height);
-    final endPoint2 = Offset(size.width, size.height - 50);
+    final endPoint2 = Offset(size.width, size.height - 80);
 
     path.quadraticBezierTo(
       controlPoint2.dx,

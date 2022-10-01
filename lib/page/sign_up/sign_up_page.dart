@@ -15,6 +15,8 @@ import '../../common_widget/space_box.dart';
 import '../../data/model/enum/button_state.dart';
 import '../../data/provider/sign_up_provider.dart';
 import '../../gen/assets.gen.dart';
+import '../../navigation/app_route.dart';
+import '../../resource/app_text_styles.dart';
 import 'model/confirm_password.dart';
 import 'model/password.dart';
 import 'model/username.dart';
@@ -106,7 +108,7 @@ class _Body extends ConsumerWidget {
                 onChanged: (value) {
                   ref.read(signUpProvider.notifier).changeUserName(value);
                 },
-                errorText: username.error != null
+                errorText: username.value!.isNotEmpty && username.error != null
                     ? (username.error as UserNameValidatorError)
                             .description(context: context) ??
                         ''
@@ -119,7 +121,7 @@ class _Body extends ConsumerWidget {
                   ref.read(signUpProvider.notifier).changePassword(value);
                 },
                 obSecureText: true,
-                errorText: password.error != null
+                errorText: password.value!.isNotEmpty && password.error != null
                     ? (password.error as PasswordValidatorError)
                             .message(context: context) ??
                         ''
@@ -134,7 +136,8 @@ class _Body extends ConsumerWidget {
                       .changeConfirmPassword(value);
                 },
                 obSecureText: true,
-                errorText: confirmPassword.error != null
+                errorText: confirmPassword.value.isNotEmpty &&
+                        confirmPassword.error != null
                     ? (confirmPassword.error as ConfirmPasswordValidatorError)
                             .description(context: context) ??
                         ''
@@ -144,7 +147,9 @@ class _Body extends ConsumerWidget {
               LargeButton(
                 title: AppLocalizations.of(context)!.signUp,
                 onTap: () {
-                  ref.read(signUpProvider.notifier).submitSignUp();
+                  Navigator.of(context).pushNamed(
+                    AppRoute.personalize,
+                  );
                 },
                 buttonState: formStatus.isValid
                     ? ButtonState.active
@@ -183,9 +188,7 @@ class _Body extends ConsumerWidget {
           const SpaceBox.width(),
           Text(
             AppLocalizations.of(context)!.signUpWith,
-            style: const TextStyle(
-              color: Colors.black,
-            ),
+            style: AppTextStyles.fontOverpassRegular14,
           ),
           const SpaceBox.width(),
           const Expanded(

@@ -74,5 +74,20 @@
   "@signUpWith": {
     "type": "text",
     "placeholders": {}
+  },
+  "textContinue": "Tiếp tục",
+  "@textContinue": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "cancel": "Bỏ qua",
+  "@cancel": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "tellWhatLove": "Nói với chúng tôi thứ bạn thích",
+  "@tellWhatLove": {
+    "type": "text",
+    "placeholders": {}
   }
 }

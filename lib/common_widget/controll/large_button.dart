@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../data/model/enum/button_state.dart';
 import '../../resource/app_color.dart';
+import '../../resource/app_text_styles.dart';
 
 /// [LargeButton] is button with expanded width screen
 class LargeButton extends StatelessWidget {
@@ -39,6 +40,8 @@ class LargeButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
+      /// onTap => Test
+      /// onTap: buttonState == ButtonState.active ? onTap : null,
       onTap: onTap,
       child: Container(
         margin: const EdgeInsets.symmetric(horizontal: 15),
@@ -46,6 +49,13 @@ class LargeButton extends StatelessWidget {
           vertical: 15,
         ),
         decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: buttonState == ButtonState.inactive
+                ? context.colors.gradientInActiveButton
+                : context.colors.gradientActiveButton,
+          ),
           color: backgroundColor(context),
           borderRadius: BorderRadius.circular(25),
         ),
@@ -62,10 +72,10 @@ class LargeButton extends StatelessWidget {
             Text(
               title,
               textAlign: TextAlign.center,
-              style: const TextStyle(
-                color: Colors.white,
-                fontWeight: FontWeight.w500,
-                fontSize: 15,
+              style: AppTextStyles.fontOverpassRegular15.copyWith(
+                color: buttonState == ButtonState.active
+                    ? Colors.white
+                    : Colors.black,
               ),
             ),
           ],

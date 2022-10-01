@@ -3,6 +3,11 @@ enum FontSizes {
   font14,
   font15,
   font16,
+  font17,
+  font18,
+  font19,
+  font20,
+  font22,
 }
 
 extension FontSizeExtension on FontSizes {
@@ -16,6 +21,16 @@ extension FontSizeExtension on FontSizes {
         return 15;
       case FontSizes.font16:
         return 16;
+      case FontSizes.font17:
+        return 17;
+      case FontSizes.font18:
+        return 18;
+      case FontSizes.font19:
+        return 19;
+      case FontSizes.font20:
+        return 20;
+      case FontSizes.font22:
+        return 22;
     }
   }
 }

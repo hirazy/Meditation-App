@@ -2,6 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:retrofit/http.dart';
 
 import '../model/api/request/user_register_request.dart';
+import '../model/api/response/personalize_response.dart';
 import '../model/api/response/user_register_response.dart';
 import 'api_paths.dart';
 
@@ -24,4 +25,7 @@ abstract class ApiClient {
     @Field('access_token') String masterKey,
     @Header('Authorization') String basicAuth,
   );
+
+  @POST(ApiPaths.personalizeTerm)
+  Future<PersonalizeResponse> getPersonalizes();
 }

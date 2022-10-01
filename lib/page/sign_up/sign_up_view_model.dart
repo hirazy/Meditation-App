@@ -38,10 +38,22 @@ class SignUpViewModel extends StateNotifier<SignUpState> {
     final password = Password.dirty(value);
     state = state.copyWith(
       password: password,
+      confirmPassword: state.confirmPassword != const ConfirmPassword.pure()
+          ? ConfirmPassword.dirty(
+              password: value,
+              value: state.confirmPassword.value,
+            )
+          : state.confirmPassword,
       formStatus: Formz.validate([
         state.userName,
         password,
-        state.confirmPassword,
+        if (state.confirmPassword != const ConfirmPassword.pure())
+          ConfirmPassword.dirty(
+            password: value,
+            value: state.confirmPassword.value,
+          )
+        else
+          state.confirmPassword,
       ]),
     );
   }

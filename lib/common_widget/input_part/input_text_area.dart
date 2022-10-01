@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../resource/app_text_styles.dart';
 import '../space_box.dart';
 
 /// [InputTextArea] is base of edit text
@@ -109,15 +110,11 @@ class InputTextAreaState extends State<InputTextArea> {
               children: [
                 Text(
                   widget.title ?? '',
-                  style: const TextStyle(
-                    color: Colors.black,
-                  ),
+                  style: AppTextStyles.fontOverpassRegular14,
                 ),
                 Text(
                   widget.secondTitle ?? '',
-                  style: const TextStyle(
-                    color: Colors.black,
-                  ),
+                  style: AppTextStyles.fontOverpassRegular14,
                 ),
               ],
             ),
@@ -159,13 +156,11 @@ class InputTextAreaState extends State<InputTextArea> {
             ),
             child: Text(
               widget.errorText!,
-              style: const TextStyle(
+              style: AppTextStyles.fontOverpassRegular14.copyWith(
                 color: Colors.red,
-                fontSize: 15,
-                fontWeight: FontWeight.w500,
               ),
             ),
-          )
+          ),
       ],
     );
   }
