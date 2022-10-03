@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../../../common_widget/icon/icon_base.dart';
-import '../../../common_widget/space_box.dart';
-import '../../../gen/assets.gen.dart';
-import '../../../resource/app_color.dart';
+import '../../../../common_widget/icon/icon_base.dart';
+import '../../../../common_widget/space_box.dart';
+import '../../../../gen/assets.gen.dart';
+import '../../../../resource/app_color.dart';
 import '../model/personalize_item.dart';
 
 class ItemPersonalize extends StatelessWidget {

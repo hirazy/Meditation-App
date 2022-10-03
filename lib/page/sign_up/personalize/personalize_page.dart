@@ -4,14 +4,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../common_widget/base/base_page.dart';
-import '../../common_widget/controll/large_button.dart';
-import '../../common_widget/icon/icon_base.dart';
-import '../../common_widget/space_box.dart';
-import '../../data/app_error.dart';
-import '../../data/repository/personalize_repository/personalize_repository.dart';
-import '../../gen/assets.gen.dart';
-import '../../resource/app_text_styles.dart';
+import '../../../common_widget/base/base_page.dart';
+import '../../../common_widget/controll/large_button.dart';
+import '../../../common_widget/icon/icon_base.dart';
+import '../../../common_widget/space_box.dart';
+import '../../../data/app_error.dart';
+import '../../../data/repository/personalize_repository/personalize_repository.dart';
+import '../../../gen/assets.gen.dart';
+import '../../../navigation/app_route.dart';
+import '../../../resource/app_text_styles.dart';
 import 'personalize_state.dart';
 import 'personalize_view_model.dart';
 import 'widget/item_personalize.dart';
@@ -24,6 +25,7 @@ final _provider =
   ),
 );
 
+/// Screen Code: [PersonalizePage]
 class PersonalizePage extends BasePage {
   const PersonalizePage({Key? key}) : super(key: key);
 
@@ -103,7 +105,9 @@ class _Body extends ConsumerWidget {
             const SpaceBox.height(),
             LargeButton(
               title: AppLocalizations.of(context)!.textContinue,
-              onTap: () {},
+              onTap: () {
+                Navigator.of(context).pushNamed(AppRoute.signUpSetting);
+              },
             ),
             const SpaceBox.height(),
           ],
@@ -145,7 +149,7 @@ class _Body extends ConsumerWidget {
           Text(
             AppLocalizations.of(context)!.tellWhatLove,
             textAlign: TextAlign.left,
-            style: AppTextStyles.fontPoppinsBold22.copyWith(
+            style: AppTextStyles.fontOverpassBold22.copyWith(
               color: Colors.white,
             ),
           ),

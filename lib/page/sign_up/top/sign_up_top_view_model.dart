@@ -2,21 +2,21 @@ import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:formz/formz.dart';
 
-import '../../data/model/api/request/user_register_request.dart';
-import '../../data/model/enum/connection.dart';
-import '../../data/repository/authentication_repository/authentication_repository.dart';
-import '../../data/repository/user_repository/user_repository.dart';
+import '../../../data/model/api/request/user_register_request.dart';
+import '../../../data/model/enum/connection.dart';
+import '../../../data/repository/authentication_repository/authentication_repository.dart';
+import '../../../data/repository/user_repository/user_repository.dart';
 import 'model/confirm_password.dart';
 import 'model/password.dart';
 import 'model/username.dart';
-import 'sign_up_state.dart';
+import 'sign_up_top_state.dart';
 
-class SignUpViewModel extends StateNotifier<SignUpState> {
-  SignUpViewModel({
+class SignUpTopViewModel extends StateNotifier<SignUpTopState> {
+  SignUpTopViewModel({
     required this.userRepository,
     required this.authenticationRepository,
     required this.read,
-  }) : super(SignUpState.initial());
+  }) : super(SignUpTopState.initial());
 
   final Reader read;
   final UserRepository userRepository;
