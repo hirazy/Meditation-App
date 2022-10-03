@@ -1,4 +1,4 @@
-import '../../../data/model/api/personalize.dart';
+import '../../../../data/model/api/personalize.dart';
 
 class PersonalizeItem {
   PersonalizeItem({

@@ -12,4 +12,6 @@ class UserRepository extends Repository {
     final response = await apiClient().signUp(userRegisterRequest);
     return ApiResult(response);
   }
+
+  Future<void> setUpPersonalize() async {}
 }

@@ -89,5 +89,10 @@
   "@tellWhatLove": {
     "type": "text",
     "placeholders": {}
+  },
+  "settingUp": "Thiết lập giấc ngủ của bạn...",
+  "@settingUp": {
+    "type": "text",
+    "placeholders": {}
   }
 }

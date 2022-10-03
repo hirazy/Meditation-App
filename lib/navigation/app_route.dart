@@ -9,5 +9,8 @@ class AppRoute {
   static const String signUp = '/signUp';
 
   /// Personalize Page
-  static const String personalize = '/personalize';
+  static const String personalize = '/signUp/personalize';
+
+  /// Personalize Page
+  static const String signUpSetting = '/signUp/setting';
 }

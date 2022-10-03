@@ -54,4 +54,11 @@ class AppTextStyles {
     fontWeight: FontWeight.w400,
     fontSize: FontSizes.font15.fontSize,
   );
+
+  /// Font Style: Overpass - Weight: 700 - Size 22
+  static final TextStyle fontOverpassBold22 = GoogleFonts.overpass(
+    fontWeight: FontWeight.w700,
+    fontSize: FontSizes.font22.fontSize,
+  );
+
 }

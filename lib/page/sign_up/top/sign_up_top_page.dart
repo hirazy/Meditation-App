@@ -5,30 +5,31 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:formz/formz.dart';
 
-import '../../common_widget/app_bar/logo_app_bar.dart';
-import '../../common_widget/base/base_page.dart';
-import '../../common_widget/controll/large_button.dart';
-import '../../common_widget/divider/horizontal_divider.dart';
-import '../../common_widget/icon/icon_base.dart';
-import '../../common_widget/input_part/input_text_area.dart';
-import '../../common_widget/space_box.dart';
-import '../../data/model/enum/button_state.dart';
-import '../../data/provider/sign_up_provider.dart';
-import '../../gen/assets.gen.dart';
-import '../../navigation/app_route.dart';
-import '../../resource/app_text_styles.dart';
+import '../../../common_widget/app_bar/logo_app_bar.dart';
+import '../../../common_widget/base/base_page.dart';
+import '../../../common_widget/controll/large_button.dart';
+import '../../../common_widget/divider/horizontal_divider.dart';
+import '../../../common_widget/icon/icon_base.dart';
+import '../../../common_widget/input_part/input_text_area.dart';
+import '../../../common_widget/space_box.dart';
+import '../../../data/model/enum/button_state.dart';
+import '../../../data/provider/sign_up_provider.dart';
+import '../../../gen/assets.gen.dart';
+import '../../../navigation/app_route.dart';
+import '../../../resource/app_text_styles.dart';
 import 'model/confirm_password.dart';
 import 'model/password.dart';
 import 'model/username.dart';
 
-class SignUpPage extends BasePage {
-  const SignUpPage({Key? key}) : super(key: key);
+/// Screen Code [SignUpTopPage]
+class SignUpTopPage extends BasePage {
+  const SignUpTopPage({Key? key}) : super(key: key);
 
   @override
-  SignUpPageState createState() => SignUpPageState();
+  SignUpTopPageState createState() => SignUpTopPageState();
 }
 
-class SignUpPageState extends BasePageState<SignUpPage>
+class SignUpTopPageState extends BasePageState<SignUpTopPage>
     with WidgetsBindingObserver {
   late StreamController closeKeyBoardStreamController;
 

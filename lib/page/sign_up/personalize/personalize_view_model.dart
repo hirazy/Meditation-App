@@ -1,7 +1,7 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../data/model/api/personalize.dart';
-import '../../data/repository/personalize_repository/personalize_repository.dart';
+import '../../../data/model/api/personalize.dart';
+import '../../../data/repository/personalize_repository/personalize_repository.dart';
 import 'model/personalize_item.dart';
 import 'personalize_state.dart';
 
