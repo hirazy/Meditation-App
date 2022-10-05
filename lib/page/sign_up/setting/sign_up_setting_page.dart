@@ -7,6 +7,7 @@ import '../../../common_widget/base/base_page.dart';
 import '../../../common_widget/display/image_blur.dart';
 import '../../../data/repository/user_repository/user_repository.dart';
 import '../../../gen/assets.gen.dart';
+import '../../../navigation/app_route.dart';
 import '../../../resource/app_text_styles.dart';
 import 'sign_up_setting_state.dart';
 import 'sign_up_setting_view_model.dart';
@@ -33,7 +34,9 @@ class SignUpSettingPageState extends BasePageState<SignUpSettingPage> {
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) async {
       final responseInit = await ref.read(_provider.notifier).init();
-      if (responseInit) {}
+      if (responseInit) {
+        Navigator.of(context).pushNamed(AppRoute.home);
+      }
     });
   }
 
