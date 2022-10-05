@@ -46,6 +46,13 @@ dependencies:
   # Get
   get: ^4.6.5
 
+  # Dio
+  dio: ^4.0.6
+
+  # Retrofit
+  retrofit: ^3.0.1+1
+  retrofit_generator: ^4.0.3+1
+
   # Firebase
   firebase_core: ^1.21.1
   firebase_crashlytics: ^2.8.9
@@ -53,6 +60,7 @@ dependencies:
   # Freezed
   freezed: ^2.1.0+1
   freezed_annotation: ^2.1.0
+  json_annotation: ^4.6.0
   json_serializable: ^6.3.1
 
   # Bottom Navigation
@@ -60,6 +68,9 @@ dependencies:
 
   # Formz
   formz: ^0.4.1
+
+  # Font Awesome Flutter
+  font_awesome_flutter: ^10.2.1
 
   # Animated Text
   animated_text_kit: ^4.2.2
@@ -69,6 +80,30 @@ dependencies:
 
   # Lottie
   lottie: ^1.4.2
+
+  # Audio Player
+  audioplayers: ^1.0.1
+
+  # Logger
+  logger: ^1.1.0
+
+  # Flutter Secure Storage
+  flutter_secure_storage: ^6.0.0
+
+  # SQFLITE
+  sqflite: ^2.0.3+1
+
+  # Package Info Plus
+  package_info_plus: ^1.4.3+1
+
+  # Connectivity
+  connectivity_plus: ^2.3.6+1
+
+  # Flutter Native Splash
+  flutter_native_splash: ^2.2.9
+
+  # Firebase Auth
+  firebase_auth: ^3.9.0
 
 dev_dependencies:
   flutter_test:
@@ -84,6 +119,16 @@ dev_dependencies:
   build_runner: ^2.2.0
   flutter_oss_licenses: ^2.0.1
   flutter_gen_runner:
+
+# Flutter Native Splash
+flutter_native_splash:
+  background_image: assets/images/img_moon_light_1.png
+  image: assets/images/ic_logo.png
+
+  android_12:
+    background_image: assets/images/img_moon_light_1.png
+    image: assets/images/ic_logo.png
+
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

@@ -9,7 +9,6 @@ class LoginState with _$LoginState {
   factory LoginState({
     @Default('') UserName username,
     @Default('') String password,
-
   }) = _LoginState;
 
   const LoginState._();
