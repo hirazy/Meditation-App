@@ -63,7 +63,7 @@ class ItemPersonalize extends StatelessWidget {
                   shape: BoxShape.circle,
                 ),
                 child: IconBase(
-                  path: Assets.images.icLotus.path,
+                  path: Assets.images.icMoonActive.path,
                   size: 40,
                 ),
               ),
