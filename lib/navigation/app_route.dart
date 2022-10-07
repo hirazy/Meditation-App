@@ -15,5 +15,5 @@ class AppRoute {
   static const String signUpSetting = '/signUp/setting';
 
   /// Home Page
-  static const String home = '/home';
+  static const String homeTab = '/home_tab';
 }

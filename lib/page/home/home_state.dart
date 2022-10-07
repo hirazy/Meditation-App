@@ -7,8 +7,4 @@ class HomeState with _$HomeState {
   factory HomeState({
     required int index,
   }) = _HomeState;
-
-  factory HomeState.initial() => HomeState(
-        index: 0,
-      );
 }

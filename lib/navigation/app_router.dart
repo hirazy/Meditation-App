@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../page/home/home_page.dart';
+import '../page/home_tab/home_tab_page.dart';
 import '../page/sign_up/personalize/personalize_page.dart';
 import '../page/sign_up/setting/sign_up_setting_page.dart';
 import '../page/sign_up/top/sign_up_top_page.dart';
@@ -36,10 +36,10 @@ class AppRouter {
           settings: settings,
           builder: (context) => const SignUpSettingPage(),
         );
-      case AppRoute.home:
+      case AppRoute.homeTab:
         return MaterialPageRoute(
           settings: settings,
-          builder: (context) => const HomePage(),
+          builder: (context) => const HomeTabPage(),
         );
     }
     return null;
