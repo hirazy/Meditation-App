@@ -9,6 +9,7 @@ class AppColor {
     required this.gradientActiveButton,
     required this.gradientInActiveButton,
     required this.hoverBackground,
+    required this.colorBottomNavigation,
   });
 
   /// light Blue
@@ -32,11 +33,22 @@ class AppColor {
   /// Gradient - Large Button Color
   final List<Color> gradientLargeButton;
 
+  /// Color - Bottom Navigation Background
+  final Color colorBottomNavigation;
+
   /// Color White
   final Color white = Colors.white;
 
   /// Color Black
   final Color black = Colors.black;
+
+  /// Color Item Bottom Navigation
+  /// Moon Active - D791D5
+  /// Lotus Active - E7AA31
+  /// Music Active - 5FA3FF
+  /// Home Active - F15353
+  /// Account Active - F5609D
+  final Color colorItemNavigation = const Color(0x00979797);
 
   /// Light Theme
   static const light = AppColor(
@@ -56,16 +68,15 @@ class AppColor {
       Color(0xffaba8ac),
     ],
     hoverBackground: Color.fromARGB(77, 255, 255, 255),
+    colorBottomNavigation: Color.fromARGB(153, 50, 50, 93),
   );
 
-/// Dark Theme
+  /// Dark Theme
 }
 
 extension AppColorExtension on BuildContext {
   AppColor get colors {
-    return _colorFromBrightness(Theme
-        .of(this)
-        .brightness);
+    return _colorFromBrightness(Theme.of(this).brightness);
   }
 
   AppColor _colorFromBrightness(Brightness brightness) {

@@ -16,8 +16,8 @@ class SignUpUpSettingViewModel extends StateNotifier<SignUpSettingState> {
   Future<bool> init() async {
     final response = await userRepository.setUpPersonalize();
 
-    Future.delayed(
-      const Duration(seconds: 3),
+    await Future.delayed(
+      const Duration(seconds: 4),
       () {},
     );
 

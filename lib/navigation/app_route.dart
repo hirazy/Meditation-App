@@ -13,4 +13,7 @@ class AppRoute {
 
   /// Personalize Page
   static const String signUpSetting = '/signUp/setting';
+
+  /// Home Page
+  static const String home = '/home';
 }

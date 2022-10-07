@@ -25,6 +25,7 @@ mixin BasePageMixin {
 
   Widget buildPage(BuildContext context) {
     return Scaffold(
+      backgroundColor: getBackgroundColor(context),
       appBar: buildAppBar(context),
       resizeToAvoidBottomInset: resizeToAvoidBottomInset,
       extendBodyBehindAppBar: true,
