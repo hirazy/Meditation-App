@@ -42,6 +42,14 @@ class AppColor {
   /// Color Black
   final Color black = Colors.black;
 
+  /// Color Item Bottom Navigation
+  /// Moon Active - D791D5
+  /// Lotus Active - E7AA31
+  /// Music Active - 5FA3FF
+  /// Home Active - F15353
+  /// Account Active - F5609D
+  final Color colorItemNavigation = const Color(0x00979797);
+
   /// Light Theme
   static const light = AppColor(
     lightBlue: Color.fromARGB(255, 32, 148, 246),

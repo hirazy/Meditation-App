@@ -1,4 +1,6 @@
+import '../common_widget/controll/bottom_bar.dart';
 import '../data/model/api/personalize.dart';
+import '../gen/assets.gen.dart';
 
 class Constants {
   Constants._private();
@@ -7,7 +9,28 @@ class Constants {
 
   static const double spaceWidth = 15;
 
-  static List<Personalize> personalizes = [
-    Personalize(id: '1', name: '')
+  static List<Personalize> personalizes = [Personalize(id: '1', name: '')];
+
+  static List<ItemBottomBar> bottomNavigationItems = [
+    ItemBottomBar(
+      icon: Assets.images.home.path,
+      activeIcon: Assets.images.homeActive.path,
+    ),
+    ItemBottomBar(
+      icon: Assets.images.music.path,
+      activeIcon: Assets.images.musicActive.path,
+    ),
+    ItemBottomBar(
+      icon: Assets.images.moon.path,
+      activeIcon: Assets.images.moonActive.path,
+    ),
+    ItemBottomBar(
+      icon: Assets.images.lotus.path,
+      activeIcon: Assets.images.lotusActive.path,
+    ),
+    ItemBottomBar(
+      icon: Assets.images.account.path,
+      activeIcon: Assets.images.accountActive.path,
+    ),
   ];
 }

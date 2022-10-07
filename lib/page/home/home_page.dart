@@ -1,11 +1,10 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../common_widget/base/base_page.dart';
-import '../../common_widget/display/item_bottom_navigation.dart';
-import '../../gen/assets.gen.dart';
-import '../../resource/app_color.dart';
+import '../../common_widget/controll/bottom_bar.dart';
+import '../../common_widget/display/card_display.dart';
+import '../../resource/constants.dart';
 import 'home_state.dart';
 import 'home_view_model.dart';
 
@@ -21,9 +20,8 @@ class HomePage extends BasePage {
 }
 
 class HomePageState extends BasePageState<HomePage> {
-
   @override
-  Color? get backgroundColor => Colors.red;
+  Color? get backgroundColor => Colors.white;
 
   @override
   Widget body(BuildContext context) {
@@ -44,6 +42,15 @@ class _Body extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return Stack(
       children: [
+        Container(
+          margin: const EdgeInsets.symmetric(horizontal: 15),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: const [
+              CardDisplay(),
+            ],
+          ),
+        ),
         bottomNavigation(
           context,
           ref,
@@ -56,57 +63,14 @@ class _Body extends ConsumerWidget {
     BuildContext context,
     WidgetRef ref,
   ) {
-    final index = ref.watch(_provider).index;
     return Positioned(
       bottom: 20,
-      child: Row(
-        children: [
-          Container(
-            width: MediaQuery.of(context).size.width - 40,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(25),
-              color: context.colors.colorBottomNavigation,
-            ),
-            margin: const EdgeInsets.symmetric(horizontal: 20),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                ItemBottomNavigation(
-                  path: Assets.images.icMoon.path,
-                  pathActive: Assets.images.icMoonActive.path,
-                  onTap: () {
-                    read(_provider.notifier).changeIndex(0);
-                  },
-                  isActive: false,
-                ),
-                ItemBottomNavigation(
-                  path: Assets.images.icAccount.path,
-                  pathActive: Assets.images.icAccountActive.path,
-                  onTap: () {},
-                  isActive: false,
-                ),
-                ItemBottomNavigation(
-                  path: Assets.images.icMoon.path,
-                  pathActive: Assets.images.icMoonActive.path,
-                  onTap: () {},
-                  isActive: true,
-                ),
-                ItemBottomNavigation(
-                  path: Assets.images.icMoon.path,
-                  pathActive: Assets.images.icMoonActive.path,
-                  onTap: () {},
-                  isActive: true,
-                ),
-                ItemBottomNavigation(
-                  path: Assets.images.icMoon.path,
-                  pathActive: Assets.images.icMoonActive.path,
-                  onTap: () {},
-                  isActive: true,
-                ),
-              ],
-            ),
-          ),
-        ],
+      child: BottomBar(
+        items: Constants.bottomNavigationItems,
+        index: ref.watch(_provider).index,
+        onTap: (index) {
+          ref.read(_provider.notifier).changeIndex(index);
+        },
       ),
     );
   }

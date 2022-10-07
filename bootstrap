@@ -49,8 +49,8 @@ if $UPDATE; then
 fi
 
 echo "name: flutter_gen" >./.dart_tool/flutter_gen/pubspec.yaml
-flutter pub run build_runner build --delete-conflicting-outputs
-flutter pub run flutter_oss_licenses:generate.dart
+fvm flutter pub run build_runner build --delete-conflicting-outputs
+fvm flutter pub run flutter_oss_licenses:generate.dart
 
 echo "Bootstrap finished"
 cd $CURRENT_DIR
