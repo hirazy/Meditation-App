@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 
 import '../../resource/app_color.dart';
+import '../../resource/constants.dart';
 import '../display/item_bottom_navigation.dart';
 
 class BottomBar extends StatelessWidget {
@@ -23,15 +24,17 @@ class BottomBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Container(
           padding: const EdgeInsets.symmetric(vertical: 5),
-          width: MediaQuery.of(context).size.width - 40,
+          width: MediaQuery.of(context).size.width - 30,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(30),
             color: context.colors.colorBottomNavigation,
           ),
-          margin: const EdgeInsets.symmetric(horizontal: 20),
+          margin: const EdgeInsets.symmetric(horizontal: Constants.spaceWidth),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [

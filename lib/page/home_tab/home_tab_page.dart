@@ -44,15 +44,6 @@ class _Body extends ConsumerWidget {
     return Stack(
       children: [
         pageTab(ref),
-        // Container(
-        //   margin: const EdgeInsets.symmetric(horizontal: 15),
-        //   child: Column(
-        //     mainAxisAlignment: MainAxisAlignment.center,
-        //     children: const [
-        //       CardDisplay(),
-        //     ],
-        //   ),
-        // ),
         bottomNavigation(
           context,
           ref,

@@ -94,5 +94,36 @@
   "@settingUp": {
     "type": "text",
     "placeholders": {}
+  },
+  "goodMorning": "Chào buổi sáng, {name}",
+  "@goodMorning": {
+    "type": "text",
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "goodAfternoon": "Chào buổi chiều, {name}",
+  "@goodAfternoon": {
+    "type": "text",
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "goodEvening": "Chào buổi tối, {name}",
+  "@goodEvening": {
+    "type": "text",
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "goodDay": "Chúng tôi chúc bạn một ngày tốt lành",
+  "@goodDay": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "workToday": "Bạn làm việc ngày hôm nay như nào?",
+  "@workToday": {
+    "type": "text",
+    "placeholders": {}
   }
 }

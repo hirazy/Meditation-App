@@ -11,6 +11,7 @@ class Constants {
 
   static List<Personalize> personalizes = [Personalize(id: '1', name: '')];
 
+  /// Items of Bottom Navigation App
   static List<ItemBottomBar> bottomNavigationItems = [
     ItemBottomBar(
       icon: Assets.images.home.path,
@@ -33,4 +34,9 @@ class Constants {
       activeIcon: Assets.images.accountActive.path,
     ),
   ];
+
+  /// Title Home Page
+  static const int isMorning = 0;
+  static const int isAfternoon = 1;
+  static const int isEvening = 2;
 }
