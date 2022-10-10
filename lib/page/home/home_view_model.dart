@@ -36,6 +36,14 @@ class HomeViewModel extends StateNotifier<HomeState> {
     controller.pause();
   }
 
+  void changeExpandedAppBar(bool isExpandedAppBar) {
+    if (state.isExpandedAppBar != isExpandedAppBar) {
+      state = state.copyWith(
+        isExpandedAppBar: isExpandedAppBar,
+      );
+    }
+  }
+
   @override
   void dispose() {
     controller.dispose();

@@ -73,7 +73,7 @@ class AppColor {
     ],
     hoverBackground: Color.fromARGB(77, 255, 255, 255),
     colorBottomNavigation: Color.fromARGB(179, 10, 10, 47),
-    baseBackgroundColor: Color(0xff1e1e40),
+    baseBackgroundColor: Color(0xff1b1b36),
   );
 
   /// Dark Theme

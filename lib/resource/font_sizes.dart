@@ -9,6 +9,7 @@ enum FontSizes {
   font20,
   font22,
   font24,
+  font25,
 }
 
 extension FontSizeExtension on FontSizes {
@@ -34,6 +35,8 @@ extension FontSizeExtension on FontSizes {
         return 22;
       case FontSizes.font24:
         return 24;
+      case FontSizes.font25:
+        return 25;
     }
   }
 }

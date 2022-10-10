@@ -79,4 +79,11 @@ class AppTextStyles {
     fontSize: FontSizes.font22.fontSize,
   );
 
+  /// Font Style: OpenSans - Weight: 700 - Size 25
+  static final TextStyle font = GoogleFonts.amaticSc(
+    fontWeight: FontWeight.w700,
+    fontSize: FontSizes.font25.fontSize,
+  );
+
+
 }

@@ -41,9 +41,10 @@ class MyAppState extends ConsumerState<MyApp> {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
+      debugShowCheckedModeBanner: false,
       // localizationsDelegates: ,
       key: ref.read(appNavigatorProvider).navigatorKey,
-      initialRoute: AppRoute.splash,
+      initialRoute: AppRoute.homeTab,
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
       onGenerateRoute: AppRouter.onGenerateRoute,
