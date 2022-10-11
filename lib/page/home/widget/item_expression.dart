@@ -28,7 +28,7 @@ class ItemExpression extends StatelessWidget {
           Container(
             padding: const EdgeInsets.all(8),
             decoration: const BoxDecoration(
-              color: Colors.teal,
+              color: Color.fromARGB(179, 137, 132, 132),
               shape: BoxShape.circle,
             ),
             child: IconBase(
@@ -39,7 +39,7 @@ class ItemExpression extends StatelessWidget {
           const SpaceBox.height(),
           Text(
             item.expression,
-            style: AppTextStyles.fontPoppinsRegular16.copyWith(
+            style: AppTextStyles.fontOpenSansBold14.copyWith(
               color: Colors.white,
             ),
           ),

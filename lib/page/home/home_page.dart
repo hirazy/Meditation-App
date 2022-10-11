@@ -9,6 +9,7 @@ import '../../common_widget/controll/line_option.dart';
 import '../../common_widget/custom/box_decoration_painter.dart';
 import '../../common_widget/display/card_display.dart';
 import '../../common_widget/display/card_expand.dart';
+import '../../common_widget/divider/horizontal_divider.dart';
 import '../../common_widget/space_box.dart';
 import '../../resource/app_color.dart';
 import '../../resource/app_size.dart';
@@ -32,7 +33,7 @@ class HomePage extends BasePage {
 
 class HomePageState extends BasePageState<HomePage>
     with WidgetsBindingObserver {
-  late ScrollController _scrollController1;
+  late ScrollController _scrollController;
 
   @override
   void didChangeAppLifecycleState(AppLifecycleState state) {
@@ -51,43 +52,42 @@ class HomePageState extends BasePageState<HomePage>
   }
 
   @override
-  void initState() {
-    super.initState();
+  void onInitState() {
+    _scrollController = ScrollController();
+    super.onInitState();
     WidgetsBinding.instance.addObserver(this);
-    _scrollController1 = ScrollController();
-
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
       ref.read(_provider.notifier).init(context);
     });
   }
 
   @override
-  Color? get backgroundColor => Colors.transparent;
+  Color? get backgroundColor => context.colors.baseBackgroundColor;
 
   @override
   Widget body(BuildContext context) {
     return _Body(
       ref: ref,
-      scrollController1: _scrollController1,
+      scrollController: _scrollController,
     );
   }
 }
 
 class _Body extends ConsumerWidget {
   const _Body({
-    required this.scrollController1,
+    required this.scrollController,
     required this.ref,
   });
 
-  final ScrollController scrollController1;
+  final ScrollController scrollController;
   final WidgetRef ref;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final state = ref.watch(_provider);
 
-    scrollController1.addListener(() {
-      if (scrollController1.offset > 110) {
+    scrollController.addListener(() {
+      if (scrollController.offset > 110) {
         ref.read(_provider.notifier).changeExpandedAppBar(true);
       } else {
         ref.read(_provider.notifier).changeExpandedAppBar(false);
@@ -97,8 +97,6 @@ class _Body extends ConsumerWidget {
       children: [
         CustomScrollView(
           slivers: [
-            // SliverToBoxAdapter(
-            //   child:
             SliverAppBar(
               pinned: true,
               automaticallyImplyLeading: false,
@@ -116,11 +114,10 @@ class _Body extends ConsumerWidget {
                 ),
               ),
             ),
-            //
           ],
         ),
         CustomScrollView(
-          controller: scrollController1,
+          controller: scrollController,
           slivers: [
             SliverAppBar(
               elevation: 0,
@@ -193,12 +190,15 @@ class _Body extends ConsumerWidget {
                           ),
                         ),
                         const SpaceBox.height(),
+                        const HorizontalDivider(),
+                        const SpaceBox.height(),
+                        /// Expression
                         SizedBox(
                           height: 80,
                           child: ListView.separated(
                             shrinkWrap: true,
                             scrollDirection: Axis.horizontal,
-                            itemCount: 2,
+                            itemCount: expressions.length,
                             physics: const BouncingScrollPhysics(),
                             separatorBuilder: (context, index) {
                               return const SpaceBox.width(16);
@@ -212,12 +212,7 @@ class _Body extends ConsumerWidget {
                           ),
                         ),
                         const SpaceBox.height(),
-                        // Text(
-                        //   AppLocalizations.of(context)!.recommended,
-                        //   style: AppTextStyles.fontOpenSansBold20.copyWith(
-                        //     color: Colors.white,
-                        //   ),
-                        // ),
+                        /// Recommended
                         LineOption(
                           title: AppLocalizations.of(context)!.recommended,
                           onTap: () {},
@@ -240,10 +235,16 @@ class _Body extends ConsumerWidget {
                             },
                           ),
                         ),
+                        const SpaceBox.height(16),
+                        /// Today
+                        LineOption(
+                          title: AppLocalizations.of(context)!.today,
+                          onTap: () {},
+                        ),
                         const SpaceBox.height(),
-                        // const MediumCard(),
-                        const LargeCard(
-                          title: '',
+                        LargeCard(
+                          title: 'Waves',
+                          onTap: () {},
                         ),
                         const SpaceBox.height(),
                         const CardDisplay(),

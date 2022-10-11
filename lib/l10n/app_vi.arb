@@ -140,5 +140,10 @@
   "@seeAll": {
     "type": "text",
     "placeholders": {}
+  },
+  "today": "Today",
+  "@today": {
+    "type": "text",
+    "placeholders": {}
   }
 }

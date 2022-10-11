@@ -12,11 +12,23 @@ class UserExpression {
 
 List<UserExpression> expressions = [
   UserExpression(
-    path: Assets.images.icExpressionRelax.path,
+    path: Assets.images.icExpressionRelaxWhite.path,
     expression: 'Relax',
   ),
   UserExpression(
-    path: Assets.images.icExpressionStress.path,
+    path: Assets.images.icExpressionSleepWhite.path,
+    expression: 'Sleep',
+  ),
+  UserExpression(
+    path: Assets.images.icExpressionStressWhite.path,
     expression: 'Stress',
+  ),
+  UserExpression(
+    path: Assets.images.icExpressionBreathWhite.path,
+    expression: 'Breath',
+  ),
+  UserExpression(
+    path: Assets.images.icExpressionAnxietyWhite.path,
+    expression: 'Anxiety',
   ),
 ];
