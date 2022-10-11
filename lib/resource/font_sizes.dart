@@ -1,4 +1,5 @@
 enum FontSizes {
+  font12,
   font13,
   font14,
   font15,
@@ -15,6 +16,8 @@ enum FontSizes {
 extension FontSizeExtension on FontSizes {
   double get fontSize {
     switch (this) {
+      case FontSizes.font12:
+        return 12;
       case FontSizes.font13:
         return 13;
       case FontSizes.font14:

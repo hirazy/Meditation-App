@@ -9,12 +9,16 @@ import '../space_box.dart';
 class LargeCard extends StatelessWidget {
   const LargeCard({
     required this.title,
+    required this.content,
     required this.onTap,
     Key? key,
   }) : super(key: key);
 
   /// Title
   final String title;
+
+  /// Content
+  final String content;
 
   final VoidCallback onTap;
 
@@ -58,18 +62,28 @@ class LargeCard extends StatelessWidget {
             ],
           ),
           const SpaceBox.height(),
-          Text(
-            title,
-            style: AppTextStyles.fontOpenSansBold14.copyWith(
-              color: Colors.white,
+          Container(
+            constraints: BoxConstraints(
+              maxWidth: context.sizes.width * 2 / 3,
             ),
-          ),
-          Text(
-            title,
-            style: AppTextStyles.fontOpenSansBold14.copyWith(
-              color: Colors.white,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  title,
+                  style: AppTextStyles.fontOpenSansBold14.copyWith(
+                    color: Colors.white,
+                  ),
+                ),
+                Text(
+                  content,
+                  style: AppTextStyles.fontOpenSansRegular13.copyWith(
+                    color: Color.fromARGB(245, 144, 144, 144),
+                  ),
+                ),
+              ],
             ),
-          ),
+          )
         ],
       ),
     );

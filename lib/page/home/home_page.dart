@@ -190,8 +190,7 @@ class _Body extends ConsumerWidget {
                           ),
                         ),
                         const SpaceBox.height(),
-                        const HorizontalDivider(),
-                        const SpaceBox.height(),
+
                         /// Expression
                         SizedBox(
                           height: 80,
@@ -212,6 +211,9 @@ class _Body extends ConsumerWidget {
                           ),
                         ),
                         const SpaceBox.height(),
+                        const HorizontalDivider(),
+                        const SpaceBox.height(),
+
                         /// Recommended
                         LineOption(
                           title: AppLocalizations.of(context)!.recommended,
@@ -236,16 +238,36 @@ class _Body extends ConsumerWidget {
                           ),
                         ),
                         const SpaceBox.height(16),
+                        const HorizontalDivider(),
+                        const SpaceBox.height(16),
                         /// Today
                         LineOption(
                           title: AppLocalizations.of(context)!.today,
                           onTap: () {},
                         ),
                         const SpaceBox.height(),
-                        LargeCard(
-                          title: 'Waves',
-                          onTap: () {},
+                        SizedBox(
+                          height: 400,
+                          child: ListView.separated(
+                            shrinkWrap: true,
+                            scrollDirection: Axis.horizontal,
+                            itemCount: 2,
+                            physics: const BouncingScrollPhysics(),
+                            separatorBuilder: (context, index) {
+                              return const SpaceBox.width();
+                            },
+                            itemBuilder: (context, index) {
+                              return LargeCard(
+                                title: 'Waves dsasad as sadasd a as asd sdsd sadsada',
+                                content: 'Hihi',
+                                onTap: () {},
+                              );
+                            },
+                          ),
                         ),
+                        const SpaceBox.height(16),
+                        const HorizontalDivider(),
+                        const SpaceBox.height(16),
                         const SpaceBox.height(),
                         const CardDisplay(),
                         const SpaceBox.height(1500),

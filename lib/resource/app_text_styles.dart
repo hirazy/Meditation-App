@@ -67,6 +67,18 @@ class AppTextStyles {
     fontSize: FontSizes.font14.fontSize,
   );
 
+  /// Font Style: OpenSans - Weight: 400 - Size 14
+  static final TextStyle fontOpenSansRegular13 = GoogleFonts.openSans(
+    fontWeight: FontWeight.w400,
+    fontSize: FontSizes.font13.fontSize,
+  );
+
+  /// Font Style: OpenSans - Weight: 400 - Size 14
+  static final TextStyle fontOpenSansBold12 = GoogleFonts.openSans(
+    fontWeight: FontWeight.w400,
+    fontSize: FontSizes.font12.fontSize,
+  );
+
   /// Font Style: OpenSans - Weight: 700 - Size 20
   static final TextStyle fontOpenSansBold20 = GoogleFonts.openSans(
     fontWeight: FontWeight.w700,
