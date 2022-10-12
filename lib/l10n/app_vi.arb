@@ -145,5 +145,10 @@
   "@today": {
     "type": "text",
     "placeholders": {}
+  },
+  "favorite": "Yêu thích",
+  "@favorite": {
+    "type": "text",
+    "placeholders": {}
   }
 }

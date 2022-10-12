@@ -38,6 +38,7 @@ class CardDisplay extends StatelessWidget {
           child: Stack(
             children: [
               circleTopRight(),
+              circleBottomLeft(),
             ],
           ),
         ),
@@ -48,6 +49,30 @@ class CardDisplay extends StatelessWidget {
   Widget circleTopRight() {
     return Positioned(
       right: -170,
+      // left: -30,
+      child: Container(
+        width: 260,
+        height: 260,
+        decoration: const BoxDecoration(
+          shape: BoxShape.circle,
+          gradient: LinearGradient(
+            begin: Alignment(-0.8, -0.7),
+            end: Alignment.bottomCenter,
+            colors: [
+              Color(0x26FFFFFF),
+              Color(0x26FFFFFF),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget circleBottomLeft() {
+    return Positioned(
+      left: -170,
+      top: 30,
+      // right: -170,
       // left: -30,
       child: Container(
         width: 260,

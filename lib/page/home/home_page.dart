@@ -221,7 +221,7 @@ class _Body extends ConsumerWidget {
                         ),
                         const SpaceBox.height(),
                         SizedBox(
-                          height: 220,
+                          height: 230,
                           child: ListView.separated(
                             shrinkWrap: true,
                             scrollDirection: Axis.horizontal,
@@ -258,7 +258,7 @@ class _Body extends ConsumerWidget {
                             },
                             itemBuilder: (context, index) {
                               return LargeCard(
-                                title: 'Waves dsasad as sadasd a as asd sdsd sadsada',
+                                title: 'Light Nice Like',
                                 content: 'Hihi',
                                 onTap: () {},
                               );

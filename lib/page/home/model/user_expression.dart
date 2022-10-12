@@ -31,4 +31,12 @@ List<UserExpression> expressions = [
     path: Assets.images.icExpressionAnxietyWhite.path,
     expression: 'Anxiety',
   ),
+  UserExpression(
+    path: Assets.images.icExpressionLoveWhite.path,
+    expression: 'Love',
+  ),
+  UserExpression(
+    path: Assets.images.icExpressionAngryWhite.path,
+    expression: 'Angry',
+  ),
 ];

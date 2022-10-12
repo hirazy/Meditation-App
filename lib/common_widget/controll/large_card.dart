@@ -75,12 +75,36 @@ class LargeCard extends StatelessWidget {
                     color: Colors.white,
                   ),
                 ),
-                Text(
-                  content,
-                  style: AppTextStyles.fontOpenSansRegular13.copyWith(
-                    color: Color.fromARGB(245, 144, 144, 144),
+                RichText(
+                  text: TextSpan(
+                    children: [
+                      TextSpan(
+                        text: '3 minutes',
+                        style: AppTextStyles.fontOpenSansRegular13.copyWith(
+                          color: const Color.fromARGB(245, 144, 144, 144),
+                        ),
+                      ),
+                      TextSpan(
+                        text: ' • ',
+                        style: AppTextStyles.fontOpenSansRegular13.copyWith(
+                          color: Colors.white,
+                        ),
+                      ),
+                      TextSpan(
+                        text: '3 minutes',
+                        style: AppTextStyles.fontOpenSansRegular13.copyWith(
+                          color: const Color.fromARGB(245, 144, 144, 144),
+                        ),
+                      )
+                    ],
                   ),
                 ),
+                // Text(
+                //   content,
+                //   style: AppTextStyles.fontOpenSansRegular13.copyWith(
+                //     color: const Color.fromARGB(245, 144, 144, 144),
+                //   ),
+                // ),
               ],
             ),
           )

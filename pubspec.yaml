@@ -114,6 +114,9 @@ dependencies:
   # Cached NetWork Image
   cached_network_image: ^3.2.0
 
+  # Fl Chart
+  fl_chart: ^0.55.2
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

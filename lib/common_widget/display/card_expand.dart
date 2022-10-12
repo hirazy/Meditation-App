@@ -48,18 +48,23 @@ class CardExpand extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  const SpaceBox.height(),
                   Text(
-                    'Hello',
+                    'Good Morning',
+                    maxLines: 1,
                     style: AppTextStyles.fontPoppinsRegular14.copyWith(
                       color: Colors.white,
                     ),
+                    overflow: TextOverflow.ellipsis,
                   ),
                   const SpaceBox.height(),
                   Text(
-                    'Content',
+                    'Playlist',
+                    maxLines: 1,
                     style: AppTextStyles.fontPoppinsRegular14.copyWith(
                       color: Colors.white,
                     ),
+                    overflow: TextOverflow.ellipsis,
                   ),
                 ],
               ),
