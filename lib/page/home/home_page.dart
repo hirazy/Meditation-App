@@ -220,7 +220,7 @@ class _Body extends ConsumerWidget {
                         ),
                         const SpaceBox.height(),
                         SizedBox(
-                          height: 230,
+                          height: 250,
                           child: ListView.separated(
                             shrinkWrap: true,
                             scrollDirection: Axis.horizontal,
@@ -246,7 +246,7 @@ class _Body extends ConsumerWidget {
                         ),
                         const SpaceBox.height(),
                         SizedBox(
-                          height: 290,
+                          height: 330,
                           child: ListView.separated(
                             shrinkWrap: true,
                             scrollDirection: Axis.horizontal,

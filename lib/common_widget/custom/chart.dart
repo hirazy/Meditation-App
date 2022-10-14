@@ -77,7 +77,8 @@ class _ChartState extends State<Chart> {
                 begin: Alignment.centerLeft,
                 end: Alignment(0.9, -0.2),
                 colors: [
-                  Color(0x00FFFFFF)
+                  Color(0x00FFFFFF),
+                  Color(0xFFFFFFFF)
                 ],
               ),
             ),

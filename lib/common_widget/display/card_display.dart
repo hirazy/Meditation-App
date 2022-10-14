@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 
+import '../custom/chart.dart';
+
 class CardDisplay extends StatelessWidget {
   const CardDisplay({Key? key}) : super(key: key);
 
@@ -39,10 +41,21 @@ class CardDisplay extends StatelessWidget {
             children: [
               circleTopRight(),
               circleBottomLeft(),
+              backgroundChart(),
             ],
           ),
         ),
       ),
+    );
+  }
+
+  Widget backgroundChart() {
+    return const Chart(
+      data: [0, 1],
+      minData: 0.99,
+      maxData: 1.01,
+      minY: 0.99,
+      maxY: 1.01,
     );
   }
 
