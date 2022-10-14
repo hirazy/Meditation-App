@@ -213,7 +213,6 @@ class _Body extends ConsumerWidget {
                         const SpaceBox.height(),
                         const HorizontalDivider(),
                         const SpaceBox.height(),
-
                         /// Recommended
                         LineOption(
                           title: AppLocalizations.of(context)!.recommended,
@@ -247,7 +246,7 @@ class _Body extends ConsumerWidget {
                         ),
                         const SpaceBox.height(),
                         SizedBox(
-                          height: 400,
+                          height: 290,
                           child: ListView.separated(
                             shrinkWrap: true,
                             scrollDirection: Axis.horizontal,
@@ -270,7 +269,7 @@ class _Body extends ConsumerWidget {
                         const SpaceBox.height(16),
                         const SpaceBox.height(),
                         const CardDisplay(),
-                        const SpaceBox.height(1500),
+                        const SpaceBox.height(80),
                         const Text(''),
                       ],
                     ),
