@@ -150,5 +150,10 @@
   "@favorite": {
     "type": "text",
     "placeholders": {}
+  },
+  "music": "Âm nhạc",
+  "@music": {
+    "type": "text",
+    "placeholders": {}
   }
 }

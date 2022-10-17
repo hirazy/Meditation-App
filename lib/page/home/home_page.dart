@@ -110,7 +110,9 @@ class _Body extends ConsumerWidget {
                 collapseMode: CollapseMode.parallax,
                 background: SizedBox(
                   height: MediaQuery.of(context).size.height * 0.4,
-                  child: VideoPlayer(state.controller!),
+                  child: state.controller != null
+                      ? VideoPlayer(state.controller!)
+                      : Container(),
                 ),
               ),
             ),
@@ -190,7 +192,6 @@ class _Body extends ConsumerWidget {
                           ),
                         ),
                         const SpaceBox.height(),
-
                         /// Expression
                         SizedBox(
                           height: 80,
@@ -213,6 +214,7 @@ class _Body extends ConsumerWidget {
                         const SpaceBox.height(),
                         const HorizontalDivider(),
                         const SpaceBox.height(),
+
                         /// Recommended
                         LineOption(
                           title: AppLocalizations.of(context)!.recommended,
@@ -263,6 +265,10 @@ class _Body extends ConsumerWidget {
                               );
                             },
                           ),
+                        ),
+                        LineOption(
+                          title: AppLocalizations.of(context)!.music,
+                          onTap: () {},
                         ),
                         const SpaceBox.height(16),
                         const HorizontalDivider(),

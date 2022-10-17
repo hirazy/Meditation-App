@@ -85,8 +85,6 @@ class CardDisplay extends StatelessWidget {
     return Positioned(
       left: -170,
       top: 30,
-      // right: -170,
-      // left: -30,
       child: Container(
         width: 260,
         height: 260,
