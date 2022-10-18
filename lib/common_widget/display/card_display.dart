@@ -1,6 +1,11 @@
-import 'package:flutter/cupertino.dart';
+import 'dart:math' as math;
 
+import 'package:flutter/material.dart';
+
+import '../../resource/app_text_styles.dart';
+import '../../resource/constants.dart';
 import '../custom/chart.dart';
+import '../space_box.dart';
 
 class CardDisplay extends StatelessWidget {
   const CardDisplay({Key? key}) : super(key: key);
@@ -39,6 +44,8 @@ class CardDisplay extends StatelessWidget {
           ),
           child: Stack(
             children: [
+              realMeditationText(),
+              personIncreasePercent(),
               circleTopRight(),
               circleBottomLeft(),
               backgroundChart(),
@@ -49,13 +56,66 @@ class CardDisplay extends StatelessWidget {
     );
   }
 
+  Widget realMeditationText() {
+    return Padding(
+      padding: const EdgeInsets.all(28),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            'Current Online',
+            style: AppTextStyles.fontPoppinsRegular16.copyWith(
+              color: Colors.white,
+            ),
+          ),
+          const SpaceBox.height(),
+          Text(
+            '123,0',
+            style: AppTextStyles.fontPoppinsRegular16.copyWith(
+              color: Colors.white,
+            ),
+          ),
+          const Expanded(
+            child: SpaceBox.height(),
+          ),
+          Text(
+            'Persons Today',
+            style: AppTextStyles.fontPoppinsRegular16.copyWith(
+              color: Colors.white,
+            ),
+          ),
+          const SpaceBox.height(),
+          Text(
+            '4500',
+            style: AppTextStyles.fontPoppinsRegular16.copyWith(
+              color: Colors.white,
+            ),
+          )
+        ],
+      ),
+    );
+  }
+
   Widget backgroundChart() {
-    return const Chart(
-      data: [0, 1],
-      minData: 0.99,
-      maxData: 1.01,
-      minY: 0.99,
-      maxY: 1.01,
+    final minData = Constants.mockChart.reduce(math.min);
+    final maxData = Constants.mockChart.reduce(math.max);
+
+    return Chart(
+      data: Constants.mockChart,
+      minData: minData,
+      maxData: maxData,
+      minY: 0.99 * minData,
+      maxY: 1.01 * maxData,
+    );
+  }
+
+  Widget personIncreasePercent() {
+    return Positioned(
+      right: 28,
+      bottom: 28,
+      child: Container(
+        padding: const EdgeInsets.fromLTRB(6, 6, 8, 6),
+      ),
     );
   }
 

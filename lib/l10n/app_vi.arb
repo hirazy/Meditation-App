@@ -155,5 +155,10 @@
   "@music": {
     "type": "text",
     "placeholders": {}
+  },
+  "termNew": "Mới",
+  "@termNew": {
+    "type": "text",
+    "placeholders": {}
   }
 }

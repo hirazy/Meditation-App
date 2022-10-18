@@ -40,4 +40,19 @@ extension ExpressionValue on Expression {
         return Assets.images.icExpressionAnxietyWhite.path;
     }
   }
+
+  String getActivePath(){
+    switch (this) {
+      case Expression.relax:
+        return Assets.images.icExpressionRelaxWhite.path;
+      case Expression.sleep:
+        return Assets.images.icExpressionSleepWhite.path;
+      case Expression.stress:
+        return Assets.images.icExpressionStressWhite.path;
+      case Expression.breath:
+        return Assets.images.icExpressionBreathWhite.path;
+      case Expression.anxiety:
+        return Assets.images.icExpressionAnxietyWhite.path;
+    }
+  }
 }

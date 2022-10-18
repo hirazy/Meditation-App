@@ -20,8 +20,8 @@ class CardExpand extends StatelessWidget {
       child: Container(
         decoration: const BoxDecoration(
           color: Colors.white10,
-          borderRadius: BorderRadius.vertical(
-            bottom: Radius.circular(20),
+          borderRadius: BorderRadius.all(
+            Radius.circular(20),
           ),
         ),
         child: Column(

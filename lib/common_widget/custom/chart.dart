@@ -73,6 +73,25 @@ class _ChartState extends State<Chart> {
             bottomTitles: AxisTitles(
               sideTitles: SideTitles(showTitles: false),
             ),
+            rightTitles: AxisTitles(
+              sideTitles: SideTitles(
+                showTitles: widget.horizontalLines.isNotEmpty,
+                reservedSize:
+                    NumberFormat(widget.format).format(widget.minData).length *
+                        11.0,
+                interval: widget.interval,
+                getTitlesWidget: (value, meta) {
+                  final title =
+                      widget.horizontalLines.contains(value.toStringAsFixed(4))
+                          ? NumberFormat(widget.format).format(value)
+                          : '';
+                  return SideTitleWidget(
+                    axisSide: meta.axisSide,
+                    child: Text(title),
+                  );
+                },
+              ),
+            ),
           ),
           gridData: FlGridData(
             drawVerticalLine: false,

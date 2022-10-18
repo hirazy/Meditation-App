@@ -28,6 +28,10 @@ class HomeViewModel extends StateNotifier<HomeState> {
     );
   }
 
+  void changeExpression(){
+
+  }
+
   void resumeVideo() {
     controller.play();
   }

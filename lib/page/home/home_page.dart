@@ -9,6 +9,7 @@ import '../../common_widget/controll/line_option.dart';
 import '../../common_widget/custom/box_decoration_painter.dart';
 import '../../common_widget/display/card_display.dart';
 import '../../common_widget/display/card_expand.dart';
+import '../../common_widget/display/list_horizontal.dart';
 import '../../common_widget/divider/horizontal_divider.dart';
 import '../../common_widget/space_box.dart';
 import '../../resource/app_color.dart';
@@ -192,7 +193,18 @@ class _Body extends ConsumerWidget {
                           ),
                         ),
                         const SpaceBox.height(),
+
                         /// Expression
+                        // ListHorizontal(
+                        //   children: expressions
+                        //       .map(
+                        //         (e) => ItemExpression(
+                        //           item: e,
+                        //           onTap: () {},
+                        //         ),
+                        //       )
+                        //       .toList(),
+                        // ),
                         SizedBox(
                           height: 80,
                           child: ListView.separated(
@@ -241,6 +253,7 @@ class _Body extends ConsumerWidget {
                         const SpaceBox.height(16),
                         const HorizontalDivider(),
                         const SpaceBox.height(16),
+
                         /// Today
                         LineOption(
                           title: AppLocalizations.of(context)!.today,
@@ -266,13 +279,13 @@ class _Body extends ConsumerWidget {
                             },
                           ),
                         ),
+                        const SpaceBox.height(16),
+                        const HorizontalDivider(),
+                        const SpaceBox.height(16),
                         LineOption(
                           title: AppLocalizations.of(context)!.music,
                           onTap: () {},
                         ),
-                        const SpaceBox.height(16),
-                        const HorizontalDivider(),
-                        const SpaceBox.height(16),
                         const SpaceBox.height(),
                         const CardDisplay(),
                         const SpaceBox.height(80),

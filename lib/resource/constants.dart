@@ -39,4 +39,15 @@ class Constants {
   static const int isMorning = 0;
   static const int isAfternoon = 1;
   static const int isEvening = 2;
+
+  /// Mock Chart
+  static const mockChart = [
+    3622.89,
+    3678.83,
+    3729.68,
+    3702.28,
+    3926.18,
+    3867.67,
+    4068.79,
+  ];
 }
