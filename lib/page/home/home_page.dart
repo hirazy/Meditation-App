@@ -187,7 +187,7 @@ class _Body extends ConsumerWidget {
                         ),
                         Text(
                           AppLocalizations.of(context)!.workToday,
-                          style: AppTextStyles.fontOpenSansBold14.copyWith(
+                          style: AppTextStyles.fontOpenSansRegular14.copyWith(
                             color: Colors.white,
                           ),
                         ),
@@ -264,7 +264,6 @@ class _Body extends ConsumerWidget {
                         const SpaceBox.height(),
                         const CardDisplay(),
                         const SpaceBox.height(80),
-                        const Text(''),
                       ],
                     ),
                   ),

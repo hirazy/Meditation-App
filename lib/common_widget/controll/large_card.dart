@@ -95,7 +95,7 @@ class LargeCard extends StatelessWidget {
                 children: [
                   Text(
                     title,
-                    style: AppTextStyles.fontOpenSansBold14.copyWith(
+                    style: AppTextStyles.fontOpenSansRegular14.copyWith(
                       color: Colors.white,
                     ),
                   ),
