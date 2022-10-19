@@ -35,7 +35,7 @@ class SignUpSettingPageState extends BasePageState<SignUpSettingPage> {
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) async {
       final responseInit = await ref.read(_provider.notifier).init();
       if (responseInit) {
-        Navigator.of(context).pushNamed(AppRoute.home);
+        Navigator.of(context).pushNamed(AppRoute.homeTab);
       }
     });
   }

@@ -10,6 +10,7 @@ class AppColor {
     required this.gradientInActiveButton,
     required this.hoverBackground,
     required this.colorBottomNavigation,
+    required this.baseBackgroundColor,
   });
 
   /// light Blue
@@ -32,6 +33,9 @@ class AppColor {
 
   /// Gradient - Large Button Color
   final List<Color> gradientLargeButton;
+
+  /// Background Color
+  final Color baseBackgroundColor;
 
   /// Color - Bottom Navigation Background
   final Color colorBottomNavigation;
@@ -68,7 +72,8 @@ class AppColor {
       Color(0xffaba8ac),
     ],
     hoverBackground: Color.fromARGB(77, 255, 255, 255),
-    colorBottomNavigation: Color.fromARGB(153, 50, 50, 93),
+    colorBottomNavigation: Color.fromARGB(179, 10, 10, 47),
+    baseBackgroundColor: Color(0xff1b1b36),
   );
 
   /// Dark Theme

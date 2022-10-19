@@ -10,6 +10,11 @@
     "type": "text",
     "placeholders": {}
   },
+  "appName": "Meditation",
+  "@appName": {
+    "type": "text",
+    "placeholders": {}
+  },
   "getStarted": "Bắt đầu",
   "@getStarted": {
     "type": "text",
@@ -92,6 +97,67 @@
   },
   "settingUp": "Thiết lập giấc ngủ của bạn...",
   "@settingUp": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "goodMorning": "Chào buổi sáng, {name}",
+  "@goodMorning": {
+    "type": "text",
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "goodAfternoon": "Chào buổi chiều, {name}",
+  "@goodAfternoon": {
+    "type": "text",
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "goodEvening": "Chào buổi tối, {name}",
+  "@goodEvening": {
+    "type": "text",
+    "placeholders": {
+      "name": {}
+    }
+  },
+  "goodDay": "Chúng tôi chúc bạn một ngày tốt lành",
+  "@goodDay": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "workToday": "Bạn làm việc ngày hôm nay như nào?",
+  "@workToday": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "recommended": "Gợi ý",
+  "@recommended": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "seeAll": "Xem tất cả",
+  "@seeAll": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "today": "Today",
+  "@today": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "favorite": "Yêu thích",
+  "@favorite": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "music": "Âm nhạc",
+  "@music": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "termNew": "Mới",
+  "@termNew": {
     "type": "text",
     "placeholders": {}
   }

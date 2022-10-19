@@ -108,6 +108,15 @@ dependencies:
   # Firebase Auth
   firebase_auth: ^3.9.0
 
+  # Video Player
+  video_player: ^2.4.7
+
+  # Cached NetWork Image
+  cached_network_image: ^3.2.0
+
+  # Fl Chart
+  fl_chart: ^0.55.2
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -151,8 +160,10 @@ flutter:
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
   assets:
+    - assets/audio/
     - assets/images/
     - assets/raws/
+    - assets/video/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
