@@ -9,6 +9,7 @@ import '../../common_widget/controll/line_option.dart';
 import '../../common_widget/custom/box_decoration_painter.dart';
 import '../../common_widget/display/card_display.dart';
 import '../../common_widget/display/card_expand.dart';
+import '../../common_widget/display/card_small.dart';
 import '../../common_widget/display/list_horizontal.dart';
 import '../../common_widget/divider/horizontal_divider.dart';
 import '../../common_widget/space_box.dart';
@@ -177,9 +178,7 @@ class _Body extends ConsumerWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        const SpaceBox.height(
-                          120,
-                        ),
+                        const SpaceBox.height(120),
                         Text(
                           state.sessionDay,
                           style: AppTextStyles.fontOpenSansBold20.copyWith(
@@ -195,33 +194,15 @@ class _Body extends ConsumerWidget {
                         const SpaceBox.height(),
 
                         /// Expression
-                        // ListHorizontal(
-                        //   children: expressions
-                        //       .map(
-                        //         (e) => ItemExpression(
-                        //           item: e,
-                        //           onTap: () {},
-                        //         ),
-                        //       )
-                        //       .toList(),
-                        // ),
-                        SizedBox(
-                          height: 80,
-                          child: ListView.separated(
-                            shrinkWrap: true,
-                            scrollDirection: Axis.horizontal,
-                            itemCount: expressions.length,
-                            physics: const BouncingScrollPhysics(),
-                            separatorBuilder: (context, index) {
-                              return const SpaceBox.width(16);
-                            },
-                            itemBuilder: (context, index) {
-                              return ItemExpression(
-                                item: expressions[index],
-                                onTap: () {},
-                              );
-                            },
-                          ),
+                        ListHorizontal(
+                          children: expressions
+                              .map(
+                                (e) => ItemExpression(
+                                  item: e,
+                                  onTap: () {},
+                                ),
+                              )
+                              .toList(),
                         ),
                         const SpaceBox.height(),
                         const HorizontalDivider(),
@@ -233,22 +214,14 @@ class _Body extends ConsumerWidget {
                           onTap: () {},
                         ),
                         const SpaceBox.height(),
-                        SizedBox(
-                          height: 250,
-                          child: ListView.separated(
-                            shrinkWrap: true,
-                            scrollDirection: Axis.horizontal,
-                            itemCount: 2,
-                            physics: const BouncingScrollPhysics(),
-                            separatorBuilder: (context, index) {
-                              return const SpaceBox.width();
-                            },
-                            itemBuilder: (context, index) {
-                              return CardExpand(
-                                onTap: () {},
-                              );
-                            },
-                          ),
+                        ListHorizontal(
+                          children: expressions
+                              .map(
+                                (e) => CardExpand(
+                                  onTap: () {},
+                                ),
+                              )
+                              .toList(),
                         ),
                         const SpaceBox.height(16),
                         const HorizontalDivider(),
@@ -260,24 +233,16 @@ class _Body extends ConsumerWidget {
                           onTap: () {},
                         ),
                         const SpaceBox.height(),
-                        SizedBox(
-                          height: 330,
-                          child: ListView.separated(
-                            shrinkWrap: true,
-                            scrollDirection: Axis.horizontal,
-                            itemCount: 2,
-                            physics: const BouncingScrollPhysics(),
-                            separatorBuilder: (context, index) {
-                              return const SpaceBox.width();
-                            },
-                            itemBuilder: (context, index) {
-                              return LargeCard(
-                                title: 'Light Nice Like',
-                                content: 'Hihi',
-                                onTap: () {},
-                              );
-                            },
-                          ),
+                        ListHorizontal(
+                          children: expressions
+                              .map(
+                                (e) => LargeCard(
+                                  title: 'Light Nice Like',
+                                  content: 'Hihi',
+                                  onTap: () {},
+                                ),
+                              )
+                              .toList(),
                         ),
                         const SpaceBox.height(16),
                         const HorizontalDivider(),
@@ -285,6 +250,16 @@ class _Body extends ConsumerWidget {
                         LineOption(
                           title: AppLocalizations.of(context)!.music,
                           onTap: () {},
+                        ),
+                        const SpaceBox.height(),
+                        ListHorizontal(
+                          children: expressions
+                              .map(
+                                (e) => CardSmall(
+                                  onTap: () {},
+                                ),
+                              )
+                              .toList(),
                         ),
                         const SpaceBox.height(),
                         const CardDisplay(),

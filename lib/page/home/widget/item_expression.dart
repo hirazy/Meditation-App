@@ -20,30 +20,35 @@ class ItemExpression extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Container(
-            padding: const EdgeInsets.all(8),
-            decoration: const BoxDecoration(
-              color: Color.fromARGB(179, 137, 132, 132),
-              shape: BoxShape.circle,
+    return Container(
+      margin: const EdgeInsets.only(
+        right: 16,
+      ),
+      child: GestureDetector(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Container(
+              padding: const EdgeInsets.all(8),
+              decoration: const BoxDecoration(
+                color: Color.fromARGB(179, 137, 132, 132),
+                shape: BoxShape.circle,
+              ),
+              child: IconBase(
+                path: item.path,
+                size: 22,
+              ),
             ),
-            child: IconBase(
-              path: item.path,
-              size: 22,
+            const SpaceBox.height(),
+            Text(
+              item.expression,
+              style: AppTextStyles.fontOpenSansBold14.copyWith(
+                color: Colors.white,
+              ),
             ),
-          ),
-          const SpaceBox.height(),
-          Text(
-            item.expression,
-            style: AppTextStyles.fontOpenSansBold14.copyWith(
-              color: Colors.white,
-            ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

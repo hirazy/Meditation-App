@@ -25,106 +25,109 @@ class LargeCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: onTap,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Stack(
-            children: [
-              ClipRRect(
-                borderRadius: const BorderRadius.all(
-                  Radius.circular(15),
-                ),
-                child: Image.asset(
-                  Assets.images.imgNature1.path,
-                  width: context.sizes.width * 2 / 3,
-                  height: context.sizes.width * 2 / 3,
-                  fit: BoxFit.fill,
-                ),
-              ),
-              Positioned(
-                top: 15,
-                left: 10,
-                child: Container(
-                  decoration: const BoxDecoration(
-                    color: Color.fromARGB(179, 98, 98, 98),
-                    borderRadius: BorderRadius.horizontal(
-                      left: Radius.circular(20),
-                      right: Radius.circular(20),
-                    ),
-                  ),
-                  padding: const EdgeInsets.symmetric(
-                    vertical: 5,
-                    horizontal: 10,
-                  ),
-                  child: Text(
-                    AppLocalizations.of(context)!.termNew,
-                    style: AppTextStyles.fontOverpassRegular14.copyWith(
-                      color: Colors.white,
-                    ),
-                  ),
-                ),
-              ),
-              Positioned(
-                left: 10,
-                bottom: 15,
-                child: Container(
-                  decoration: const BoxDecoration(
-                    color: Color.fromARGB(179, 98, 98, 98),
-                    shape: BoxShape.circle,
-                  ),
-                  padding: const EdgeInsets.all(5),
-                  child: IconBase(
-                    path: Assets.images.icLock.path,
-                    size: 15,
-                  ),
-                ),
-              ),
-            ],
-          ),
-          const SpaceBox.height(),
-          Container(
-            constraints: BoxConstraints(
-              maxWidth: context.sizes.width * 2 / 3,
-            ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+    return Container(
+      margin: const EdgeInsets.only(right: 8),
+      child: GestureDetector(
+        onTap: onTap,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Stack(
               children: [
-                Text(
-                  title,
-                  style: AppTextStyles.fontOpenSansBold14.copyWith(
-                    color: Colors.white,
+                ClipRRect(
+                  borderRadius: const BorderRadius.all(
+                    Radius.circular(15),
+                  ),
+                  child: Image.asset(
+                    Assets.images.imgNature1.path,
+                    width: context.sizes.width * 2 / 3,
+                    height: context.sizes.width * 2 / 3,
+                    fit: BoxFit.fill,
                   ),
                 ),
-                RichText(
-                  text: TextSpan(
-                    children: [
-                      TextSpan(
-                        text: '3 minutes',
-                        style: AppTextStyles.fontOpenSansRegular13.copyWith(
-                          color: const Color.fromARGB(245, 144, 144, 144),
-                        ),
+                Positioned(
+                  top: 15,
+                  left: 10,
+                  child: Container(
+                    decoration: const BoxDecoration(
+                      color: Color.fromARGB(179, 98, 98, 98),
+                      borderRadius: BorderRadius.horizontal(
+                        left: Radius.circular(20),
+                        right: Radius.circular(20),
                       ),
-                      TextSpan(
-                        text: ' • ',
-                        style: AppTextStyles.fontOpenSansRegular13.copyWith(
-                          color: Colors.white,
-                        ),
+                    ),
+                    padding: const EdgeInsets.symmetric(
+                      vertical: 5,
+                      horizontal: 10,
+                    ),
+                    child: Text(
+                      AppLocalizations.of(context)!.termNew,
+                      style: AppTextStyles.fontOverpassRegular14.copyWith(
+                        color: Colors.white,
                       ),
-                      TextSpan(
-                        text: '3 minutes',
-                        style: AppTextStyles.fontOpenSansRegular13.copyWith(
-                          color: const Color.fromARGB(245, 144, 144, 144),
-                        ),
-                      )
-                    ],
+                    ),
+                  ),
+                ),
+                Positioned(
+                  left: 10,
+                  bottom: 15,
+                  child: Container(
+                    decoration: const BoxDecoration(
+                      color: Color.fromARGB(179, 98, 98, 98),
+                      shape: BoxShape.circle,
+                    ),
+                    padding: const EdgeInsets.all(5),
+                    child: IconBase(
+                      path: Assets.images.icLock.path,
+                      size: 15,
+                    ),
                   ),
                 ),
               ],
             ),
-          )
-        ],
+            const SpaceBox.height(),
+            Container(
+              constraints: BoxConstraints(
+                maxWidth: context.sizes.width * 2 / 3,
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    title,
+                    style: AppTextStyles.fontOpenSansBold14.copyWith(
+                      color: Colors.white,
+                    ),
+                  ),
+                  RichText(
+                    text: TextSpan(
+                      children: [
+                        TextSpan(
+                          text: '3 minutes',
+                          style: AppTextStyles.fontOpenSansRegular13.copyWith(
+                            color: const Color.fromARGB(245, 144, 144, 144),
+                          ),
+                        ),
+                        TextSpan(
+                          text: ' • ',
+                          style: AppTextStyles.fontOpenSansRegular13.copyWith(
+                            color: Colors.white,
+                          ),
+                        ),
+                        TextSpan(
+                          text: '3 minutes',
+                          style: AppTextStyles.fontOpenSansRegular13.copyWith(
+                            color: const Color.fromARGB(245, 144, 144, 144),
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
