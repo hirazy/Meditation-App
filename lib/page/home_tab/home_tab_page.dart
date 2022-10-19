@@ -5,6 +5,7 @@ import '../../common_widget/base/base_page.dart';
 import '../../common_widget/controll/bottom_bar.dart';
 import '../../resource/constants.dart';
 import '../home/home_page.dart';
+import '../music/top/music_top_page.dart';
 import 'home_tab_state.dart';
 import 'home_tab_view_model.dart';
 
@@ -57,6 +58,7 @@ class _Body extends ConsumerWidget {
       index: ref.watch(_provider).index,
       children: const [
         HomePage(),
+        MusicTopPage(),
       ],
     );
   }
