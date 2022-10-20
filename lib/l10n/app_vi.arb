@@ -160,5 +160,20 @@
   "@termNew": {
     "type": "text",
     "placeholders": {}
+  },
+  "listenRelax": "Nghe để thư giãn",
+  "@listenRelax": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "search": "Tìm kiếm",
+  "@search": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "soundOfNature": "Âm thanh thiên nhiên",
+  "@soundOfNature": {
+    "type": "text",
+    "placeholders": {}
   }
 }

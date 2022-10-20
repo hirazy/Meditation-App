@@ -117,6 +117,9 @@ dependencies:
   # Fl Chart
   fl_chart: ^0.55.2
 
+  # Just Audio
+  just_audio: ^0.9.29
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
