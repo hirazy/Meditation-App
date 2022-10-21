@@ -37,9 +37,14 @@ class SongPlayCard extends StatelessWidget {
       ),
       child: Row(
         children: [
-          IconBase(
-            path: Assets.images.imgNature.path,
-            size: 40,
+          ClipRRect(
+            borderRadius: BorderRadius.circular(10),
+            child: Image.asset(
+              Assets.images.imgNature.path,
+              height: 60,
+              width: 60,
+              fit: BoxFit.fill,
+            ),
           ),
           const SpaceBox.width(15),
           Column(
@@ -49,7 +54,6 @@ class SongPlayCard extends StatelessWidget {
                 'Good sleep after work hard',
                 style: AppTextStyles.fontPoppinsRegular16,
               ),
-              const SpaceBox.height(),
               Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
@@ -68,6 +72,7 @@ class SongPlayCard extends StatelessWidget {
                   ),
                   Column(
                     children: [
+                      const SpaceBox.height(15),
                       SliderTheme(
                         data: SliderTheme.of(context).copyWith(
                           trackHeight: 4,
@@ -89,7 +94,7 @@ class SongPlayCard extends StatelessWidget {
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
+                        children: const [
                           Text(
                             '0: 00',
                           ),
