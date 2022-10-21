@@ -166,7 +166,7 @@ class _Body extends ConsumerWidget {
                 context.sizes.height * 0.1,
               ),
               ClipPath(
-                clipper: BoxDecorationPainter(),
+                clipper: const BoxDecorationPainter(),
                 child: Container(
                   decoration: BoxDecoration(
                     color: context.colors.baseBackgroundColor,
