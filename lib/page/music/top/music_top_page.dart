@@ -100,19 +100,23 @@ class MusicTopPageState extends BasePageState<MusicTopPage> {
                         ),
                       ),
                       const SpaceBox.height(10),
-                      GridView.count(
-                        crossAxisCount: 2,
+                      GridView.builder(
                         shrinkWrap: true,
+                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                          crossAxisCount: 2,
+                          crossAxisSpacing: 8,
+                          mainAxisSpacing: 8,
+                          mainAxisExtent: context.sizes.height * 1 / 5 + 50,
+                        ),
+                        itemCount: expressions.length,
                         physics: const BouncingScrollPhysics(),
-                        children: expressions
-                            .map(
-                              (e) => MusicCategoryCard(
-                                onTap: () {},
-                              ),
-                            )
-                            .toList(),
+                        itemBuilder: (context, index) {
+                          return MusicCategoryCard(
+                            onTap: () {},
+                          );
+                        },
                       ),
-                      const SpaceBox.height(2000),
+                      const SpaceBox.height(80),
                     ],
                   ),
                 ),

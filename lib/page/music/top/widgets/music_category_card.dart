@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../../../common_widget/space_box.dart';
 import '../../../../gen/assets.gen.dart';
 import '../../../../resource/app_size.dart';
 import '../../../../resource/app_text_styles.dart';
@@ -18,7 +19,6 @@ class MusicCategoryCard extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        margin: const EdgeInsets.all(4),
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(20),
@@ -32,15 +32,17 @@ class MusicCategoryCard extends StatelessWidget {
               child: Image.asset(
                 Assets.images.imgNature3.path,
                 fit: BoxFit.cover,
-                // height: context.sizes.height * 1 / 5,
+                height: context.sizes.height * 1 / 5,
               ),
             ),
+            const SpaceBox.height(15),
             Text(
               'Nature',
               style: AppTextStyles.fontPoppinsRegular14.copyWith(
                 color: Colors.black,
               ),
             ),
+            // SpaceBox.height(),
           ],
         ),
       ),

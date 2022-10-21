@@ -52,7 +52,9 @@ class SongPlayCard extends StatelessWidget {
             children: [
               Text(
                 'Good sleep after work hard',
-                style: AppTextStyles.fontPoppinsRegular16,
+                style: AppTextStyles.fontPoppinsRegular14.copyWith(
+                  overflow: TextOverflow.ellipsis,
+                ),
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.start,
