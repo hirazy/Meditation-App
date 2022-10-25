@@ -5,5 +5,7 @@ import 'sleep_state.dart';
 class SleepViewModel extends StateNotifier<SleepState> {
   SleepViewModel() : super(SleepState.initial());
 
-  void init() {}
+  void init() {
+    state = state.copyWith(index: 0);
+  }
 }
