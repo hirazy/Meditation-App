@@ -22,8 +22,8 @@ class ChipCard extends StatelessWidget {
       child: Container(
         margin: const EdgeInsets.only(right: 10),
         padding: const EdgeInsets.symmetric(
-          vertical: 3,
-          horizontal: 5,
+          horizontal: 8,
+          vertical: 5,
         ),
         decoration: BoxDecoration(
           color: Colors.white,

@@ -18,6 +18,10 @@ class RemindCard extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
+        padding: const EdgeInsets.symmetric(
+          horizontal: 5,
+          vertical: 8,
+        ),
         margin: const EdgeInsets.symmetric(horizontal: 20),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
@@ -37,27 +41,38 @@ class RemindCard extends StatelessWidget {
                 const SpaceBox.width(),
                 Text(
                   AppLocalizations.of(context)!.sleepReminder,
-                  style: AppTextStyles.fontPoppinsRegular14.copyWith(),
+                  style: AppTextStyles.fontPoppinsBold14.copyWith(
+                    color: const Color(0xFF3d204f),
+                  ),
                 ),
                 const SpaceBox.width(10),
                 const Text('Today'),
               ],
             ),
+            const SpaceBox.height(5),
             Row(
               children: [
                 const VerticalDivider(
                   width: 1,
-                  color: Colors.red,
+                  color: Colors.purpleAccent,
                 ),
+                // const VerticalDivider(
+                //   width: 1,
+                //   thickness: 1,
+                //   color: Colors.red,
+                // ),
                 const SpaceBox.width(),
                 Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
                       'Evening meditation',
                       style: AppTextStyles.fontOpenSansBold14,
                     ),
+                    const SpaceBox.height(5),
                     Text(
-                      'Friday, 4 September from 9pm o 10pm',
+                      'Friday, 4 September from 9pm to 10pm',
                       style: AppTextStyles.fontOpenSansBold14,
                     ),
                   ],

@@ -3786,7 +3786,7 @@ SOFTWARE.''',
     description: 'Client code to start and interact with the frontend_server compiler from the Dart SDK.',
     repository: 'https://github.com/dart-lang/webdev/tree/master/frontend_server_client',
     authors: [],
-    version: '3.0.0',
+    version: '3.1.0',
     license: '''Copyright 2020, the Dart project authors. 
 
 Redistribution and use in source and binary forms, with or without
@@ -5181,11 +5181,11 @@ SOFTWARE.''',
   ),
   Package(
     name: 'lints',
-    description: 'Official Dart lint rules. Defines the \'core\' and \'recommended\' set of lints suggested by the Dart team.',
-    homepage: 'https://github.com/dart-lang/lints',
+    description: '''Official Dart lint rules. Defines the \'core\' and \'recommended\' set of lints suggested by the Dart team.
+''',
     repository: 'https://github.com/dart-lang/lints',
     authors: [],
-    version: '2.0.0',
+    version: '2.0.1',
     license: '''Copyright 2021, the Dart project authors.
 
 Redistribution and use in source and binary forms, with or without
@@ -7426,7 +7426,7 @@ implied. See the License for the specific language governing permissions
 and limitations under the License.''',
     isMarkdown: false,
     isSdk: false,
-    isDirectDependency: false,
+    isDirectDependency: true,
   ),
   Package(
     name: 'shelf',

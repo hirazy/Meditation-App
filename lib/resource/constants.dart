@@ -58,4 +58,8 @@ class Constants {
     'Fiction',
     'M'
   ];
+
+  static const dummySleepCardStories = [
+
+  ];
 }

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:meditation_app/page/sleep/widget/remind_card.dart';
 
 import '../../common_widget/base/base_page.dart';
 import '../../common_widget/display/chip_card.dart';
@@ -8,6 +7,7 @@ import '../../common_widget/display/list_horizontal.dart';
 import '../../common_widget/space_box.dart';
 import '../../resource/app_text_styles.dart';
 import '../../resource/constants.dart';
+import 'widget/remind_card.dart';
 import 'widget/story_card.dart';
 
 class SleepPage extends BasePage {
@@ -24,7 +24,7 @@ class SleepPageState extends BasePageState<SleepPage> {
   }
 
   @override
-  Color get backgroundColor => const Color(0xFF3d204f);
+  Color get backgroundColor => const Color(0xff2e153d);
 
   @override
   Widget body(BuildContext context) {
