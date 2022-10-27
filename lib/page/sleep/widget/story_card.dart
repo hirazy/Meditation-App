@@ -18,8 +18,13 @@ class StoryCard extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        height: context.sizes.height * 1 / 5,
+        width: context.sizes.width * 2 / 5,
+        height: context.sizes.height * 1 / 4,
+        margin: const EdgeInsets.only(
+          right: 8,
+        ),
         decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(15),
           image: DecorationImage(
             image: AssetImage(
               Assets.images.imgNature.path,
@@ -27,21 +32,28 @@ class StoryCard extends StatelessWidget {
             fit: BoxFit.fill,
           ),
         ),
-        child: Column(
-          children: [
-            Text(
-              'Night Fall',
-              style: AppTextStyles.fontPoppinsRegular16.copyWith(
-                color: Colors.white,
+        child: Container(
+          margin: const EdgeInsets.all(
+            8,
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              Text(
+                'Night Fall',
+                style: AppTextStyles.fontOverpassRegular15.copyWith(
+                  color: Colors.white,
+                ),
               ),
-            ),
-            Text(
-              'Night Fall',
-              style: AppTextStyles.fontPoppinsRegular16.copyWith(
-                color: Colors.white,
-              ),
-            )
-          ],
+              Text(
+                'Night Fall',
+                style: AppTextStyles.fontOpenSansRegular13.copyWith(
+                  color: Colors.grey,
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );

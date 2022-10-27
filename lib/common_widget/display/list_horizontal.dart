@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+import '../../resource/constants.dart';
+import '../space_box.dart';
+
 class ListHorizontal extends StatelessWidget {
   const ListHorizontal({
     required this.children,
@@ -14,7 +17,12 @@ class ListHorizontal extends StatelessWidget {
       physics: const BouncingScrollPhysics(),
       scrollDirection: Axis.horizontal,
       child: Row(
-        children: children,
+        children: [
+          const SpaceBox.width(
+            Constants.spaceWidth,
+          ),
+          ...children
+        ],
       ),
     );
   }

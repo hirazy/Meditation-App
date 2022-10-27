@@ -186,6 +186,11 @@
     "type": "text",
     "placeholders": {}
   },
+  "sleepMusic": "Nhạc ngủ",
+  "@sleepMusic": {
+    "type": "text",
+    "placeholders": {}
+  },
   "eveningMeditation": "Tịnh tâm buổi tối",
   "@eveningMeditation": {
     "type": "text",

@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import '../../common_widget/base/base_page.dart';
+import '../../common_widget/display/card_action_view.dart';
 import '../../common_widget/display/chip_card.dart';
 import '../../common_widget/display/list_horizontal.dart';
 import '../../common_widget/space_box.dart';
+import '../../gen/assets.gen.dart';
 import '../../resource/app_text_styles.dart';
 import '../../resource/constants.dart';
 import 'widget/remind_card.dart';
@@ -36,11 +38,16 @@ class SleepPageState extends BasePageState<SleepPage> {
             children: [
               const SpaceBox.height(10),
               RemindCard(onTap: () {}),
-              const SpaceBox.height(10),
-              Text(
-                AppLocalizations.of(context)!.sleepStories,
-                style: AppTextStyles.fontOverpassRegular14.copyWith(
-                  color: Colors.white,
+              const SpaceBox.height(15),
+              Container(
+                margin: const EdgeInsets.only(
+                  left: Constants.spaceWidth,
+                ),
+                child: Text(
+                  AppLocalizations.of(context)!.sleepStories,
+                  style: AppTextStyles.fontOverpassRegular14.copyWith(
+                    color: Colors.white,
+                  ),
                 ),
               ),
               const SpaceBox.height(),
@@ -55,8 +62,33 @@ class SleepPageState extends BasePageState<SleepPage> {
                     .toList(),
               ),
               const SpaceBox.height(20),
-              StoryCard(
+              ListHorizontal(
+                children: Constants.dummySleepStories
+                    .map(
+                      (e) => StoryCard(
+                        onTap: () {},
+                      ),
+                    )
+                    .toList(),
+              ),
+              const SpaceBox.height(10),
+              Container(
+                margin: const EdgeInsets.only(
+                  left: Constants.spaceWidth,
+                ),
+                child: Text(
+                  AppLocalizations.of(context)!.sleepMusic,
+                  style: AppTextStyles.fontOverpassRegular14.copyWith(
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+              const SpaceBox.height(10),
+              CardActionView(
+                title: 'Sleep Music',
+                content: 'Drift off to sleep with these calming tracks',
                 onTap: () {},
+                iconAction: Assets.images.icNext.path,
               ),
             ],
           ),

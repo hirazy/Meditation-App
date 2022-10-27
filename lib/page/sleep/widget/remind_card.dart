@@ -4,6 +4,7 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import '../../../common_widget/space_box.dart';
 import '../../../gen/assets.gen.dart';
 import '../../../resource/app_text_styles.dart';
+import '../../../resource/constants.dart';
 
 class RemindCard extends StatelessWidget {
   const RemindCard({
@@ -22,7 +23,9 @@ class RemindCard extends StatelessWidget {
           horizontal: 5,
           vertical: 8,
         ),
-        margin: const EdgeInsets.symmetric(horizontal: 20),
+        margin: const EdgeInsets.symmetric(
+          horizontal: Constants.spaceWidth,
+        ),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
           color: Colors.white,
