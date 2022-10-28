@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:video_player/video_player.dart';
 
 import '../../common_widget/base/base_page.dart';
 import '../../common_widget/controll/large_card.dart';
@@ -13,6 +12,7 @@ import '../../common_widget/display/card_small.dart';
 import '../../common_widget/display/list_horizontal.dart';
 import '../../common_widget/divider/horizontal_divider.dart';
 import '../../common_widget/space_box.dart';
+import '../../gen/assets.gen.dart';
 import '../../resource/app_color.dart';
 import '../../resource/app_size.dart';
 import '../../resource/app_text_styles.dart';
@@ -113,7 +113,12 @@ class _Body extends ConsumerWidget {
                 background: SizedBox(
                   height: MediaQuery.of(context).size.height * 0.4,
                   child: state.controller != null
-                      ? VideoPlayer(state.controller!)
+                      ? Image.asset(
+                          Assets.images.bgNature.path,
+                          fit: BoxFit.fill,
+                          width: MediaQuery.of(context).size.width,
+                        )
+                      // VideoPlayer(state.controller!)
                       : Container(),
                 ),
               ),

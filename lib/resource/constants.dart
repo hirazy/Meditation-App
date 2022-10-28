@@ -50,4 +50,16 @@ class Constants {
     3867.67,
     4068.79,
   ];
+
+  /// Sleep Stories
+  static const dummySleepStories = [
+    'All',
+    'Recommended',
+    'Fiction',
+    'M'
+  ];
+
+  static const dummySleepCardStories = [
+
+  ];
 }

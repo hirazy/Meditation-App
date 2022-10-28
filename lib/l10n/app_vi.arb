@@ -175,5 +175,25 @@
   "@soundOfNature": {
     "type": "text",
     "placeholders": {}
+  },
+  "sleepReminder": "Nhắc nhở giấc ngủ",
+  "@sleepReminder": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "sleepStories": "Câu chuyện về giấc ngủ",
+  "@sleepStories": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "sleepMusic": "Nhạc ngủ",
+  "@sleepMusic": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "eveningMeditation": "Tịnh tâm buổi tối",
+  "@eveningMeditation": {
+    "type": "text",
+    "placeholders": {}
   }
 }
