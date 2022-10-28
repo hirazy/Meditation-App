@@ -59,11 +59,6 @@ class RemindCard extends StatelessWidget {
                   width: 1,
                   color: Colors.purpleAccent,
                 ),
-                // const VerticalDivider(
-                //   width: 1,
-                //   thickness: 1,
-                //   color: Colors.red,
-                // ),
                 const SpaceBox.width(),
                 Column(
                   mainAxisAlignment: MainAxisAlignment.center,
