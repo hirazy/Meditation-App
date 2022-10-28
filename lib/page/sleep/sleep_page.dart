@@ -84,12 +84,18 @@ class SleepPageState extends BasePageState<SleepPage> {
                 ),
               ),
               const SpaceBox.height(10),
-              CardActionView(
-                title: 'Sleep Music',
-                content: 'Drift off to sleep with these calming tracks',
-                onTap: () {},
-                iconAction: Assets.images.icNext.path,
+              ListView.builder(
+                itemBuilder: (context, index) => CardActionView(
+                  title: 'Sleep Music',
+                  content: 'Drift off to sleep with these calming tracks',
+                  onTap: () {},
+                  iconAction: Assets.images.icNext.path,
+                ),
+                itemCount: 5,
+                physics: const BouncingScrollPhysics(),
+                shrinkWrap: true,
               ),
+              const SpaceBox.height(80),
             ],
           ),
         ),

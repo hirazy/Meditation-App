@@ -36,13 +36,15 @@ class CardActionView extends StatelessWidget {
       onTap: onTap,
       child: Container(
         margin: const EdgeInsets.symmetric(
+          vertical: 4,
           horizontal: Constants.spaceWidth,
         ),
         padding: const EdgeInsets.all(8),
         decoration: BoxDecoration(
           gradient: const LinearGradient(
             colors: [
-              Colors.purpleAccent,
+              Color(0xFF650979),
+              Color(0xFF9B39B1),
               Colors.purple,
             ],
           ),

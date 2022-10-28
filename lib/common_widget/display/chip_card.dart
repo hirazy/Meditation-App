@@ -26,12 +26,14 @@ class ChipCard extends StatelessWidget {
           vertical: 5,
         ),
         decoration: BoxDecoration(
-          color: Colors.white,
+          color: const Color(0xFF262121),
           borderRadius: BorderRadius.circular(15),
         ),
         child: Text(
           title,
-          style: AppTextStyles.fontPoppinsRegular14,
+          style: AppTextStyles.fontPoppinsRegular14.copyWith(
+            color: Colors.white,
+          ),
         ),
       ),
     );
