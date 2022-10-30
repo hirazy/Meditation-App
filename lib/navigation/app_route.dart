@@ -16,4 +16,7 @@ class AppRoute {
 
   /// Home Page
   static const String homeTab = '/home_tab';
+
+  /// Meditation Page
+  static const String meditation = '/meditation';
 }

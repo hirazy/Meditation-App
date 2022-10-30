@@ -18,6 +18,12 @@ class AppTextStyles {
     fontSize: FontSizes.font14.fontSize,
   );
 
+  /// Font Style: Poppins - Weight: 400 - Size 13
+  static final TextStyle fontPoppinsRegular13 = GoogleFonts.poppins(
+    fontWeight: FontWeight.w400,
+    fontSize: FontSizes.font13.fontSize,
+  );
+
   /// Font Style: Poppins - Weight: 400 - Size 14
   static final TextStyle fontPoppinsBold14 = GoogleFonts.poppins(
     fontWeight: FontWeight.w700,
@@ -46,6 +52,12 @@ class AppTextStyles {
   static final TextStyle fontPoppinsRegular16 = GoogleFonts.poppins(
     fontWeight: FontWeight.w400,
     fontSize: FontSizes.font16.fontSize,
+  );
+
+  /// Font Style: Overpass - Weight: 400 - Size 15
+  static final TextStyle fontPoppinsRegular15 = GoogleFonts.poppins(
+    fontWeight: FontWeight.w400,
+    fontSize: FontSizes.font15.fontSize,
   );
 
   /// Font Style: Overpass - Weight: 400 - Size 14
@@ -107,6 +119,4 @@ class AppTextStyles {
     fontWeight: FontWeight.w700,
     fontSize: FontSizes.font25.fontSize,
   );
-
-
 }
