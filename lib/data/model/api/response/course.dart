@@ -9,7 +9,7 @@ part 'course.g.dart';
 @freezed
 class Course with _$Course {
   factory Course({
-    @JsonKey(name: 'code') required String code,
+    @JsonKey(name: 'code') String? code,
     @JsonKey(name: 'errrmsg') String? errmsg,
     @JsonKey(name: 'id') String? id,
     @JsonKey(name: 'level') String? level,
