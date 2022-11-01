@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../../../common_widget/base/base_page.dart';
 import '../../../../common_widget/space_box.dart';
@@ -18,19 +19,35 @@ class CourseTabState extends BasePageState<CourseTab> {
 
   @override
   Widget body(BuildContext context) {
-    return SingleChildScrollView(
-      child: Column(
-        children: [
-          ...Constants.dummyLevelCourses
-              .map(
-                (e) => LevelCard(
-                  levelCourse: e,
-                  onTap: () {},
-                ),
-              )
-              .toList(),
-          const SpaceBox.height(100),
-        ],
+    return Container(
+      decoration: const BoxDecoration(
+        gradient: LinearGradient(
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+          colors: [
+            Colors.amberAccent,
+            Colors.orange,
+            Colors.orangeAccent,
+          ],
+        ),
+        // DrawableLinearGradient(unitMode: null, colors: [], from:
+        //
+        // )
+      ),
+      child: SingleChildScrollView(
+        child: Column(
+          children: [
+            ...Constants.dummyLevelCourses
+                .map(
+                  (e) => LevelCard(
+                    levelCourse: e,
+                    onTap: () {},
+                  ),
+                )
+                .toList(),
+            const SpaceBox.height(100),
+          ],
+        ),
       ),
     );
   }

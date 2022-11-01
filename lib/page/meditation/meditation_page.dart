@@ -6,6 +6,7 @@ import '../../common_widget/app_bar/default_app_bar.dart';
 import '../../common_widget/base/base_page.dart';
 import '../../common_widget/space_box.dart';
 import '../../gen/assets.gen.dart';
+import '../../resource/app_color.dart';
 import 'meditation_state.dart';
 import 'meditation_view_model.dart';
 import 'widget/course/course_tab.dart';
@@ -28,7 +29,7 @@ class MeditationPageState extends BasePageState<MeditationPage>
   late TabController _tabController;
 
   @override
-  Color get backgroundColor => Colors.orange;
+  Color get backgroundColor => context.colors.baseBackgroundColor;
 
   @override
   PreferredSizeWidget? buildAppBar(BuildContext context) => DefaultAppBar(

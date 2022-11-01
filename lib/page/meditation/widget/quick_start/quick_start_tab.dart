@@ -21,43 +21,57 @@ class QuickStartTabState extends BasePageState<QuickStartTab> {
 
   @override
   Widget body(BuildContext context) {
-    return SingleChildScrollView(
-      child: Column(
-        children: [
-          const SpaceBox.height(12),
-          ListHorizontal(
-            children: Constants.dummySleepStories
-                .map(
-                  (e) => ChipCard(
-                    title: e,
-                    onTap: () {},
-                  ),
-                )
-                .toList(),
-          ),
-          const SpaceBox.height(12),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: Constants.spaceWidth),
-            child: GridView.builder(
-              shrinkWrap: true,
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2,
-                crossAxisSpacing: 8,
-                mainAxisSpacing: 8,
-                mainAxisExtent: context.sizes.height * 1 / 4 + 60,
-              ),
-              itemCount: Constants.dummyCourses.length,
-              physics: const BouncingScrollPhysics(),
-              itemBuilder: (context, index) {
-                return QuickCourseCard(
-                  course: Constants.dummyCourses[index],
-                  onTap: () {},
-                );
-              },
+    return Container(
+      decoration: const BoxDecoration(
+        gradient: LinearGradient(
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+          colors: [
+            Colors.amberAccent,
+            Colors.orange,
+            Colors.orangeAccent,
+          ],
+        ),
+      ),
+      child: SingleChildScrollView(
+        child: Column(
+          children: [
+            const SpaceBox.height(15),
+            ListHorizontal(
+              children: Constants.dummySleepStories
+                  .map(
+                    (e) => ChipCard(
+                      title: e,
+                      onTap: () {},
+                    ),
+                  )
+                  .toList(),
             ),
-          ),
-          const SpaceBox.height(100),
-        ],
+            const SpaceBox.height(15),
+            Padding(
+              padding:
+                  const EdgeInsets.symmetric(horizontal: Constants.spaceWidth),
+              child: GridView.builder(
+                shrinkWrap: true,
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                  crossAxisSpacing: 8,
+                  mainAxisSpacing: 8,
+                  mainAxisExtent: context.sizes.height * 1 / 4 + 60,
+                ),
+                itemCount: Constants.dummyCourses.length,
+                physics: const BouncingScrollPhysics(),
+                itemBuilder: (context, index) {
+                  return QuickCourseCard(
+                    course: Constants.dummyCourses[index],
+                    onTap: () {},
+                  );
+                },
+              ),
+            ),
+            const SpaceBox.height(100),
+          ],
+        ),
       ),
     );
   }

@@ -119,7 +119,7 @@ class Constants {
           level: '1',
           banner: '',
           name: 'What is meditation?',
-          author: 'JJ',
+          author: 'JT123',
           description:
               'Answer on the most important questions about meditation',
         ),
@@ -127,7 +127,7 @@ class Constants {
           id: '2',
           level: '1',
           name: 'What is meditation?',
-          author: 'JJ',
+          author: 'Hihi 123',
           description:
               'Answer on the most important questions about meditation',
         ),
@@ -135,7 +135,7 @@ class Constants {
           id: '3',
           level: '1',
           name: 'What is meditation?',
-          author: 'JJ',
+          author: 'Test 123',
           description:
               'Answer on the most important questions about meditation',
         ),

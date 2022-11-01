@@ -74,8 +74,8 @@ class QuickCourseCard extends StatelessWidget {
           const SpaceBox.height(5),
           Text(
             course.author ?? '',
-            style: AppTextStyles.fontPoppinsRegular15.copyWith(
-              color: Colors.white,
+            style: AppTextStyles.fontPoppinsRegular14.copyWith(
+              color: Colors.white60,
             ),
           )
         ],
