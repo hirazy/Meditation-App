@@ -14,6 +14,7 @@ class Course with _$Course {
     @JsonKey(name: 'id') String? id,
     @JsonKey(name: 'level') String? level,
     @JsonKey(name: 'name') String? name,
+    @JsonKey(name: 'author') String? author,
     @JsonKey(name: 'description') String? description,
     @JsonKey(name: 'banner') String? banner,
     @JsonKey(name: 'progress') int? progress,

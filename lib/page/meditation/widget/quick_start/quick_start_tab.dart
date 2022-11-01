@@ -4,10 +4,9 @@ import '../../../../common_widget/base/base_page.dart';
 import '../../../../common_widget/display/chip_card.dart';
 import '../../../../common_widget/display/list_horizontal.dart';
 import '../../../../common_widget/space_box.dart';
-import '../../../../data/provider/app_navigator_provider.dart';
-import '../../../../navigation/app_route.dart';
+import '../../../../resource/app_size.dart';
 import '../../../../resource/constants.dart';
-import '../../../music/top/widgets/music_category_card.dart';
+import 'widget/quick_course_card.dart';
 
 class QuickStartTab extends BasePage {
   const QuickStartTab({Key? key}) : super(key: key);
@@ -25,31 +24,39 @@ class QuickStartTabState extends BasePageState<QuickStartTab> {
     return SingleChildScrollView(
       child: Column(
         children: [
-          const SpaceBox.height(),
+          const SpaceBox.height(12),
           ListHorizontal(
             children: Constants.dummySleepStories
                 .map(
                   (e) => ChipCard(
-                    title: 'Light Nice Like',
+                    title: e,
                     onTap: () {},
                   ),
                 )
                 .toList(),
           ),
-          const SpaceBox.height(),
-          GridView.builder(
-            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2,
-              crossAxisSpacing: 8,
+          const SpaceBox.height(12),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: Constants.spaceWidth),
+            child: GridView.builder(
+              shrinkWrap: true,
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2,
+                crossAxisSpacing: 8,
+                mainAxisSpacing: 8,
+                mainAxisExtent: context.sizes.height * 1 / 4 + 60,
+              ),
+              itemCount: Constants.dummyCourses.length,
+              physics: const BouncingScrollPhysics(),
+              itemBuilder: (context, index) {
+                return QuickCourseCard(
+                  course: Constants.dummyCourses[index],
+                  onTap: () {},
+                );
+              },
             ),
-            physics: const BouncingScrollPhysics(),
-            itemBuilder: (context, index) {
-              return MusicCategoryCard(onTap: () {
-                // ref.read(appNavigatorProvider).navigateTo(AppRoute.)
-              });
-            },
           ),
-          const SpaceBox.height(80),
+          const SpaceBox.height(100),
         ],
       ),
     );

@@ -54,9 +54,59 @@ class Constants {
   ];
 
   /// Sleep Stories
-  static const dummySleepStories = ['All', 'Recommended', 'Fiction', 'M'];
+  static const dummySleepStories = [
+    'All',
+    'New',
+    'Recommended',
+    'Fiction',
+    'Manual',
+    'All',
+  ];
 
   static const dummySleepCardStories = [];
+
+  static List<Course> dummyCourses = [
+    Course(
+      id: '1',
+      level: '1',
+      banner: '',
+      name: 'What is meditation?',
+      author: 'JJ',
+      description: 'Answer on the most important questions about meditation',
+    ),
+    Course(
+      id: '1',
+      level: '1',
+      banner: '',
+      name: 'What is meditation?',
+      author: 'JJ',
+      description: 'Answer on the most important questions about meditation',
+    ),
+    Course(
+      id: '1',
+      level: '1',
+      banner: '',
+      name: 'What is meditation?',
+      author: 'JJ',
+      description: 'Answer on the most important questions about meditation',
+    ),
+    Course(
+      id: '1',
+      level: '1',
+      banner: '',
+      name: 'What is meditation?',
+      author: 'JJ',
+      description: 'Answer on the most important questions about meditation',
+    ),
+    Course(
+      id: '1',
+      level: '1',
+      banner: '',
+      name: 'What is meditation?',
+      author: 'JJ',
+      description: 'Answer on the most important questions about meditation',
+    ),
+  ];
 
   static List<LevelCourse> dummyLevelCourses = [
     LevelCourse(
@@ -69,6 +119,7 @@ class Constants {
           level: '1',
           banner: '',
           name: 'What is meditation?',
+          author: 'JJ',
           description:
               'Answer on the most important questions about meditation',
         ),
@@ -76,6 +127,7 @@ class Constants {
           id: '2',
           level: '1',
           name: 'What is meditation?',
+          author: 'JJ',
           description:
               'Answer on the most important questions about meditation',
         ),
@@ -83,6 +135,7 @@ class Constants {
           id: '3',
           level: '1',
           name: 'What is meditation?',
+          author: 'JJ',
           description:
               'Answer on the most important questions about meditation',
         ),
@@ -116,7 +169,8 @@ class Constants {
         Course(
           id: '1',
           level: '1',
-          banner: 'https://images.ctfassets.net/hrltx12pl8hq/7oQKmoi04ul0JsCUxkuHih/3fbf330101cffcce262c7ab54844009d/05-nature-backgrounds_1491895829.jpg?fit=fill&w=480&h=270',
+          banner:
+              'https://images.ctfassets.net/hrltx12pl8hq/7oQKmoi04ul0JsCUxkuHih/3fbf330101cffcce262c7ab54844009d/05-nature-backgrounds_1491895829.jpg?fit=fill&w=480&h=270',
           name: 'Your first step',
           description: 'First contact with meditation',
         ),
