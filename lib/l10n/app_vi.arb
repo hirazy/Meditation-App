@@ -195,5 +195,45 @@
   "@eveningMeditation": {
     "type": "text",
     "placeholders": {}
+  },
+  "back": "Quay lại",
+  "@back": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "course": "Khóa học",
+  "@course": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "quickStart": "Khởi đầu nhanh",
+  "@quickStart": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "basicMeditation": "Khởi đầu nhanh",
+  "@basicMeditation": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "beginnerLevel": "Khởi đầu nhanh",
+  "@beginnerLevel": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "advancedLevel": "Khởi đầu nhanh",
+  "@advancedLevel": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "expertLevel": "Khởi đầu nhanh",
+  "@expertLevel": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "specialSituation": "Đặc biệt",
+  "@specialSituation": {
+    "type": "text",
+    "placeholders": {}
   }
 }

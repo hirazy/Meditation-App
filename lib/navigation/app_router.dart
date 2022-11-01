@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../page/home_tab/home_tab_page.dart';
+import '../page/meditation/meditation_page.dart';
 import '../page/sign_up/personalize/personalize_page.dart';
 import '../page/sign_up/setting/sign_up_setting_page.dart';
 import '../page/sign_up/top/sign_up_top_page.dart';
@@ -40,6 +41,11 @@ class AppRouter {
         return MaterialPageRoute(
           settings: settings,
           builder: (context) => const HomeTabPage(),
+        );
+      case AppRoute.meditation:
+        return MaterialPageRoute(
+          settings: settings,
+          builder: (context) => const MeditationPage(),
         );
     }
     return null;
