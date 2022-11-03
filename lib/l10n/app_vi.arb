@@ -235,5 +235,20 @@
   "@specialSituation": {
     "type": "text",
     "placeholders": {}
+  },
+  "termTotal": "Tổng",
+  "@termTotal": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "termMonth": "Tháng",
+  "@termMonth": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "termYear": "Năm",
+  "@termYear": {
+    "type": "text",
+    "placeholders": {}
   }
 }

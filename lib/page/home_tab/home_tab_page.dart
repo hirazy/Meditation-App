@@ -7,6 +7,7 @@ import '../../resource/constants.dart';
 import '../home/home_page.dart';
 import '../meditation/meditation_page.dart';
 import '../music/top/music_top_page.dart';
+import '../profile/profile_page.dart';
 import '../sleep/sleep_page.dart';
 import 'home_tab_state.dart';
 import 'home_tab_view_model.dart';
@@ -63,6 +64,7 @@ class _Body extends ConsumerWidget {
         MusicTopPage(),
         SleepPage(),
         MeditationPage(),
+        ProfilePage(),
       ],
     );
   }
