@@ -250,5 +250,35 @@
   "@termYear": {
     "type": "text",
     "placeholders": {}
+  },
+  "profile": "Hồ sơ",
+  "@profile": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "myMediation": "Khóa học của tôi",
+  "@myMediation": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "editProfile": "Chỉnh sửa hồ sơ",
+  "@editProfile": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "setting": "Cài đặt",
+  "@setting": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "inviteFriends": "Mời bạn bè",
+  "@inviteFriends": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "licenceTitle": "Phiên bản phát triển",
+  "@licenceTitle": {
+    "type": "text",
+    "placeholders": {}
   }
 }
