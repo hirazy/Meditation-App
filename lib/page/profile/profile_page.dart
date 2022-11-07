@@ -3,8 +3,10 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../common_widget/base/base_page.dart';
+import '../../common_widget/icon/icon_base.dart';
 import '../../common_widget/space_box.dart';
 import '../../data/repository/profile_repository/profile_repository.dart';
+import '../../gen/assets.gen.dart';
 import '../../resource/app_text_styles.dart';
 import 'model/enum/profile_cell.dart';
 import 'profile_state.dart';
@@ -30,6 +32,9 @@ class ProfilePageState extends BasePageState<ProfilePage> {
   Map<ProfileCell, String> _cellTitles = {};
 
   @override
+  Color get backgroundColor => Colors.blueAccent;
+
+  @override
   void onInitState() {
     super.onInitState();
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
@@ -40,6 +45,8 @@ class ProfilePageState extends BasePageState<ProfilePage> {
 
   @override
   Widget body(BuildContext context) {
+    final cells = ref.watch(_provider).cells;
+
     return SingleChildScrollView(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -53,13 +60,57 @@ class ProfilePageState extends BasePageState<ProfilePage> {
           ProfileOverViewCard(
             onTap: () {},
           ),
+          const SpaceBox.height(15),
+          _buildSection(cells),
         ],
       ),
     );
   }
+}
 
-  Widget _buildCell() {
-    return Container();
+extension ProfilePageStateComponent on ProfilePageState {
+  Widget _buildSection(List<ProfileCell> cells) {
+    return Column(
+      children: [
+        ...cells.map(_buildCell).toList(),
+      ],
+    );
+  }
+
+  Widget _buildCell(ProfileCell cell) {
+    return GestureDetector(
+      onTap: () {},
+      child: Container(
+        margin: const EdgeInsets.only(
+          top: 10,
+          left: 16,
+          right: 16,
+        ),
+        padding: const EdgeInsets.symmetric(
+          vertical: 12,
+          horizontal: 16,
+        ),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(12),
+          color: Colors.indigoAccent,
+        ),
+        child: Row(
+          children: [
+            Expanded(
+              child: Text(
+                _getTitle(cell),
+                style: AppTextStyles.fontPoppinsRegular15
+                    .copyWith(color: Colors.white),
+              ),
+            ),
+            IconBase(
+              path: Assets.images.icNext.path,
+              size: 18,
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }
 

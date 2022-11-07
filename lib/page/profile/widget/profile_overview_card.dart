@@ -30,7 +30,7 @@ class ProfileOverViewCard extends StatelessWidget {
               top: context.sizes.width / 8,
             ),
             decoration: BoxDecoration(
-              color: Colors.blueAccent,
+              color: Colors.blueGrey,
               borderRadius: BorderRadius.circular(15),
             ),
             child: Column(
@@ -48,7 +48,7 @@ class ProfileOverViewCard extends StatelessWidget {
                     color: Colors.white60,
                   ),
                 ),
-                const SpaceBox.height(10),
+                const SpaceBox.height(15),
                 Row(
                   children: [
                     const SpaceBox.width(),
@@ -57,10 +57,25 @@ class ProfileOverViewCard extends StatelessWidget {
                       flex: 1,
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
-                        children: const [
-                          Text('Total'),
-                          Text('Month'),
-                          Text('Year'),
+                        children: [
+                          Text(
+                            'Total',
+                            style: AppTextStyles.fontPoppinsRegular14.copyWith(
+                              color: Colors.white,
+                            ),
+                          ),
+                          Text(
+                            'Month',
+                            style: AppTextStyles.fontPoppinsRegular14.copyWith(
+                              color: Colors.white,
+                            ),
+                          ),
+                          Text(
+                            'Year',
+                            style: AppTextStyles.fontPoppinsRegular14.copyWith(
+                              color: Colors.white,
+                            ),
+                          ),
                         ],
                       ),
                     ),
@@ -73,9 +88,27 @@ class ProfileOverViewCard extends StatelessWidget {
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
-                                Text('Total'),
-                                Text('Month'),
-                                Text('Year'),
+                                Text(
+                                  '94',
+                                  style: AppTextStyles.fontPoppinsRegular14
+                                      .copyWith(
+                                    color: Colors.white,
+                                  ),
+                                ),
+                                Text(
+                                  'Month',
+                                  style: AppTextStyles.fontPoppinsRegular14
+                                      .copyWith(
+                                    color: Colors.white,
+                                  ),
+                                ),
+                                Text(
+                                  'Year',
+                                  style: AppTextStyles.fontPoppinsRegular14
+                                      .copyWith(
+                                    color: Colors.white,
+                                  ),
+                                ),
                               ],
                             ),
                           ),
