@@ -1,0 +1,4 @@
+enum ProfileCellSection{
+  licenseSection,
+
+}

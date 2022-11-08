@@ -1,12 +1,12 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import 'model/enum/profile_cell.dart';
+import 'model/profile_cell_model.dart';
 
 part 'profile_state.freezed.dart';
 
 @freezed
 class ProfileState with _$ProfileState {
   factory ProfileState({
-    @Default([]) List<ProfileCell> cells,
+    @Default([]) List<ProfileCellModel> cells,
   }) = _ProfileState;
 }

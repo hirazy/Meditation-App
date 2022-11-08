@@ -9,16 +9,18 @@ import '../../data/repository/profile_repository/profile_repository.dart';
 import '../../gen/assets.gen.dart';
 import '../../resource/app_text_styles.dart';
 import 'model/enum/profile_cell.dart';
+import 'model/profile_cell_model.dart';
 import 'profile_state.dart';
 import 'profile_view_model.dart';
 import 'widget/profile_overview_card.dart';
 
 final _provider =
-    StateNotifierProvider.autoDispose<ProfileViewModel, ProfileState>(
-  (ref) => ProfileViewModel(
-    repository: ProfileRepository(reader: ref.read),
-    reader: ref.read,
-  ),
+StateNotifierProvider.autoDispose<ProfileViewModel, ProfileState>(
+      (ref) =>
+      ProfileViewModel(
+        repository: ProfileRepository(reader: ref.read),
+        reader: ref.read,
+      ),
 );
 
 class ProfilePage extends BasePage {
@@ -45,7 +47,9 @@ class ProfilePageState extends BasePageState<ProfilePage> {
 
   @override
   Widget body(BuildContext context) {
-    final cells = ref.watch(_provider).cells;
+    final cells = ref
+        .watch(_provider)
+        .cells;
 
     return SingleChildScrollView(
       child: Column(
@@ -69,7 +73,7 @@ class ProfilePageState extends BasePageState<ProfilePage> {
 }
 
 extension ProfilePageStateComponent on ProfilePageState {
-  Widget _buildSection(List<ProfileCell> cells) {
+  Widget _buildSection(List<ProfileCellModel> cells) {
     return Column(
       children: [
         ...cells.map(_buildCell).toList(),
@@ -77,40 +81,50 @@ extension ProfilePageStateComponent on ProfilePageState {
     );
   }
 
-  Widget _buildCell(ProfileCell cell) {
-    return GestureDetector(
-      onTap: () {},
-      child: Container(
-        margin: const EdgeInsets.only(
-          top: 10,
-          left: 16,
-          right: 16,
-        ),
-        padding: const EdgeInsets.symmetric(
-          vertical: 12,
-          horizontal: 16,
-        ),
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(12),
-          color: Colors.indigoAccent,
-        ),
-        child: Row(
-          children: [
-            Expanded(
-              child: Text(
-                _getTitle(cell),
-                style: AppTextStyles.fontPoppinsRegular15
-                    .copyWith(color: Colors.white),
-              ),
+  Widget _buildCell(ProfileCellModel cellModel) {
+    switch (cellModel.type) {
+      case ProfileCellType.static:
+        return GestureDetector(
+          onTap: () {},
+          child: Container(
+            margin: const EdgeInsets.only(
+              top: 10,
+              left: 16,
+              right: 16,
             ),
-            IconBase(
-              path: Assets.images.icNext.path,
-              size: 18,
+            padding: const EdgeInsets.symmetric(
+              vertical: 12,
+              horizontal: 16,
             ),
-          ],
-        ),
-      ),
-    );
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(12),
+              color: Colors.indigoAccent,
+            ),
+            child: Row(
+              children: [
+                Expanded(
+                  child: Text(
+                    _getTitle(cellModel.cell),
+                    style: AppTextStyles.fontPoppinsRegular15
+                        .copyWith(color: Colors.white),
+                  ),
+                ),
+                IconBase(
+                  path: Assets.images.icNext.path,
+                  size: 18,
+                ),
+              ],
+            ),
+          ),
+        );
+      case ProfileCellType.interactive:
+        return GestureDetector(
+          onTap: () {},
+          child: Row(
+            children: [],
+          ),
+        );
+    }
   }
 }
 

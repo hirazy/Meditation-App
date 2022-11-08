@@ -19,6 +19,10 @@ class SplashPageState extends ConsumerState<SplashPage> {
   @override
   void initState() {
     super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      ref.read(splashViewModel.notifier).init();
+    });
+
     Future.delayed(
       const Duration(seconds: 5),
       () async {
