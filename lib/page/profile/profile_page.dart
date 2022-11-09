@@ -3,6 +3,7 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../common_widget/base/base_page.dart';
+import '../../common_widget/chart/base_bar_chart.dart';
 import '../../common_widget/icon/icon_base.dart';
 import '../../common_widget/space_box.dart';
 import '../../data/repository/profile_repository/profile_repository.dart';
@@ -15,12 +16,11 @@ import 'profile_view_model.dart';
 import 'widget/profile_overview_card.dart';
 
 final _provider =
-StateNotifierProvider.autoDispose<ProfileViewModel, ProfileState>(
-      (ref) =>
-      ProfileViewModel(
-        repository: ProfileRepository(reader: ref.read),
-        reader: ref.read,
-      ),
+    StateNotifierProvider.autoDispose<ProfileViewModel, ProfileState>(
+  (ref) => ProfileViewModel(
+    repository: ProfileRepository(reader: ref.read),
+    reader: ref.read,
+  ),
 );
 
 class ProfilePage extends BasePage {
@@ -47,9 +47,7 @@ class ProfilePageState extends BasePageState<ProfilePage> {
 
   @override
   Widget body(BuildContext context) {
-    final cells = ref
-        .watch(_provider)
-        .cells;
+    final cells = ref.watch(_provider).cells;
 
     return SingleChildScrollView(
       child: Column(
@@ -64,6 +62,10 @@ class ProfilePageState extends BasePageState<ProfilePage> {
           ProfileOverViewCard(
             onTap: () {},
           ),
+          const AspectRatio(
+            aspectRatio: 1.7,
+            child: BaseBarChart(),
+          ),
           const SpaceBox.height(15),
           _buildSection(cells),
         ],
@@ -75,6 +77,7 @@ class ProfilePageState extends BasePageState<ProfilePage> {
 extension ProfilePageStateComponent on ProfilePageState {
   Widget _buildSection(List<ProfileCellModel> cells) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         ...cells.map(_buildCell).toList(),
       ],
@@ -120,8 +123,31 @@ extension ProfilePageStateComponent on ProfilePageState {
       case ProfileCellType.interactive:
         return GestureDetector(
           onTap: () {},
-          child: Row(
-            children: [],
+          child: Container(
+            margin: const EdgeInsets.only(
+              top: 12,
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Row(
+                  // mainAxisSize: MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Expanded(
+                      child: Text(
+                        _getTitle(cellModel.cell),
+                        style: AppTextStyles.fontPoppinsRegular15.copyWith(
+                          color: Colors.white,
+                          decoration: TextDecoration.underline,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
           ),
         );
     }
