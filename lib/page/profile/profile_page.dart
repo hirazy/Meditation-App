@@ -9,6 +9,7 @@ import '../../common_widget/space_box.dart';
 import '../../data/repository/profile_repository/profile_repository.dart';
 import '../../gen/assets.gen.dart';
 import '../../resource/app_text_styles.dart';
+import '../../resource/constants.dart';
 import 'model/enum/profile_cell.dart';
 import 'model/profile_cell_model.dart';
 import 'profile_state.dart';
@@ -62,12 +63,24 @@ class ProfilePageState extends BasePageState<ProfilePage> {
           ProfileOverViewCard(
             onTap: () {},
           ),
-          const AspectRatio(
+          const SpaceBox.height(15),
+          AspectRatio(
             aspectRatio: 1.7,
-            child: BaseBarChart(),
+            child: Container(
+              margin: const EdgeInsets.symmetric(
+                horizontal: Constants.spaceWidth,
+              ),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(
+                  15,
+                ),
+              ),
+              child: const BaseBarChart(),
+            ),
           ),
           const SpaceBox.height(15),
           _buildSection(cells),
+          const SpaceBox.height(Constants.paddingHeightBottom),
         ],
       ),
     );

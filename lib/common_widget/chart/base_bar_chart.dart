@@ -12,6 +12,14 @@ class BaseBarChart extends StatelessWidget {
         gridData: FlGridData(show: false),
         alignment: BarChartAlignment.spaceAround,
         barGroups: barGroups,
+        borderData: FlBorderData(
+            border: const Border(bottom: BorderSide(), left: BorderSide())),
+        titlesData: FlTitlesData(
+          bottomTitles: AxisTitles(sideTitles: _bottomTitles),
+          topTitles: AxisTitles(sideTitles: SideTitles(showTitles: false)),
+          leftTitles: AxisTitles(sideTitles: SideTitles(showTitles: false)),
+          rightTitles: AxisTitles(sideTitles: SideTitles(showTitles: false)),
+        ),
         maxY: 10,
       ),
     );
@@ -56,6 +64,38 @@ class BaseBarChart extends StatelessWidget {
             getTitlesWidget: getTitles,
           ),
         ),
+      );
+
+  SideTitles get _bottomTitles => SideTitles(
+        showTitles: true,
+        getTitlesWidget: (value, meta) {
+          var text = '';
+          switch (value.toInt()) {
+            case 0:
+              text = 'Mon';
+              break;
+            case 1:
+              text = 'Tue';
+              break;
+            case 2:
+              text = 'Wed';
+              break;
+            case 4:
+              text = 'Thu';
+              break;
+            case 5:
+              text = 'Fri';
+              break;
+            case 6:
+              text = 'Sat';
+              break;
+            case 7:
+              text = 'Sun';
+              break;
+          }
+
+          return Text(text);
+        },
       );
 
   LinearGradient get _barsGradient => const LinearGradient(
