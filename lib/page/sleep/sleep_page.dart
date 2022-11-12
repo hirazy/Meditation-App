@@ -95,7 +95,7 @@ class SleepPageState extends BasePageState<SleepPage> {
                 physics: const BouncingScrollPhysics(),
                 shrinkWrap: true,
               ),
-              const SpaceBox.height(80),
+              const SpaceBox.height(Constants.paddingHeightBottom),
             ],
           ),
         ),

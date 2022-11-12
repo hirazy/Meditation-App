@@ -126,6 +126,9 @@ dependencies:
   # Flutter Svg
   flutter_svg: ^1.1.6
 
+  # Percent Indicator
+  percent_indicator: ^4.2.2
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

@@ -69,7 +69,9 @@ class QuickStartTabState extends BasePageState<QuickStartTab> {
                 },
               ),
             ),
-            const SpaceBox.height(100),
+            const SpaceBox.height(
+              Constants.paddingHeightBottom,
+            ),
           ],
         ),
       ),

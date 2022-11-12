@@ -280,5 +280,15 @@
   "@licenceTitle": {
     "type": "text",
     "placeholders": {}
+  },
+  "numberSessions": "Số lượng bản nghe",
+  "@numberSessions": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "minutes": "Phút",
+  "@minutes": {
+    "type": "text",
+    "placeholders": {}
   }
 }

@@ -268,7 +268,9 @@ class _Body extends ConsumerWidget {
                         ),
                         const SpaceBox.height(),
                         const CardDisplay(),
-                        const SpaceBox.height(80),
+                        const SpaceBox.height(
+                          Constants.paddingHeightBottom,
+                        ),
                       ],
                     ),
                   ),

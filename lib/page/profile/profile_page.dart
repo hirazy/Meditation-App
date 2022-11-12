@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:percent_indicator/circular_percent_indicator.dart';
 
 import '../../common_widget/base/base_page.dart';
 import '../../common_widget/chart/base_bar_chart.dart';
@@ -64,21 +65,135 @@ class ProfilePageState extends BasePageState<ProfilePage> {
             onTap: () {},
           ),
           const SpaceBox.height(15),
-          AspectRatio(
-            aspectRatio: 1.7,
-            child: Container(
-              margin: const EdgeInsets.symmetric(
-                horizontal: Constants.spaceWidth,
+          Container(
+            padding: const EdgeInsets.symmetric(
+              vertical: 8,
+              horizontal: 12,
+            ),
+            margin: const EdgeInsets.symmetric(
+              horizontal: Constants.spaceWidth,
+            ),
+            decoration: BoxDecoration(
+              color: Colors.orangeAccent.shade100,
+              borderRadius: BorderRadius.circular(
+                15,
               ),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(
-                  15,
+            ),
+            child: Column(
+              children: [
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    IconBase(
+                      path: Assets.images.icHeadphones.path,
+                    ),
+                    const SpaceBox.width(),
+                    Text(
+                      AppLocalizations.of(context)!.numberSessions,
+                      style: AppTextStyles.fontPoppinsRegular15.copyWith(
+                        color: Colors.white,
+                      ),
+                    ),
+                    Expanded(
+                      child: Text(
+                        '64',
+                        style: AppTextStyles.fontOpenSansBold22.copyWith(
+                          color: Colors.deepOrange,
+                        ),
+                        textAlign: TextAlign.end,
+                      ),
+                    )
+                  ],
                 ),
-              ),
-              child: const BaseBarChart(),
+                const SpaceBox.height(12),
+                const AspectRatio(
+                  aspectRatio: 1.7,
+                  child: BaseBarChart(),
+                ),
+              ],
             ),
           ),
           const SpaceBox.height(15),
+          Padding(
+            padding: const EdgeInsets.symmetric(
+              horizontal: Constants.spaceWidth,
+            ),
+            child: Row(
+              children: [
+                Expanded(
+                  child: Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    child: Column(
+                      children: [
+                        Row(
+                          children: [
+                            IconBase(path: Assets.images.icTimeLeft.path),
+                            Expanded(
+                              child: Column(
+                                children: [Text('Test')],
+                              ),
+                            )
+                          ],
+                        )
+                      ],
+                    ),
+                  ),
+                ),
+                const SpaceBox.width(12),
+                Expanded(
+                  child: Container(
+                    child: Column(
+                      children: [
+                        CircularPercentIndicator(
+                          radius: 60,
+                          animation: true,
+                          animationDuration: 1000,
+                          lineWidth: 10,
+                          percent: 1,
+                          reverse: false,
+                          arcType: ArcType.FULL_REVERSED,
+                          startAngle: 0,
+                          animateFromLastPercent: true,
+                          circularStrokeCap: CircularStrokeCap.round,
+                          backgroundColor: Colors.green,
+                          linearGradient: const LinearGradient(
+                            begin: Alignment.centerLeft,
+                            end: Alignment.centerRight,
+                            tileMode: TileMode.clamp,
+                            stops: [0.0, 1.0],
+                            colors: <Color>[
+                              Colors.yellow,
+                              Colors.red,
+                            ],
+                          ),
+                          widgetIndicator: Center(
+                            child: Container(
+                              height: 20,
+                              width: 20,
+                              decoration: BoxDecoration(
+                                color: Colors.yellow,
+                                borderRadius: BorderRadius.circular(50),
+                              ),
+                              padding: const EdgeInsets.all(5),
+                              child: Container(
+                                decoration: BoxDecoration(
+                                  color: Colors.yellow,
+                                  borderRadius: BorderRadius.circular(50),
+                                ),
+                              ),
+                            ),
+                          ),
+                          arcBackgroundColor: Colors.grey,
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
           _buildSection(cells),
           const SpaceBox.height(Constants.paddingHeightBottom),
         ],

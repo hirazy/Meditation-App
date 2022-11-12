@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../../../common_widget/base/base_page.dart';
 import '../../../../common_widget/space_box.dart';
@@ -45,7 +44,9 @@ class CourseTabState extends BasePageState<CourseTab> {
                   ),
                 )
                 .toList(),
-            const SpaceBox.height(100),
+            const SpaceBox.height(
+              Constants.paddingHeightBottom,
+            ),
           ],
         ),
       ),

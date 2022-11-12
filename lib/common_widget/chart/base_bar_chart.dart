@@ -1,6 +1,8 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 
+import '../../resource/app_text_styles.dart';
+
 class BaseBarChart extends StatelessWidget {
   const BaseBarChart({Key? key}) : super(key: key);
 
@@ -13,9 +15,15 @@ class BaseBarChart extends StatelessWidget {
         alignment: BarChartAlignment.spaceAround,
         barGroups: barGroups,
         borderData: FlBorderData(
-            border: const Border(bottom: BorderSide(), left: BorderSide())),
+          border: const Border(
+              // bottom: BorderSide(),
+              // left: BorderSide(),
+              ),
+        ),
         titlesData: FlTitlesData(
-          bottomTitles: AxisTitles(sideTitles: _bottomTitles),
+          bottomTitles: AxisTitles(
+            sideTitles: _bottomTitles,
+          ),
           topTitles: AxisTitles(sideTitles: SideTitles(showTitles: false)),
           leftTitles: AxisTitles(sideTitles: SideTitles(showTitles: false)),
           rightTitles: AxisTitles(sideTitles: SideTitles(showTitles: false)),
@@ -94,12 +102,18 @@ class BaseBarChart extends StatelessWidget {
               break;
           }
 
-          return Text(text);
+          return Text(
+            text,
+            style: AppTextStyles.fontPoppinsRegular15.copyWith(
+              color: Colors.white,
+            ),
+          );
         },
       );
 
-  LinearGradient get _barsGradient => const LinearGradient(
+  LinearGradient get _barsGradient => LinearGradient(
         colors: [
+          Colors.yellow.withAlpha(40),
           Colors.yellow,
           Colors.orangeAccent,
           Colors.deepOrange,
@@ -115,9 +129,10 @@ class BaseBarChart extends StatelessWidget {
             BarChartRodData(
               toY: 8,
               gradient: _barsGradient,
+              width: 15,
             )
           ],
-          showingTooltipIndicators: [0],
+          // showingTooltipIndicators: [0],
         ),
         BarChartGroupData(
           x: 1,
@@ -125,9 +140,21 @@ class BaseBarChart extends StatelessWidget {
             BarChartRodData(
               toY: 10,
               gradient: _barsGradient,
+              width: 15,
             )
           ],
-          showingTooltipIndicators: [0],
+          // showingTooltipIndicators: [0],
+        ),
+        BarChartGroupData(
+          x: 1,
+          barRods: [
+            BarChartRodData(
+              toY: 10,
+              gradient: _barsGradient,
+              width: 15,
+            )
+          ],
+          // showingTooltipIndicators: [0],
         ),
       ];
 }
