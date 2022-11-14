@@ -1,3 +1,3 @@
-class AudioService{
-
+class AudioService {
+  void play() {}
 }

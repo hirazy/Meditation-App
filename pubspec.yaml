@@ -129,6 +129,9 @@ dependencies:
   # Percent Indicator
   percent_indicator: ^4.2.2
 
+  # Linear Progress Indicator
+  liquid_progress_indicator: ^0.4.0
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

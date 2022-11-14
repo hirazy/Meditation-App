@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:percent_indicator/circular_percent_indicator.dart';
+import 'package:liquid_progress_indicator/liquid_progress_indicator.dart';
 
 import '../../common_widget/base/base_page.dart';
 import '../../common_widget/chart/base_bar_chart.dart';
@@ -15,6 +15,7 @@ import 'model/enum/profile_cell.dart';
 import 'model/profile_cell_model.dart';
 import 'profile_state.dart';
 import 'profile_view_model.dart';
+import 'widget/current_course_card.dart';
 import 'widget/profile_overview_card.dart';
 
 final _provider =
@@ -128,67 +129,63 @@ class ProfilePageState extends BasePageState<ProfilePage> {
                     child: Column(
                       children: [
                         Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
                           children: [
-                            IconBase(path: Assets.images.icTimeLeft.path),
                             Expanded(
-                              child: Column(
-                                children: [Text('Test')],
+                              child: IconBase(
+                                path: Assets.images.icMeditationCourse.path,
+                                size: 25,
                               ),
-                            )
+                            ),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.end,
+                              children: [
+                                Text(
+                                  AppLocalizations.of(context)!.course,
+                                  style:
+                                      AppTextStyles.fontPoppinsBold16.copyWith(
+                                    color: Colors.white,
+                                  ),
+                                  textAlign: TextAlign.end,
+                                ),
+                                Text(
+                                  AppLocalizations.of(context)!.course,
+                                  style: AppTextStyles.fontPoppinsRegular14
+                                      .copyWith(
+                                    color: Colors.white,
+                                  ),
+                                  textAlign: TextAlign.end,
+                                )
+                              ],
+                            ),
                           ],
-                        )
+                        ),
+                        SizedBox(
+                          width: 75,
+                          height: 75,
+                          child: LiquidCircularProgressIndicator(
+                            backgroundColor: Colors.white,
+                            valueColor:
+                                const AlwaysStoppedAnimation(Colors.grey),
+                            borderColor: Colors.blue,
+                            borderWidth: 5,
+                            center: const Text(
+                              'Loading...',
+                              style: TextStyle(
+                                fontSize: 12,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ),
+                        ),
                       ],
                     ),
                   ),
                 ),
                 const SpaceBox.width(12),
                 Expanded(
-                  child: Container(
-                    child: Column(
-                      children: [
-                        CircularPercentIndicator(
-                          radius: 60,
-                          animation: true,
-                          animationDuration: 1000,
-                          lineWidth: 10,
-                          percent: 1,
-                          reverse: false,
-                          arcType: ArcType.FULL_REVERSED,
-                          startAngle: 0,
-                          animateFromLastPercent: true,
-                          circularStrokeCap: CircularStrokeCap.round,
-                          backgroundColor: Colors.green,
-                          linearGradient: const LinearGradient(
-                            begin: Alignment.centerLeft,
-                            end: Alignment.centerRight,
-                            tileMode: TileMode.clamp,
-                            stops: [0.0, 1.0],
-                            colors: <Color>[
-                              Colors.yellow,
-                              Colors.red,
-                            ],
-                          ),
-                          widgetIndicator: Center(
-                            child: Container(
-                              height: 20,
-                              width: 20,
-                              decoration: BoxDecoration(
-                                color: Colors.yellow,
-                                borderRadius: BorderRadius.circular(50),
-                              ),
-                              padding: const EdgeInsets.all(5),
-                              child: Container(
-                                decoration: BoxDecoration(
-                                  color: Colors.yellow,
-                                  borderRadius: BorderRadius.circular(50),
-                                ),
-                              ),
-                            ),
-                          ),
-                          arcBackgroundColor: Colors.grey,
-                        ),
-                      ],
-                    ),
+                  child: CurrentCourseCard(
+                    onTap: () {},
                   ),
                 ),
               ],

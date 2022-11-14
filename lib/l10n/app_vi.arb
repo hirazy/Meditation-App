@@ -290,5 +290,15 @@
   "@minutes": {
     "type": "text",
     "placeholders": {}
+  },
+  "current": "Hiện tại",
+  "@current": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "withYourself": "Cùng bản thân",
+  "@withYourself": {
+    "type": "text",
+    "placeholders": {}
   }
 }
