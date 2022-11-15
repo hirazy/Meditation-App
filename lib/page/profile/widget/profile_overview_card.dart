@@ -1,7 +1,10 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
+import '../../../common_widget/icon/icon_base.dart';
 import '../../../common_widget/space_box.dart';
+import '../../../gen/assets.gen.dart';
 import '../../../resource/app_size.dart';
 import '../../../resource/app_text_styles.dart';
 import '../../../resource/constants.dart';
@@ -28,6 +31,8 @@ class ProfileOverViewCard extends StatelessWidget {
             ),
             padding: EdgeInsets.only(
               top: context.sizes.width / 8,
+              left: Constants.spaceWidth,
+              right: Constants.spaceWidth,
             ),
             decoration: BoxDecoration(
               color: Colors.blueGrey,
@@ -49,92 +54,98 @@ class ProfileOverViewCard extends StatelessWidget {
                   ),
                 ),
                 const SpaceBox.height(15),
-                Row(
+                Column(
                   children: [
-                    const SpaceBox.width(),
-                    Flexible(
-                      fit: FlexFit.tight,
-                      flex: 1,
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'Total',
-                            style: AppTextStyles.fontPoppinsRegular14.copyWith(
-                              color: Colors.white,
-                            ),
+                    Row(
+                      children: [
+                        Expanded(
+                          child: textLabel(
+                            AppLocalizations.of(context)!.termTotal,
+                            textAlign: TextAlign.start,
+                            color: Colors.lightBlue,
                           ),
-                          Text(
-                            'Month',
-                            style: AppTextStyles.fontPoppinsRegular14.copyWith(
-                              color: Colors.white,
-                            ),
+                        ),
+                        Expanded(
+                          child: textLabel(
+                            '94',
+                            color: Colors.lightBlue,
+                            fontSize: 16,
+                            isBoldText: true,
                           ),
-                          Text(
-                            'Year',
-                            style: AppTextStyles.fontPoppinsRegular14.copyWith(
-                              color: Colors.white,
-                            ),
+                        ),
+                        Expanded(
+                          child: textLabel(
+                            '94',
+                            color: Colors.lightBlue,
+                            fontSize: 16,
+                            isBoldText: true,
                           ),
-                        ],
-                      ),
+                        ),
+                        Expanded(
+                          child: textLabel(
+                            '94',
+                            color: Colors.lightBlue,
+                            fontSize: 16,
+                            isBoldText: true,
+                          ),
+                        )
+                      ],
                     ),
-                    Expanded(
-                      flex: 4,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Expanded(
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                Text(
-                                  '94',
-                                  style: AppTextStyles.fontPoppinsRegular14
-                                      .copyWith(
-                                    color: Colors.white,
-                                  ),
-                                ),
-                                Text(
-                                  'Month',
-                                  style: AppTextStyles.fontPoppinsRegular14
-                                      .copyWith(
-                                    color: Colors.white,
-                                  ),
-                                ),
-                                Text(
-                                  'Year',
-                                  style: AppTextStyles.fontPoppinsRegular14
-                                      .copyWith(
-                                    color: Colors.white,
-                                  ),
-                                ),
-                              ],
-                            ),
+                    const SpaceBox.height(),
+                    Row(
+                      children: [
+                        Expanded(
+                          child: textLabel(
+                            AppLocalizations.of(context)!.termMonth,
+                            textAlign: TextAlign.start,
                           ),
-                          Expanded(
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                Text('Total'),
-                                Text('Month'),
-                                Text('Year'),
-                              ],
-                            ),
+                        ),
+                        Expanded(
+                          child: IconBase(
+                            path: Assets.images.icTimeLeft.path,
+                            size: 20,
                           ),
-                          Expanded(
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                Text('Total'),
-                                Text('Month'),
-                                Text('Year'),
-                              ],
-                            ),
-                          )
-                        ],
-                      ),
+                        ),
+                        Expanded(
+                          child: IconBase(
+                            path: Assets.images.icHeadphones.path,
+                            size: 20,
+                          ),
+                        ),
+                        Expanded(
+                          child: IconBase(
+                            path: Assets.images.icCalendar.path,
+                            size: 20,
+                          ),
+                        ),
+                      ],
                     ),
+                    const SpaceBox.height(),
+                    Row(
+                      children: [
+                        Expanded(
+                          child: textLabel(
+                            AppLocalizations.of(context)!.termYear,
+                            textAlign: TextAlign.start,
+                          ),
+                        ),
+                        Expanded(
+                          child: textLabel(
+                            'Total minutes',
+                          ),
+                        ),
+                        Expanded(
+                          child: textLabel(
+                            'Total sessions',
+                          ),
+                        ),
+                        Expanded(
+                          child: textLabel(
+                            'Days in row',
+                          ),
+                        )
+                      ],
+                    )
                   ],
                 ),
                 const SpaceBox.height(),
@@ -169,6 +180,24 @@ class ProfileOverViewCard extends StatelessWidget {
           ),
         ],
       ),
+    );
+  }
+
+  Widget textLabel(
+    String value, {
+    Color? color,
+    TextAlign? textAlign,
+    double? fontSize,
+    bool? isBoldText,
+  }) {
+    return Text(
+      value,
+      style: AppTextStyles.fontPoppinsRegular14.copyWith(
+        color: color ?? Colors.white,
+        fontSize: fontSize,
+        fontWeight: (isBoldText != null) ? FontWeight.w700 : null,
+      ),
+      textAlign: textAlign ?? TextAlign.center,
     );
   }
 }

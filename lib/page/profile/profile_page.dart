@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:liquid_progress_indicator/liquid_progress_indicator.dart';
+import 'package:percent_indicator/circular_percent_indicator.dart';
 
 import '../../common_widget/base/base_page.dart';
 import '../../common_widget/chart/base_bar_chart.dart';
@@ -59,7 +60,9 @@ class ProfilePageState extends BasePageState<ProfilePage> {
         children: [
           Text(
             AppLocalizations.of(context)!.profile,
-            style: AppTextStyles.fontPoppinsRegular16,
+            style: AppTextStyles.fontPoppinsBold18.copyWith(
+              color: Colors.white,
+            ),
           ),
           const SpaceBox.height(10),
           ProfileOverViewCard(
@@ -122,69 +125,55 @@ class ProfilePageState extends BasePageState<ProfilePage> {
             child: Row(
               children: [
                 Expanded(
-                  child: Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                    child: Column(
-                      children: [
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            Expanded(
-                              child: IconBase(
-                                path: Assets.images.icMeditationCourse.path,
-                                size: 25,
-                              ),
-                            ),
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.end,
-                              children: [
-                                Text(
-                                  AppLocalizations.of(context)!.course,
-                                  style:
-                                      AppTextStyles.fontPoppinsBold16.copyWith(
-                                    color: Colors.white,
-                                  ),
-                                  textAlign: TextAlign.end,
-                                ),
-                                Text(
-                                  AppLocalizations.of(context)!.course,
-                                  style: AppTextStyles.fontPoppinsRegular14
-                                      .copyWith(
-                                    color: Colors.white,
-                                  ),
-                                  textAlign: TextAlign.end,
-                                )
-                              ],
-                            ),
-                          ],
-                        ),
-                        SizedBox(
-                          width: 75,
-                          height: 75,
-                          child: LiquidCircularProgressIndicator(
-                            backgroundColor: Colors.white,
-                            valueColor:
-                                const AlwaysStoppedAnimation(Colors.grey),
-                            borderColor: Colors.blue,
-                            borderWidth: 5,
-                            center: const Text(
-                              'Loading...',
-                              style: TextStyle(
-                                fontSize: 12,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
+                  child: CurrentCourseCard(
+                    pathIcon: Assets.images.icTimeLeft.path,
+                    contentWidget: SizedBox(
+                      height: 40,
+                      child: LiquidCircularProgressIndicator(
+                        backgroundColor: Colors.white,
+                        valueColor:
+                            const AlwaysStoppedAnimation(Colors.orangeAccent),
+                        borderColor: Colors.blue,
+                        borderWidth: 3,
+                        value: 84 / 100,
+                        center: Text(
+                          '84',
+                          style: AppTextStyles.fontOpenSansBold22.copyWith(
+                            color: Colors.white,
                           ),
                         ),
-                      ],
+                      ),
                     ),
+                    onTap: () {},
+                    subTitle: AppLocalizations.of(context)!.minutes,
+                    title: AppLocalizations.of(context)!.withYourself,
                   ),
                 ),
                 const SpaceBox.width(12),
                 Expanded(
                   child: CurrentCourseCard(
+                    subTitle: AppLocalizations.of(context)!.current,
+                    title: AppLocalizations.of(context)!.course,
+                    contentWidget: CircularPercentIndicator(
+                      radius: 60,
+                      animation: true,
+                      animationDuration: 1000,
+                      lineWidth: 10,
+                      percent: 1,
+                      reverse: false,
+                      arcType: ArcType.FULL,
+                      startAngle: 0,
+                      animateFromLastPercent: true,
+                      circularStrokeCap: CircularStrokeCap.round,
+                      center: Text(
+                        '16',
+                        style: AppTextStyles.fontOpenSansBold22.copyWith(
+                          color: Colors.white,
+                        ),
+                      ),
+                      progressColor: Colors.indigoAccent,
+                    ),
+                    pathIcon: Assets.images.icMeditationCourse.path,
                     onTap: () {},
                   ),
                 ),
@@ -203,6 +192,7 @@ extension ProfilePageStateComponent on ProfilePageState {
   Widget _buildSection(List<ProfileCellModel> cells) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
         ...cells.map(_buildCell).toList(),
       ],
@@ -249,29 +239,16 @@ extension ProfilePageStateComponent on ProfilePageState {
         return GestureDetector(
           onTap: () {},
           child: Container(
+            alignment: Alignment.center,
             margin: const EdgeInsets.only(
               top: 12,
             ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Row(
-                  // mainAxisSize: MainAxisSize.min,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Expanded(
-                      child: Text(
-                        _getTitle(cellModel.cell),
-                        style: AppTextStyles.fontPoppinsRegular15.copyWith(
-                          color: Colors.white,
-                          decoration: TextDecoration.underline,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ],
+            child: Text(
+              _getTitle(cellModel.cell),
+              style: AppTextStyles.fontPoppinsRegular15.copyWith(
+                color: Colors.white,
+                decoration: TextDecoration.underline,
+              ),
             ),
           ),
         );
