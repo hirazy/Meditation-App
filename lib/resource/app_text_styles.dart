@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import 'app_fonts.dart';
 import 'font_sizes.dart';
 
 /// Weight: 400 - Regular, 700 - Bold
@@ -22,6 +21,18 @@ class AppTextStyles {
   static final TextStyle fontPoppinsRegular13 = GoogleFonts.poppins(
     fontWeight: FontWeight.w400,
     fontSize: FontSizes.font13.fontSize,
+  );
+
+  /// Font Style: Poppins - Weight: 400 - Size 12
+  static final TextStyle fontPoppinsRegular12 = GoogleFonts.poppins(
+    fontWeight: FontWeight.w400,
+    fontSize: FontSizes.font12.fontSize,
+  );
+
+  /// Font Style: Poppins - Weight: 700 - Size 12
+  static final TextStyle fontPoppinsBold12 = GoogleFonts.poppins(
+    fontWeight: FontWeight.w700,
+    fontSize: FontSizes.font12.fontSize,
   );
 
   /// Font Style: Poppins - Weight: 400 - Size 14
@@ -51,6 +62,12 @@ class AppTextStyles {
   /// Font Style: Overpass - Weight: 400 - Size 16
   static final TextStyle fontPoppinsRegular16 = GoogleFonts.poppins(
     fontWeight: FontWeight.w400,
+    fontSize: FontSizes.font16.fontSize,
+  );
+
+  /// Font Style: Overpass - Weight: 700 - Size 16
+  static final TextStyle fontPoppinsBold16 = GoogleFonts.poppins(
+    fontWeight: FontWeight.w700,
     fontSize: FontSizes.font16.fontSize,
   );
 

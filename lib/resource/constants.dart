@@ -13,6 +13,8 @@ class Constants {
 
   static List<Personalize> personalizes = [Personalize(id: '1', name: '')];
 
+  static const double paddingHeightBottom = 100;
+
   /// Items of Bottom Navigation App
   static List<ItemBottomBar> bottomNavigationItems = [
     ItemBottomBar(

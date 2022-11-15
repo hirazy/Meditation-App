@@ -1,0 +1,3 @@
+class AudioService {
+  void play() {}
+}

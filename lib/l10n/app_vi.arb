@@ -235,5 +235,70 @@
   "@specialSituation": {
     "type": "text",
     "placeholders": {}
+  },
+  "termTotal": "Tổng",
+  "@termTotal": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "termMonth": "Tháng",
+  "@termMonth": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "termYear": "Năm",
+  "@termYear": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "profile": "Hồ sơ",
+  "@profile": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "myMediation": "Khóa học của tôi",
+  "@myMediation": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "editProfile": "Chỉnh sửa hồ sơ",
+  "@editProfile": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "setting": "Cài đặt",
+  "@setting": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "inviteFriends": "Mời bạn bè",
+  "@inviteFriends": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "licenceTitle": "Phiên bản phát triển",
+  "@licenceTitle": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "numberSessions": "Số lượng bản nghe",
+  "@numberSessions": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "minutes": "Phút",
+  "@minutes": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "current": "Hiện tại",
+  "@current": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "withYourself": "Cùng bản thân",
+  "@withYourself": {
+    "type": "text",
+    "placeholders": {}
   }
 }

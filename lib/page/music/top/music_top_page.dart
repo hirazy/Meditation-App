@@ -116,7 +116,9 @@ class MusicTopPageState extends BasePageState<MusicTopPage> {
                           );
                         },
                       ),
-                      const SpaceBox.height(80),
+                      const SpaceBox.height(
+                        Constants.paddingHeightBottom,
+                      ),
                     ],
                   ),
                 ),
