@@ -1,6 +1,4 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
-
 import 'meditation_state.dart';
 
 class MeditationViewModel extends StateNotifier<MeditationState> {

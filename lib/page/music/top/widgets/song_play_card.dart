@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../../../common_widget/icon/icon_base.dart';
 import '../../../../common_widget/space_box.dart';
 import '../../../../gen/assets.gen.dart';
 import '../../../../resource/app_text_styles.dart';

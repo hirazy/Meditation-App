@@ -14,8 +14,8 @@ class MediumCard extends StatelessWidget {
           ClipRRect(
             child: Image.asset(''),
           ),
-          Text('Hello'),
-          Text('123'),
+          const Text('Hello'),
+          const Text('123'),
         ],
       ),
     );

@@ -1,7 +1,6 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../data/repository/profile_repository/profile_repository.dart';
-import 'model/enum/profile_cell.dart';
 import 'profile_state.dart';
 
 class ProfileViewModel extends StateNotifier<ProfileState> {

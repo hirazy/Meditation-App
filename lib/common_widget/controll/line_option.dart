@@ -32,7 +32,8 @@ class LineOption extends StatelessWidget {
           Text(AppLocalizations.of(context)!.seeAll,
               style: AppTextStyles.fontOpenSansRegular14.copyWith(
                 color: Colors.white,
-              ))
+              ),
+          )
         ],
       ),
     );
