@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../../../common_widget/icon/icon_base.dart';
-import '../../../common_widget/space_box.dart';
-import '../../../resource/app_text_styles.dart';
+import '../../../../common_widget/icon/icon_base.dart';
+import '../../../../common_widget/space_box.dart';
+import '../../../../resource/app_text_styles.dart';
 import '../model/user_expression.dart';
 
 class ItemExpression extends StatelessWidget {

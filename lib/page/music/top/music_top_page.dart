@@ -10,7 +10,7 @@ import '../../../common_widget/space_box.dart';
 import '../../../resource/app_size.dart';
 import '../../../resource/app_text_styles.dart';
 import '../../../resource/constants.dart';
-import '../../home/model/user_expression.dart';
+import '../../home/top/model/user_expression.dart';
 import 'music_top_state.dart';
 import 'music_top_view_model.dart';
 import 'widgets/music_category_card.dart';
