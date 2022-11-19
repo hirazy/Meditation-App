@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:bot_toast/bot_toast.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -7,13 +8,19 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'common_widget/alert_dialog/loading_dialog.dart';
 import 'data/provider/app_navigator_provider.dart';
 import 'data/provider/loading_state_provider.dart';
+import 'main/app_flavor.dart';
 import 'navigation/app_route.dart';
 import 'navigation/app_router.dart';
 import 'resource/app_color.dart';
 import 'resource/app_theme.dart';
 
 class App extends ConsumerStatefulWidget {
-  const App({Key? key}) : super(key: key);
+  const App({
+    required this.appFlavor,
+    Key? key,
+  }) : super(key: key);
+
+  final AppFlavor appFlavor;
 
   @override
   AppState createState() => AppState();
@@ -23,6 +30,8 @@ class AppState extends ConsumerState<App> {
   @override
   void initState() {
     super.initState();
+
+    print('App InitState');
   }
 
   @override
@@ -33,7 +42,7 @@ class AppState extends ConsumerState<App> {
       builder: (context) {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
-          theme: AppTheme.appTheme(),
+          // theme: AppTheme.appTheme(),
           localizationsDelegates: AppLocalizations.localizationsDelegates,
           supportedLocales: AppLocalizations.supportedLocales,
           builder: (context, child) {
@@ -41,26 +50,29 @@ class AppState extends ConsumerState<App> {
               data: MediaQuery.of(context).copyWith(
                 textScaleFactor: 1,
               ),
-              child: Container(),
+              child:(BotToastInit())(context, child),
             );
           },
           home: Stack(
             children: [
-              Scaffold(
-                appBar: _buildAppBar(),
-                body: SafeArea(
-                  child: Column(
-                    children: [
-                      Expanded(
-                        child: _buildContent(
-                          loadingState,
-                        ),
-                      )
-                    ],
-                  ),
-                ),
+              _buildContent(
+                loadingState,
               ),
-              _buildLoading(loadingState),
+              // Scaffold(
+              //   appBar: _buildAppBar(),
+              //   body: SafeArea(
+              //     child: Column(
+              //       children: [
+              //         Expanded(
+              //           child: _buildContent(
+              //             loadingState,
+              //           ),
+              //         )
+              //       ],
+              //     ),
+              //   ),
+              // ),
+              // _buildLoading(loadingState),
             ],
           ),
         );
@@ -69,6 +81,7 @@ class AppState extends ConsumerState<App> {
   }
 
   Widget _buildContent(LoadingState loadingState) {
+    print('Build Content');
     return WillPopScope(
       onWillPop: () async {
         if (!loadingState.isLoading) {
@@ -83,7 +96,7 @@ class AppState extends ConsumerState<App> {
       },
       child: Navigator(
         key: ref.read(appNavigatorProvider).navigatorKey,
-        initialRoute: AppRoute.splash,
+        initialRoute: AppRoute.homeTab,
         onGenerateRoute: AppRouter.onGenerateRoute,
       ),
     );

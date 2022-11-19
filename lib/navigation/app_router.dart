@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../page/home/view_all_list/model/view_all_list_arguments.dart';
+import '../page/home/view_all_list/view_all_list_page.dart';
 import '../page/home_tab/home_tab_page.dart';
 import '../page/meditation/meditation_page.dart';
 import '../page/sign_up/personalize/personalize_page.dart';
@@ -46,6 +48,13 @@ class AppRouter {
         return MaterialPageRoute(
           settings: settings,
           builder: (context) => const MeditationPage(),
+        );
+      case AppRoute.viewAllList:
+        return MaterialPageRoute(
+          settings: settings,
+          builder: (context) => ViewAllListPage(
+            arguments: settings.arguments as ViewAllListArguments,
+          ),
         );
     }
     return null;

@@ -19,6 +19,7 @@ class LineOption extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
+      onTap: onTap,
       child: Row(
         children: [
           Expanded(
@@ -29,10 +30,12 @@ class LineOption extends StatelessWidget {
               ),
             ),
           ),
-          Text(AppLocalizations.of(context)!.seeAll,
-              style: AppTextStyles.fontOpenSansRegular14.copyWith(
-                color: Colors.white,
-              ))
+          Text(
+            AppLocalizations.of(context)!.seeAll,
+            style: AppTextStyles.fontOpenSansRegular14.copyWith(
+              color: Colors.white,
+            ),
+          ),
         ],
       ),
     );

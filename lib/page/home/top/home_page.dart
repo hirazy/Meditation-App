@@ -12,11 +12,14 @@ import '../../../common_widget/display/card_small.dart';
 import '../../../common_widget/display/list_horizontal.dart';
 import '../../../common_widget/divider/horizontal_divider.dart';
 import '../../../common_widget/space_box.dart';
+import '../../../data/provider/app_navigator_provider.dart';
 import '../../../gen/assets.gen.dart';
+import '../../../navigation/app_route.dart';
 import '../../../resource/app_color.dart';
 import '../../../resource/app_size.dart';
 import '../../../resource/app_text_styles.dart';
 import '../../../resource/constants.dart';
+import '../view_all_list/model/view_all_list_arguments.dart';
 import 'home_state.dart';
 import 'home_view_model.dart';
 import 'model/user_expression.dart';
@@ -216,7 +219,9 @@ class _Body extends ConsumerWidget {
                         /// Recommended
                         LineOption(
                           title: AppLocalizations.of(context)!.recommended,
-                          onTap: () {},
+                          onTap: () {
+                            gotoViewAllListPage(context);
+                          },
                         ),
                         const SpaceBox.height(),
                         ListHorizontal(
@@ -235,7 +240,9 @@ class _Body extends ConsumerWidget {
                         /// Today
                         LineOption(
                           title: AppLocalizations.of(context)!.today,
-                          onTap: () {},
+                          onTap: () {
+                            gotoViewAllListPage(context);
+                          },
                         ),
                         const SpaceBox.height(),
                         ListHorizontal(
@@ -254,7 +261,9 @@ class _Body extends ConsumerWidget {
                         const SpaceBox.height(16),
                         LineOption(
                           title: AppLocalizations.of(context)!.music,
-                          onTap: () {},
+                          onTap: () {
+                            gotoViewAllListPage(context);
+                          },
                         ),
                         const SpaceBox.height(),
                         ListHorizontal(
@@ -281,5 +290,15 @@ class _Body extends ConsumerWidget {
         ],
       ),
     );
+  }
+
+  void gotoViewAllListPage(BuildContext context) {
+    ref.read(appNavigatorProvider).navigateTo(
+          AppRoute.viewAllList,
+          arguments: ViewAllListArguments(
+            id: '1',
+            title: AppLocalizations.of(context)!.recommended,
+          ),
+        );
   }
 }

@@ -4,6 +4,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../app.dart';
 import '../data/provider/app_flavor_provider.dart';
 import '../main.dart';
 import 'app_flavor.dart';
@@ -12,8 +13,7 @@ Future<void> mainCommon(AppFlavor appFlavor) async {
   WidgetsFlutterBinding.ensureInitialized();
 
   Future<void> startApp() async {
-    await Firebase.initializeApp(
-    );
+    await Firebase.initializeApp();
 
     if (kDebugMode) {
       // Force disable Crashlytics collection while doing every day development.
@@ -31,7 +31,9 @@ Future<void> mainCommon(AppFlavor appFlavor) async {
       overrides: [
         appFlavorProvider.overrideWithValue(appFlavor),
       ],
-      child: const MyApp(),
+      child: App(
+        appFlavor: appFlavor,
+      ),
     ),
   );
 }

@@ -9,7 +9,7 @@ class Constants {
 
   static const String isDeletedColumn = 'is_deleted';
 
-  static const double spaceWidth = 15;
+  static const double spaceWidth = 12;
 
   static List<Personalize> personalizes = [Personalize(id: '1', name: '')];
 
