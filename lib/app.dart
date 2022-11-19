@@ -58,21 +58,6 @@ class AppState extends ConsumerState<App> {
               _buildContent(
                 loadingState,
               ),
-              // Scaffold(
-              //   appBar: _buildAppBar(),
-              //   body: SafeArea(
-              //     child: Column(
-              //       children: [
-              //         Expanded(
-              //           child: _buildContent(
-              //             loadingState,
-              //           ),
-              //         )
-              //       ],
-              //     ),
-              //   ),
-              // ),
-              // _buildLoading(loadingState),
             ],
           ),
         );
@@ -81,7 +66,6 @@ class AppState extends ConsumerState<App> {
   }
 
   Widget _buildContent(LoadingState loadingState) {
-    print('Build Content');
     return WillPopScope(
       onWillPop: () async {
         if (!loadingState.isLoading) {
