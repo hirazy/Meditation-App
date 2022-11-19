@@ -4,6 +4,7 @@ import 'package:flutter_svg/svg.dart';
 
 import '../../gen/assets.gen.dart';
 import '../../resource/app_text_styles.dart';
+import '../../resource/constants.dart';
 import '../space_box.dart';
 
 class DefaultAppBar extends StatelessWidget implements PreferredSizeWidget {
@@ -56,7 +57,7 @@ class DefaultAppBar extends StatelessWidget implements PreferredSizeWidget {
                   child: Text(
                     title!,
                     overflow: TextOverflow.ellipsis,
-                    style: AppTextStyles.fontPoppinsRegular16,
+                    style: AppTextStyles.fontPoppinsRegular18,
                   ),
                 )
               ],
@@ -69,23 +70,28 @@ class DefaultAppBar extends StatelessWidget implements PreferredSizeWidget {
     return onLeftTapped != null
         ? GestureDetector(
             onTap: onLeftTapped,
-            child: SizedBox(
-              height: kToolbarHeight,
-              child: Row(
-                children: [
-                  Image.asset(
-                    Assets.images.icBackWhite.path,
-                    height: 12,
-                    width: 12,
-                  ),
-                  Expanded(
-                    child: Text(
-                      leftLabel ?? AppLocalizations.of(context)!.back,
-                      style: AppTextStyles.fontPoppinsRegular14,
-                      overflow: TextOverflow.ellipsis,
+            child: Padding(
+              padding: const EdgeInsets.all(5),
+              child: SizedBox(
+                height: kToolbarHeight,
+                child: Row(
+                  children: [
+                    const SpaceBox.width(),
+                    Image.asset(
+                      Assets.images.icBackWhite.path,
+                      height: 25,
+                      width: 25,
                     ),
-                  ),
-                ],
+                    if (leftLabel != null)
+                      Expanded(
+                        child: Text(
+                          leftLabel ?? AppLocalizations.of(context)!.back,
+                          style: AppTextStyles.fontPoppinsRegular15,
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                      ),
+                  ],
+                ),
               ),
             ),
           )

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../../gen/assets.gen.dart';
+import '../../../../gen/assets.gen.dart';
+
 
 enum Expression {
   relax,

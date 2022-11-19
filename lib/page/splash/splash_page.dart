@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../common_widget/logo_image.dart';
+import '../../data/provider/app_navigator_provider.dart';
 import '../../gen/assets.gen.dart';
 import '../../navigation/app_route.dart';
 import 'splash_view_model.dart';
@@ -28,10 +29,7 @@ class SplashPageState extends ConsumerState<SplashPage> {
       () async {
         await ref.read(splashViewModel.notifier).loadAppInfo(
           () {
-            Navigator.of(context).pushNamedAndRemoveUntil(
-              AppRoute.welcome,
-              (route) => false,
-            );
+            _navigateToNext();
           },
           () {},
         );
@@ -112,5 +110,12 @@ class SplashPageState extends ConsumerState<SplashPage> {
         ),
       ),
     );
+  }
+
+  void _navigateToNext() {
+    ref.read(appNavigatorProvider).navigateTo(
+          AppRoute.homeTab,
+          shouldClearStack: true,
+        );
   }
 }

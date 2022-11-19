@@ -4,7 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../common_widget/base/base_page.dart';
 import '../../common_widget/controll/bottom_bar.dart';
 import '../../resource/constants.dart';
-import '../home/home_page.dart';
+import '../home/top/home_page.dart';
 import '../meditation/meditation_page.dart';
 import '../music/top/music_top_page.dart';
 import '../profile/profile_page.dart';

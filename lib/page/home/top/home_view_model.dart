@@ -2,8 +2,8 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:video_player/video_player.dart';
 
-import '../../gen/assets.gen.dart';
-import '../../utils/extension/date_time_extension.dart';
+import '../../../gen/assets.gen.dart';
+import '../../../utils/extension/date_time_extension.dart';
 import 'home_state.dart';
 
 class HomeViewModel extends StateNotifier<HomeState> {
@@ -28,9 +28,7 @@ class HomeViewModel extends StateNotifier<HomeState> {
     );
   }
 
-  void changeExpression(){
-
-  }
+  void changeExpression() {}
 
   void resumeVideo() {
     controller.play();

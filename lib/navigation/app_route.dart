@@ -19,4 +19,7 @@ class AppRoute {
 
   /// Meditation Page
   static const String meditation = '/meditation';
+
+  /// View All List Page
+  static const String viewAllList = '/home/view_all_list';
 }

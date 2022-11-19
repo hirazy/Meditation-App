@@ -25,7 +25,7 @@ class AppNavigator {
   Future<dynamic> navigateTo(
     String routeName, {
     Object? arguments,
-    bool shouldClearStack = true,
+    bool shouldClearStack = false,
   }) async {
     final currentState = navigatorKey.currentState;
 
