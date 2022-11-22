@@ -300,5 +300,10 @@
   "@withYourself": {
     "type": "text",
     "placeholders": {}
+  },
+  "play": "Bắt đầu",
+  "@play": {
+    "type": "text",
+    "placeholders": {}
   }
 }

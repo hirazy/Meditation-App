@@ -19,6 +19,7 @@ import '../../../resource/app_color.dart';
 import '../../../resource/app_size.dart';
 import '../../../resource/app_text_styles.dart';
 import '../../../resource/constants.dart';
+import '../album/model/album_arguments.dart';
 import '../view_all_list/model/view_all_list_arguments.dart';
 import 'home_state.dart';
 import 'home_view_model.dart';
@@ -228,7 +229,12 @@ class _Body extends ConsumerWidget {
                           children: expressions
                               .map(
                                 (e) => CardExpand(
-                                  onTap: () {},
+                                  onTap: () {
+                                    _navigateToAlbumPage(
+                                      AppLocalizations.of(context)!
+                                          .basicMeditation,
+                                    );
+                                  },
                                 ),
                               )
                               .toList(),
@@ -298,6 +304,15 @@ class _Body extends ConsumerWidget {
           arguments: ViewAllListArguments(
             id: '1',
             title: AppLocalizations.of(context)!.recommended,
+          ),
+        );
+  }
+
+  void _navigateToAlbumPage(String title) {
+    ref.read(appNavigatorProvider).navigateTo(
+          AppRoute.album,
+          arguments: AlbumArguments(
+            title: title,
           ),
         );
   }

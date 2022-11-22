@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:bot_toast/bot_toast.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -30,8 +31,12 @@ class AppState extends ConsumerState<App> {
   @override
   void initState() {
     super.initState();
-
-    print('App InitState');
+    SystemChrome.setEnabledSystemUIMode(
+      SystemUiMode.manual,
+      overlays: [
+        SystemUiOverlay.bottom,
+      ],
+    );
   }
 
   @override
@@ -50,7 +55,7 @@ class AppState extends ConsumerState<App> {
               data: MediaQuery.of(context).copyWith(
                 textScaleFactor: 1,
               ),
-              child:(BotToastInit())(context, child),
+              child: (BotToastInit())(context, child),
             );
           },
           home: Stack(

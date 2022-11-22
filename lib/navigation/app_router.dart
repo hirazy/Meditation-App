@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../page/home/album/album_page.dart';
+import '../page/home/album/model/album_arguments.dart';
 import '../page/home/view_all_list/model/view_all_list_arguments.dart';
 import '../page/home/view_all_list/view_all_list_page.dart';
 import '../page/home_tab/home_tab_page.dart';
@@ -54,6 +56,13 @@ class AppRouter {
           settings: settings,
           builder: (context) => ViewAllListPage(
             arguments: settings.arguments as ViewAllListArguments,
+          ),
+        );
+      case AppRoute.album:
+        return MaterialPageRoute(
+          settings: settings,
+          builder: (context) => AlbumPage(
+            arguments: settings.arguments as AlbumArguments,
           ),
         );
     }
