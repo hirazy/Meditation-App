@@ -1,7 +1,9 @@
 import 'dart:io';
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:get_it/get_it.dart';
 
+import '../../service/audio_service.dart';
 import '../api/api_client.dart';
 import '../provider/api_client_provider.dart';
 import '../provider/app_flavor_provider.dart';
@@ -41,6 +43,9 @@ abstract class Repository {
 
   /// Secure Storage
   SecureStorage secureStorage() => read(secureStorageProvider);
+
+  /// Audio Player
+  AudioServiceImpl get audioServiceImpl => GetIt.instance<AudioServiceImpl>();
 
   bool isOk(final int statusCode) =>
       statusCode == HttpStatus.ok ||

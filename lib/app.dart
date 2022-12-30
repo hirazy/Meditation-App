@@ -85,7 +85,7 @@ class AppState extends ConsumerState<App> {
       },
       child: Navigator(
         key: ref.read(appNavigatorProvider).navigatorKey,
-        initialRoute: AppRoute.homeTab,
+        initialRoute: AppRoute.splash,
         onGenerateRoute: AppRouter.onGenerateRoute,
       ),
     );

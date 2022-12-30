@@ -7,6 +7,7 @@ class SplashState with _$SplashState {
   factory SplashState({
     required String version,
     @Default(false) bool isAuthenticated,
+    @Default(false) bool isAnimated,
   }) = _SplashState;
 
   const SplashState._();

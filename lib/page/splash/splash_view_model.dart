@@ -13,11 +13,18 @@ class SplashViewModel extends StateNotifier<SplashState> {
 
   final Reader read;
 
-  void init(){
+  void init() {}
 
+  Future<void> loadAppInfo(
+    Function() onNextHome,
+    Function() onNextLogin,
+  ) async {
+    onNextHome();
   }
 
-  Future<void> loadAppInfo(Function() onNextHome, Function() onNextLogin) async{
-    onNextHome();
+  void changeAnimated() {
+    state = state.copyWith(
+      isAnimated: true,
+    );
   }
 }

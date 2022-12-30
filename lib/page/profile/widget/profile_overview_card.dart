@@ -157,8 +157,7 @@ class ProfileOverViewCard extends StatelessWidget {
             left: 0,
             right: 0,
             child: CachedNetworkImage(
-              imageUrl:
-                  'https://scontent.fhan14-2.fna.fbcdn.net/v/t1.6435-1/142915405_106600208107240_8287176908190349092_n.jpg?stp=dst-jpg_p160x160&_nc_cat=100&ccb=1-7&_nc_sid=7206a8&_nc_ohc=TRciSk6vfAwAX9ktPDK&tn=y9erCs1Wd2HJw9GZ&_nc_ht=scontent.fhan14-2.fna&oh=00_AfDWIuqy5TMihiLa-peD6yPThcaGdvZ8kuVDf1RhEXw4Yg&oe=638B4B10',
+              imageUrl: Constants.icAvatar,
               imageBuilder: (context, image) {
                 return Container(
                   height: context.sizes.width / 4,

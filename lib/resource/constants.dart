@@ -16,7 +16,7 @@ class Constants {
   static const double paddingHeightBottom = 100;
 
   static const String icAvatar =
-      'https://scontent.fhan14-2.fna.fbcdn.net/v/t1.6435-9/142915405_106600208107240_8287176908190349092_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=3FuErWu95zQAX9g_1Yy&tn=y9erCs1Wd2HJw9GZ&_nc_ht=scontent.fhan14-2.fna&oh=00_AfDoZ_Qzcz3OSWJhC7UdV0y3mT6HfGhqcIkX2wL-COyQIw&oe=639FDB86';
+      'https://scontent.fhan14-2.fna.fbcdn.net/v/t1.6435-9/142915405_106600208107240_8287176908190349092_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=OC71uUd6TbIAX-58SGw&_nc_ht=scontent.fhan14-2.fna&oh=00_AfCmPH_sfSmQNrRi7P6ERjguSc_imXA6PtNmIMHGFW-lNw&oe=63D11386';
 
   /// Items of Bottom Navigation App
   static List<ItemBottomBar> bottomNavigationItems = [
