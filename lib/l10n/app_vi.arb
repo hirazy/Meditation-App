@@ -305,5 +305,25 @@
   "@play": {
     "type": "text",
     "placeholders": {}
+  },
+  "favorited": "Bắt đầu",
+  "@favorited": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "share": "Chia sẻ",
+  "@share": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "download": "Tải xuống",
+  "@download": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "downloading": "Đang tải xuống",
+  "@downloading": {
+    "type": "text",
+    "placeholders": {}
   }
 }

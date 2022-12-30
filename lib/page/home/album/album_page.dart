@@ -6,12 +6,15 @@ import '../../../common_widget/app_bar/custom_sliver_app_bar.dart';
 import '../../../common_widget/base/base_page.dart';
 import '../../../common_widget/icon/icon_base.dart';
 import '../../../common_widget/space_box.dart';
+import '../../../data/provider/modal_bottom_sheet_provider.dart';
 import '../../../data/repository/album_repository/album_repository.dart';
 import '../../../gen/assets.gen.dart';
 import '../../../resource/app_size.dart';
 import '../../../resource/app_text_styles.dart';
 import '../../../resource/constants.dart';
 import '../../../utils/utils.dart';
+import '../album_options/album_options_modal.dart';
+import '../album_options/model/album_options_arguments.dart';
 import 'album_state.dart';
 import 'album_view_model.dart';
 import 'model/album_arguments.dart';
@@ -60,6 +63,9 @@ class AlbumPageState extends BasePageState<AlbumPage> {
           title: widget.arguments.title,
           onLeftTap: () {
             Navigator.of(context).pop();
+          },
+          onActionTap: () {
+            showBottomOptions();
           },
           appBarColor: Colors.teal,
           buildBody: SliverList(
@@ -290,13 +296,12 @@ class AlbumPageState extends BasePageState<AlbumPage> {
   }
 
   void showBottomOptions() {
-    showModalBottomSheet(
-      context: context,
+    ref.read(modalBottomSheetProvider).showModal(
       builder: (context) {
-        return Column(
-          children: const [
-            Text('Hello'),
-          ],
+        return AlbumOptionsModal(
+          arguments: AlbumOptionArguments(
+            albumId: 1,
+          ),
         );
       },
     );

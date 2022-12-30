@@ -29,6 +29,7 @@ abstract class BaseModalPageState<Page extends BaseModalPage>
 
   @mustCallSuper
   void onInitState() {
+    super.initState();
     logger.d('Init State: $runtimeType');
   }
 

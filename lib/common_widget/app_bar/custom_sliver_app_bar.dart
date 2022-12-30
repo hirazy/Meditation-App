@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../../gen/assets.gen.dart';
 import '../../../../resource/app_size.dart';
 import '../../../../resource/app_text_styles.dart';
+import '../space_box.dart';
 
 class CustomSliverAppBar extends StatelessWidget {
   const CustomSliverAppBar({
@@ -11,6 +12,7 @@ class CustomSliverAppBar extends StatelessWidget {
     required this.onLeftTap,
     required this.buildBody,
     required this.appBarColor,
+    required this.onActionTap,
     Key? key,
   }) : super(key: key);
 
@@ -25,6 +27,9 @@ class CustomSliverAppBar extends StatelessWidget {
 
   /// [onLeftTap]
   final VoidCallback onLeftTap;
+
+  /// [onActionTap]
+  final VoidCallback onActionTap;
 
   /// [buildBody] body of sliver appbar
   final Widget buildBody;
@@ -41,6 +46,7 @@ class CustomSliverAppBar extends StatelessWidget {
                 expandedHeight: context.sizes.height * 0.45,
                 onLeftTap: onLeftTap,
                 appBarColor: appBarColor,
+                onActionTap: onActionTap,
               ),
               pinned: true,
             ),
@@ -57,6 +63,7 @@ class CustomSliverAppBarDelegate extends SliverPersistentHeaderDelegate {
     required this.expandedHeight,
     required this.onLeftTap,
     required this.appBarColor,
+    required this.onActionTap,
   });
 
   ///
@@ -73,6 +80,9 @@ class CustomSliverAppBarDelegate extends SliverPersistentHeaderDelegate {
 
   /// [appBarColor]
   final Color appBarColor;
+
+  /// [onActionTap]
+  final VoidCallback onActionTap;
 
   @override
   Widget build(
@@ -122,6 +132,20 @@ class CustomSliverAppBarDelegate extends SliverPersistentHeaderDelegate {
             ),
           ),
           centerTitle: true,
+          actions: [
+            GestureDetector(
+              onTap: onActionTap,
+              child: Padding(
+                padding: const EdgeInsets.all(3),
+                child: Image.asset(
+                  Assets.images.icOptions.path,
+                  width: 22,
+                  height: 22,
+                ),
+              ),
+            ),
+            const SpaceBox.width(10)
+          ],
         ),
       );
 
