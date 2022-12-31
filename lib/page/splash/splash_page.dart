@@ -3,7 +3,6 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../common_widget/logo_image.dart';
 import '../../data/provider/app_navigator_provider.dart';
 import '../../gen/assets.gen.dart';
 import '../../navigation/app_route.dart';
@@ -22,6 +21,10 @@ class SplashPageState extends ConsumerState<SplashPage> {
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((_) {
       ref.read(splashViewModel.notifier).init();
+    });
+
+    Future.delayed(const Duration(seconds: 1), () {
+      ref.read(splashViewModel.notifier).changeAnimated();
     });
 
     Future.delayed(
@@ -94,14 +97,25 @@ class SplashPageState extends ConsumerState<SplashPage> {
                 //   ],
                 // ),
                 Row(
-                  children: const [
-                    Expanded(
-                      child: Center(
-                        child: LogoImage(
-                          size: 80,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    AnimatedPadding(
+                      padding: const EdgeInsets.only(top: 40),
+                      duration: const Duration(seconds: 3),
+                      curve: Curves.easeInOutCubicEmphasized,
+                      child: AnimatedOpacity(
+                        opacity: ref.watch(splashViewModel).isAnimated ? 1 : 0,
+                        duration: const Duration(seconds: 2),
+                        curve: Curves.easeInCubic,
+                        child: CircleAvatar(
+                          backgroundColor: Colors.purple,
+                          radius: 50,
+                          foregroundImage: AssetImage(
+                            Assets.images.icLogo.path,
+                          ),
                         ),
                       ),
-                    )
+                    ),
                   ],
                 ),
               ],

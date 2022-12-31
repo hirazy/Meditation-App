@@ -22,4 +22,7 @@ class AppRoute {
 
   /// View All List Page
   static const String viewAllList = '/home/view_all_list';
+
+  /// Album Page
+  static const String album = 'home/album';
 }
