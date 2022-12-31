@@ -7,5 +7,6 @@ class AlbumOptionsState with _$AlbumOptionsState {
   factory AlbumOptionsState({
     @Default(false) bool isFavorite,
     @Default(false) bool isDownloading,
+    @Default(287) double heightOfModal,
   }) = _AlbumOptionsState;
 }

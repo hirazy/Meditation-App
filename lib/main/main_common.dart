@@ -12,6 +12,7 @@ import 'package:hive_flutter/hive_flutter.dart';
 import '../app.dart';
 import '../data/provider/app_flavor_provider.dart';
 import '../service/audio_service.dart';
+import '../utils/utils.dart';
 import 'app_flavor.dart';
 
 Future<void> startService() async {
@@ -46,12 +47,15 @@ Future<void> mainCommon(AppFlavor appFlavor) async {
   }
 
   if (Platform.isWindows || Platform.isLinux || Platform.isMacOS) {
-    await Hive.initFlutter('BlackHole');
+    await Hive.initFlutter(hiveSubDir);
   } else {
     await Hive.initFlutter();
   }
 
-  // await openHiveBox('settings');
+  await Utils.openHiveBox(hiveSettingsKey);
+  await Utils.openHiveBox(hiveDownloadKey);
+  await Utils.openHiveBox(hiveFavoriteSongKey);
+  await Utils.openHiveBox(hiveCacheKey, isLimit: true);
 
   await startService();
 

@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -29,9 +31,18 @@ class AlbumOptionsModal extends BaseModalPage {
 
 class AlbumOptionsModalState extends BaseModalPageState<AlbumOptionsModal> {
   @override
+  double? get modalHeight =>
+      ref.watch(albumOptionsViewModel).heightOfModal +
+      MediaQueryData.fromWindow(window).padding.bottom;
+
+  @override
   void initState() {
     super.initState();
     Future.delayed(const Duration(seconds: 0), () {
+      final heightOfKeyboard = MediaQuery.of(context).viewInsets.bottom;
+      ref
+          .read(albumOptionsViewModel.notifier)
+          .changeHeightOfModal(heightOfKeyboard);
       ref.read(albumOptionsViewModel.notifier).init(widget.arguments);
     });
   }

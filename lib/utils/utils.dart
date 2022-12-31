@@ -4,6 +4,13 @@ import 'dart:ui';
 import 'package:hive/hive.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:permission_handler/permission_handler.dart';
+import 'package:share_plus/share_plus.dart';
+
+const hiveSubDir = 'meditation_app';
+const hiveSettingsKey = 'settings';
+const hiveDownloadKey = 'downloads';
+const hiveFavoriteSongKey = 'Favorite Songs';
+const hiveCacheKey = 'cache';
 
 class Utils {
   static Future<void> changeAudioFocusPermission({
@@ -46,7 +53,7 @@ class Utils {
     }
   }
 
-  Future<void> openHiveBox(
+  static Future<void> openHiveBox(
     String boxName, {
     bool isLimit = false,
   }) async {
@@ -56,8 +63,8 @@ class Utils {
       var dbFile = File('$dirPath/$boxName.hive');
       var lockFile = File('$dirPath/$boxName.lock');
       if (Platform.isWindows || Platform.isLinux || Platform.isMacOS) {
-        dbFile = File('$dirPath/BlackHole/$boxName.hive');
-        lockFile = File('$dirPath/BlackHole/$boxName.lock');
+        dbFile = File('$dirPath/$hiveSubDir/$boxName.hive');
+        lockFile = File('$dirPath/$hiveSubDir/$boxName.lock');
       }
       await dbFile.delete();
       await lockFile.delete();
@@ -68,5 +75,9 @@ class Utils {
     if (isLimit && box.length > 500) {
       await box.clear();
     }
+  }
+
+  static Future<void> share() async {
+    await Share.share('');
   }
 }

@@ -62,9 +62,16 @@ dependencies:
   retrofit: ^3.0.1+1
   retrofit_generator: ^4.0.3+1
 
+  # URL Launcher
+  url_launcher: ^6.1.7
+
   # Firebase
   firebase_core: ^2.1.1
   firebase_crashlytics: ^3.0.3
+  firebase_dynamic_links: ^5.0.11
+
+  # Share Plus
+  share_plus: ^6.3.0
 
   # Freezed
   freezed: ^2.1.0+1

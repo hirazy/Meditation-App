@@ -89,7 +89,8 @@ class AudioServiceImpl extends BaseAudioHandler implements AudioPlayerHandler {
     children: [
       AudioSource.uri(
         Uri.parse(
-            'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3'),
+          'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3',
+        ),
       ),
     ],
   );
